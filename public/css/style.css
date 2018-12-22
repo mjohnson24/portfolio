@@ -41,7 +41,7 @@ header .social {
     float: right;
     position: fixed;
     top: calc(50vh - 65px);
-    left: calc(100vw - 70px);
+    left: calc(100vw - 73px);
     padding-left: 0;
     text-align: center;
 }
@@ -49,6 +49,7 @@ header .social {
 header .social ul {
     list-style: none;
     text-align: center;
+    font-size: 25px;
 }
 
 header .social ul li a {
@@ -78,13 +79,15 @@ footer {
     z-index: 9999;
     overflow: visible;
     background: rgb(255, 255, 255) url("../img/loader.gif") no-repeat center center;
-    background-size: 150px 120px;
+    background-size: 300px 300px;
 }
 
 h1 {
-    font-size: 150px;
+    font-size: 60px;
     font-family: 'Metropolis';
     text-transform: uppercase;
+    text-align: right;
+    width: 230px;
 }
 
 h2 {
@@ -95,6 +98,12 @@ h2 {
     font-weight: 800;
     line-height: 15px;
     letter-spacing: 5px;
+}
+
+h3 {
+    font-size: 20px;
+    font-family: 'Metropolis';
+    text-align: right;
 }
 
 .hero {
@@ -133,7 +142,7 @@ h2 {
 }
 
 .centeredBox {
-    width: 50%;
+    width: 60%;
     text-align: center;
 }
 
@@ -235,15 +244,18 @@ label input:checked+.menu {
 
 label input:checked+.menu .hamburger {
     transform: rotate(45deg);
+    background: black;
 }
 
 label input:checked+.menu .hamburger:after {
     transform: rotate(90deg);
+    background: black;
     bottom: 0;
 }
 
 label input:checked+.menu .hamburger:before {
     transform: rotate(90deg);
+    background: black;
     top: 0;
 }
 
@@ -320,15 +332,266 @@ label a {
     min-height: 100%;
 }
 
-section {
-    height: calc(100vh - 80px);
-    background-color: wheat;
-    border-bottom: 1px solid black;
+.anchor {
+    display: block;
+    height: 40px;
+    margin-top: -40px;
+    visibility: hidden;
 }
 
-.color {
-    background: black;
+.about {
+    height: calc(100vh - 80px);
+    background: rgb(248, 248, 248);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
+
+.skills {
+    height: calc(100vh - 80px);
+    background: rgb(28, 27, 31);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Skills progress bars */
+
+.skills-bar-container {
+    width: 80%;
+    padding-left: 0;
+    list-style: none;
+    height: 80%;
+}
+
+.skills-bar-container li {
+    position: relative;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.skills-bar-container li .progressbar-title {
+    color: #fff;
+}
+
+.skills-bar-container li .progressbar-title h3 {
+    display: inline-block;
+}
+
+.skills-bar-container li .progressbar-title .percent {
+    position: absolute;
+    right: 5px;
+}
+
+.skills-bar-container li .bar-container {
+    background: #555;
+    position: relative;
+    width: 100%;
+    height: 5px;
+    margin-top: 5px;
+    display: block;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.skills-bar-container li .bar-container .progressbar {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.skills-bar-container li .bar-container #progress-html {
+    -webkit-animation-name: progress-html;
+    animation-name: progress-html;
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+}
+
+.skills-bar-container li .bar-container #progress-css {
+    -webkit-animation-name: progress-css;
+    animation-name: progress-css;
+    -webkit-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+}
+
+.skills-bar-container li .bar-container #progress-javascript {
+    -webkit-animation-name: progress-javascript;
+    animation-name: progress-javascript;
+    -webkit-animation-delay: 2.1s;
+    animation-delay: 2.1s;
+}
+
+.skills-bar-container li .bar-container #progress-php {
+    -webkit-animation-name: progress-php;
+    animation-name: progress-php;
+    -webkit-animation-delay: 2.8s;
+    animation-delay: 2.8s;
+}
+
+.skills-bar-container li .bar-container #progress-angular {
+    -webkit-animation-name: progress-angular;
+    animation-name: progress-angular;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
+}
+
+.progressred {
+    background-color: #c0392b;
+}
+
+.progressblue {
+    background-color: #1199ff;
+}
+
+.progresspurple {
+    background-color: #9b59b6;
+}
+
+.progressorange {
+    background-color: #ffa500;
+}
+
+.progressgreen {
+    background-color: #27ae60;
+}
+
+@-webkit-keyframes progress-html {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@-webkit-keyframes progress-css {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@-webkit-keyframes progress-javascript {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+@-moz-keyframes progress-html {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@-moz-keyframes progress-css {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@-moz-keyframes progress-javascript {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+
+@keyframes progress-html {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes progress-css {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes progress-javascript {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+
+/* #################################### */
+
+.portfolio {
+    height: calc(100vh - 80px);
+    background: rgb(248, 248, 248);
+}
+
+.about .left {
+    place-self: center;
+
+}
+
+.about .right {
+    place-self: center;
+    margin-right: 5em;
+
+}
+
+.skills .left {
+    place-self: center;
+}
+
+.skills .right {
+    place-self: center;
+    width: 100%
+}
+
+
+
+section .right p,
+section .left p {
+    text-align: justify;
+}
+
 
 @media screen and (max-width: 768px) {
     main {
@@ -369,18 +632,43 @@ section {
     label .hamburger,
     label .hamburger:after,
     label .hamburger:before {
-        background: black;
+        background: white;
         z-index: 9999;
     }
 
-    /* label input:checked+.menu {
-        box-shadow: 0 0 0 100vw #FFF,
-            0 0 0 100vh #FFF;
-    } */
+    label input:checked+.menu .hamburger {
+        background: black;
+    }
 
-    /* label ul {
-        left: 35px;
-    } */
+    label input:checked+.menu .hamburger:after {
+        background: black;
+    }
+
+    label input:checked+.menu .hamburger:before {
+        background: black;
+    }
+
+    .about {
+        grid-template-columns: auto;
+        height: calc(100vh - 40px);
+    }
+
+    .about .right {
+        margin-right: 3em;
+        margin-left: 3em;
+
+    }
+
+    .skills {
+        grid-template-columns: auto;
+        height: calc(100vh - 40px);
+    }
+
+    .skills-bar-container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 70%;
+    }
 
 }
 
@@ -391,7 +679,7 @@ section {
 
     label ul li {
         margin-left: 50px;
-        margin-top: 30vh;
+        margin-top: 20vh;
     }
 
     label ul li a {

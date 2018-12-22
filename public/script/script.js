@@ -36,7 +36,7 @@ document.addEventListener('readystatechange', function () {
 
     if (document.readyState === 'complete') {
         // The Typewriter
-        var textArray = ["Welcome dude ", "I'm Edoardo Lunardi ", "nice to see you here. "];
+        var textArray = ["Welcome! ", "I'm Edoardo Lunardi ", "nice to see you here. "];
         var typeWriterElement = document.getElementById('typewriter');
 
         function delWriter(text, i, cb) {
@@ -137,3 +137,18 @@ const applyGradient = async (url, callback) => {
 
 // RESULT
 applyGradient(gradientAPI, addBackgroundToUnderlines);
+
+// Smooth scrolling
+$('a[href^="#"]').on('click', function (e) {
+    e.preventDefault();
+
+    var target = this.hash;
+    $target = $(target);
+
+    $('html, body').stop().animate({
+        'scrollTop': $target.offset().top
+    }, 500, function () {
+        window.location.hash = target;
+    });
+
+});
