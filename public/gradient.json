@@ -1,27 +1,8 @@
 {
   "data": [{
-      "name": "newLife",
-      "direction": "to right",
-      "colors": ["#43e97b", "#38f9d7"],
-      "positions": ["0%", "100%"]
-    },
-    {
-      "name": "temptingAzure",
-      "direction": "120deg",
-      "colors": ["#84fab0", "#8fd3f4"],
-      "positions": ["0%", "100%"]
-    },
-    {
-      "name": "trueSunset",
-      "direction": "to right",
-      "colors": ["#fa709a", "#fee140"],
-      "positions": ["0%", "100%"]
-    },
-    {
-      "name": "itmeoBranding",
-      "direction": "180deg",
-      "colors": ["#2af598", "#009efd"],
-      "positions": ["0%", "100%"]
-    }
-  ]
+    "name": "newLife",
+    "direction": "to right",
+    "colors": ["#43e97b", "#38f9d7"],
+    "positions": ["0%", "100%"]
+  }]
 }
