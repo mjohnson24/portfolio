@@ -87,7 +87,8 @@ h1 {
     font-family: 'Metropolis';
     text-transform: uppercase;
     text-align: right;
-    width: 230px;
+    width: 240px;
+    margin: 0;
 }
 
 h2 {
@@ -634,17 +635,71 @@ label a {
 .portfolio {
     height: calc(100vh - 80px);
     background: rgb(248, 248, 248);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.portfolio .left {
+    place-self: center;
+}
+
+.portfolio .right {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.portfolio .right div {
+    place-self: center;
+    text-align: center;
+}
+
+.portfolio .right img {
+    width: 100%;
+    transition: all .2s ease-in-out;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.portfolio .right figcaption {
+    font-style: italic;
+    display: inline-block;
+}
+
+.portfolio .right img:hover {
+    transform: scale(0.95);
 }
 
 .about .left {
     place-self: center;
+    text-align: center;
+}
 
+.about .left img {
+    width: 70%;
+    height: 300px;
+    object-fit: cover;
+    object-position: 50% 10%;
 }
 
 .about .right {
     place-self: center;
     margin-right: 5em;
 
+}
+
+.contact {
+    height: calc(100vh - 80px);
+    background: rgb(28, 27, 31);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.contact .left {
+    place-self: center;
+}
+
+.contact .right {
+    place-self: center;
 }
 
 .skills .left {
@@ -656,12 +711,6 @@ label a {
     width: 100%
 }
 
-
-
-section .right p,
-section .left p {
-    text-align: justify;
-}
 
 
 @media screen and (max-width: 768px) {
@@ -739,6 +788,16 @@ section .left p {
         margin-left: auto;
         margin-right: auto;
         width: 70%;
+    }
+
+    .portfolio {
+        grid-template-columns: auto;
+        min-height: calc(100vh - 40px);
+    }
+
+    .contact {
+        grid-template-columns: auto;
+        min-height: calc(100vh - 40px);
     }
 
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <title>Edoardo Lunardi</title>
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,800" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -40,10 +40,10 @@
                                 <a class="underline--magical" href='#about'>About</a>
                             </li>
                             <li>
-                                <a class="underline--magical" href='/'>Portfolio</a>
+                                <a class="underline--magical" href='#portfolio'>Portfolio</a>
                             </li>
                             <li>
-                                <a class="underline--magical" href='/'>Contact</a>
+                                <a class="underline--magical" href='#contact'>Contact</a>
                             </li>
                             <li class="social-mobile"><a href="mailto:edward.lunardi@gmail.com"><i class="far fa-envelope"></i></a></li>
                             <li class="social-mobile"><a href="https://www.instagram.com/edo_lunardi/"><i class="fab fa-instagram"></i></a></li>
@@ -76,26 +76,25 @@
                 <section class="about">
                     <div class="left" data-aos-anchor="#about" data-aos="fade-right" data-aos-offset="300"
                         data-aos-easing="ease-in-sine">
-                        <h1 class="underline--magical" style="color: #546A7B">About Me</h1>
+                        <h1 class="underline--magical" style="color: #546A7B">About Me<span style="font-size:10px">(briefly)</span></h1>
                     </div>
                     <div class="right" data-aos="fade-left" data-aos-offset="320" data-aos-easing="ease-in-sine">
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut
-                            labore et dolore magna
-                            aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex
-                            ea commodo consequat.
-                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                            nulla
-                            pariatur. Excepteur sint
-                            occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                            laborum."</p>
+                        <p style="font-weight: 400; font-family: 'Metropolis'; font-size: 30px">My name is Edoardo and
+                            I'm a freelance
+                            <span style="color:#546A7B" class="underline--magical">front-end
+                                developer</span>.</p>
+                        <p>Born in 1998 in Italy, I've always been passionate about
+                            technology. Web enthusiast and long life learner, I started five months ago to dig into the
+                            Web development. <br> I'm currently studying <span class="underline--magical">Computer
+                                Science</span> at Università
+                            della Svizzera
+                            Italiana in Lugano.</p>
                     </div>
                 </section>
                 <section class="skills">
-                    <div class="left" data-aos-anchor="#about" data-aos="fade-right" data-aos-offset="1000"
+                    <div class="left" data-aos-anchor="#skills" data-aos="fade-right" data-aos-offset="1500"
                         data-aos-easing="ease-in-sine">
-                        <h1 class="underline--magical" style="color: white; text-transform: none">Skills</h1>
+                        <h1 class="underline--magical" style="color: white; text-transform: none; width: 150px">Skills</h1>
                     </div>
                     <div class="right" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
                         <ul class="skills-bar-container">
@@ -133,10 +132,45 @@
                         </ul>
                     </div>
                 </section>
-                <section class="portfolio"></section>
+                <span class="anchor" id="portfolio"></span>
+                <section class="portfolio">
+                    <div class="left">
+                        <div class="left" data-aos-anchor="#portfolio" data-aos="fade-right" data-aos-offset="400"
+                            data-aos-easing="ease-in-sine">
+                            <h1 class="underline--magical" style="color: #546A7B; text-transform: none; width: 130px">Port<br>folio</h1>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="right" data-aos-anchor="#portfolio" data-aos="fade-left" data-aos-offset="400"
+                            data-aos-easing="ease-in-sine">
+                            <figure>
+                                <a href="https://gabrieledefino.netlify.com/" target="_blank"><img src="img/gabriele.jpg"></a>
+                                <figcaption class="underline--magical">Photographer Website</figcaption>
+                            </figure>
+
+                        </div>
+                    </div>
+
+                </section>
+                <span class="anchor" id="contact"></span>
+                <section class="contact">
+                    <div class="left">
+                        <div class="left" data-aos-anchor="#contact" data-aos="fade-right" data-aos-offset="400"
+                            data-aos-easing="ease-in-sine">
+                            <h1 class="underline--magical" style="color: white; text-transform: none; width: 230px">Contact<br>Me</h1>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="right" data-aos-anchor="#contact" data-aos="fade-left" data-aos-offset="400"
+                            data-aos-easing="ease-in-sine">
+                            <span style="color: white">CIAOOO</span>
+
+                        </div>
+                    </div>
+                </section>
             </main>
             <footer>
-
+                CULO CAZZO
             </footer>
         </div>
     </div>
@@ -149,22 +183,6 @@
     <script>
         AOS.init();
     </script>
-    <!-- <script>
-        var nav = $("header");
-        var win = $(window);
-        var main = $("main");
-        nav.hide();
-        win.on("scroll", function () {
-            var winH = $(this).height();
-            if ($(this).scrollTop() > winH) {
-                nav.fadeIn();
-            } else {
-                nav.fadeOut();
-            }
-        }).on("resize", function () {
-            winH = $(this).height();
-        });
-    </script> -->
 </body>
 
 </html>
