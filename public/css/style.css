@@ -397,7 +397,7 @@ label a {
 .container {
     width: 100%;
     overflow: hidden;
-    /* position: absolute; */
+    position: absolute;
     display: grid;
     grid-template-areas:
         "header"
