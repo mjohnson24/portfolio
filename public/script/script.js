@@ -152,3 +152,16 @@ $('a[href^="#"]').on('click', function (e) {
     });
 
 });
+
+// Show footer only at the bottom of the page
+var footer = $("footer h2");
+footer.hide();
+$(window).on("scroll", function () {
+    var scrollHeight = $(document).height();
+    var scrollPosition = $(window).height() + $(window).scrollTop();
+    if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+        footer.fadeIn();
+    } else {
+        footer.fadeOut();
+    }
+});

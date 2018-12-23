@@ -51,8 +51,16 @@ header .social ul {
     font-size: 25px;
 }
 
+header .social ul li {
+    transition: transform 0.5s;
+}
+
 header .social ul li a {
     color: black;
+}
+
+header .social ul li:hover {
+    transform: scale(1.2);
 }
 
 main {
@@ -65,10 +73,19 @@ main {
 footer {
     grid-area: footer;
     height: 40px;
+    text-align: center;
     width: 100%;
     background-color: white;
     top: calc(100vh - 40px);
     position: fixed;
+    z-index: 99999;
+}
+
+footer h2 {
+    height: 0;
+    margin-left: 0;
+    text-transform: uppercase;
+    letter-spacing: 0;
 }
 
 #loader {
@@ -266,6 +283,10 @@ label .menu {
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     cursor: pointer;
+}
+
+label .menu:hover {
+    transform: scale(1.2)
 }
 
 label .text {
@@ -679,13 +700,6 @@ label a {
     text-align: center;
 }
 
-.about .left img {
-    width: 70%;
-    height: 300px;
-    object-fit: cover;
-    object-position: 50% 10%;
-}
-
 .about .right {
     place-self: center;
     margin-right: 5em;
@@ -699,12 +713,43 @@ label a {
     grid-template-columns: 1fr 1fr;
 }
 
+.contact .right img {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: calc(100vh - 80px);
+    display: block;
+    object-fit: cover;
+    border: 40px solid white;
+}
+
+.contact .contact-links {
+    list-style: none;
+    padding-left: 0;
+}
+
+.contact .contact-links li {
+    display: inline-block;
+    margin: 30px;
+    transition: transform 0.5s;
+}
+
+.contact .contact-links li a {
+    color: white;
+    font-size: 40px;
+}
+
+.contact .contact-links li:hover {
+    transform: scale(1.2);
+}
+
 .contact .left {
     place-self: center;
 }
 
 .contact .right {
     place-self: center;
+    text-align: center;
 }
 
 .skills .left {
@@ -805,6 +850,14 @@ label a {
         height: calc(100vh - 40px);
     }
 
+    .contact .right img {
+        height: calc(100vh - 200px);
+    }
+
+    .contact .left {
+        margin-top: 3em;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -823,5 +876,17 @@ label a {
 
     .centeredBox {
         width: 100%;
+    }
+
+    .contact .contact-links li {
+        margin: 20px;
+    }
+
+    .contact .contact-links li a {
+        font-size: 30px;
+    }
+
+    footer h2 {
+        font-size: 12px;
     }
 }
