@@ -53,15 +53,49 @@ header .social ul {
 }
 
 header .social ul li {
-    transition: transform 0.5s;
+    transition: all 0.5s ease-in;
 }
 
 header .social ul li a {
     color: black;
 }
 
-header .social ul li:hover {
+.fa-facebook,
+.fa-instagram,
+.fa-envelope,
+.fa-telegram-plane,
+.fa-github {
+    transition: all 0.2s ease-in;
     transform: scale(1.2);
+}
+
+.fa-facebook:hover {
+    color: #3b5998
+}
+
+.fa-instagram:hover {
+    /* background: #f09433;
+    background: -moz-linear-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-linear-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; */
+
+    color: #cd486b
+}
+
+.fa-envelope:hover {
+    color: #ffa500
+}
+
+.fa-telegram-plane:hover {
+    color: #0088cc
+}
+
+.fa-github:hover {
+    color: #6e5494
 }
 
 main {

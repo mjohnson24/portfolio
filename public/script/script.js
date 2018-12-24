@@ -174,8 +174,7 @@ $(window).on("scroll", function () {
         footer.fadeOut();
     }
     // Animate progess bars on scroll
-    console.log($(window).scrollTop());
-    if ($(window).scrollTop() > 1000) {
+    if ($(window).scrollTop() > 900) {
         html.attr("id", "progress-html");
         css.attr("id", "progress-css");
         js.attr("id", "progress-javascript");
