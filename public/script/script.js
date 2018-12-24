@@ -154,15 +154,36 @@ $('a[href^="#"]').on('click', function (e) {
 
 });
 
-// Show footer only at the bottom of the page
+
+
+var html = $(".progressred");
+var css = $(".progressblue");
+var js = $(".progresspurple");
+var ui = $(".progressorange");
+
 var footer = $("footer h2");
 footer.hide();
+
 $(window).on("scroll", function () {
+    // Show footer only at the bottom of the page
     var scrollHeight = $(document).height();
     var scrollPosition = $(window).height() + $(window).scrollTop();
     if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
         footer.fadeIn();
     } else {
         footer.fadeOut();
+    }
+    // Animate progess bars on scroll
+    console.log($(window).scrollTop());
+    if ($(window).scrollTop() > 1000) {
+        html.attr("id", "progress-html");
+        css.attr("id", "progress-css");
+        js.attr("id", "progress-javascript");
+        ui.attr("id", "progress-design");
+    } else {
+        html.attr("id", "");
+        css.attr("id", "");
+        js.attr("id", "");
+        ui.attr("id", "");
     }
 });
