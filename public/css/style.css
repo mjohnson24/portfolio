@@ -530,18 +530,11 @@ label a {
     animation-delay: 2.1s;
 }
 
-.skills-bar-container li .bar-container #progress-php {
-    -webkit-animation-name: progress-php;
-    animation-name: progress-php;
+.skills-bar-container li .bar-container #progress-design {
+    -webkit-animation-name: progress-design;
+    animation-name: progress-design;
     -webkit-animation-delay: 2.8s;
     animation-delay: 2.8s;
-}
-
-.skills-bar-container li .bar-container #progress-angular {
-    -webkit-animation-name: progress-angular;
-    animation-name: progress-angular;
-    -webkit-animation-delay: 3.5s;
-    animation-delay: 3.5s;
 }
 
 .progressred {
@@ -594,6 +587,16 @@ label a {
     }
 }
 
+@-webkit-keyframes progress-design {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
 @-moz-keyframes progress-html {
     0% {
         width: 0%;
@@ -615,6 +618,16 @@ label a {
 }
 
 @-moz-keyframes progress-javascript {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+@-moz-keyframes progress-design {
     0% {
         width: 0%;
     }
@@ -646,6 +659,16 @@ label a {
 }
 
 @keyframes progress-javascript {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
+}
+
+@keyframes progress-design {
     0% {
         width: 0%;
     }
@@ -836,7 +859,12 @@ label a {
 
     .skills {
         grid-template-columns: auto;
-        height: calc(100vh - 40px);
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .skills .left {
+        margin-top: 3em;
     }
 
     .skills-bar-container {
