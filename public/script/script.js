@@ -1,4 +1,5 @@
 // Fade animation
+
 $("body").delay(100).animate({
     "opacity": "1"
 }, 1000);
@@ -165,10 +166,3 @@ $(window).on("scroll", function () {
         footer.fadeOut();
     }
 });
-
-var hero = $(".hero");
-var win = $(window);
-
-win.on("scroll", function () {
-    console.log(hero.height());
-})

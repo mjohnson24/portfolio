@@ -429,6 +429,10 @@ label a {
     min-height: 100%;
 }
 
+.active {
+    background-size: 100% 88%;
+}
+
 .anchor {
     display: block;
     height: 40px;
@@ -1313,7 +1317,12 @@ label a {
 
     .about {
         grid-template-columns: auto;
-        height: calc(100vh - 40px);
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .about .left {
+        margin-top: 2em;
     }
 
     .about .right {
