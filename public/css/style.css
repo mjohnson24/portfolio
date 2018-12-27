@@ -28,6 +28,21 @@ body {
     height: 100%;
 }
 
+.pleaserotate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 0;
+    background: url("../img/turn.png") no-repeat center center;
+    background-size: cover;
+    z-index: 99999;
+}
+
+.pleaserotate>h1 {
+    text-align: center;
+}
+
 header {
     grid-area: header;
     background-color: white;
@@ -1294,8 +1309,6 @@ label a {
         transform: scale3d(1, 1, 1);
     }
 }
-
-
 
 @media screen and (max-width: 768px) {
 

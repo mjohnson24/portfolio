@@ -212,8 +212,47 @@ $(window).on("scroll", function () {
             "color": "white"
         })
     }
-
-
-
-
 });
+
+if (/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
+    var rotatediv = $(".pleaserotate");
+    var container = $(".container");
+    // Check if devide is rotated
+    var mql = window.matchMedia("(orientation: portrait)");
+
+    if (!mql.matches) {
+        rotatediv.css({
+            "height": "100vh"
+        })
+        container.css({
+            "display": "none"
+        })
+    } else {
+        rotatediv.css({
+            "height": "0"
+        })
+        container.css({
+            "display": "initial"
+        })
+    }
+
+    // Add a media query change listener
+    mql.addListener(function (m) {
+        if (!mql.matches) {
+            rotatediv.css({
+                "height": "100vh"
+            })
+            container.css({
+                "display": "none"
+            })
+        } else {
+            rotatediv.css({
+                "height": "0"
+            })
+            container.css({
+                "display": "initial"
+            })
+        }
+    });
+
+}
