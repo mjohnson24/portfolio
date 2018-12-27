@@ -185,4 +185,35 @@ $(window).on("scroll", function () {
         js.attr("id", "");
         ui.attr("id", "");
     }
+
+    var about_position = $(".about").offset().top;
+    var about_height = $(".about").height();
+    // var skills_position = $(".skills").offset().top;
+    // var skills_height = $(".skills").height();
+    var portfolio_position = $(".portfolio").offset().top;
+    var portfolio_height = $(".portfolio").height();
+    var about_position = $(".about").offset().top;
+    var about_height = $(".about").height();
+
+    var menu_pos = $("#menu-text").offset().top;
+
+    // Change color of menu label on scroll
+    if (menu_pos > about_position && menu_pos < (about_position + about_height)) {
+        $("#menu-text").css({
+            "color": "black"
+        })
+
+    } else if (menu_pos > portfolio_position && menu_pos < (portfolio_position + portfolio_height)) {
+        $("#menu-text").css({
+            "color": "black"
+        })
+    } else {
+        $("#menu-text").css({
+            "color": "white"
+        })
+    }
+
+
+
+
 });
