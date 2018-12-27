@@ -41,7 +41,7 @@ header .social {
     float: right;
     position: fixed;
     top: calc(50vh - 65px);
-    left: calc(100vw - 73px);
+    left: calc(100vw - 33px);
     padding-left: 0;
     text-align: center;
 }
@@ -50,6 +50,7 @@ header .social ul {
     list-style: none;
     text-align: center;
     font-size: 25px;
+    padding-left: 0;
 }
 
 header .social ul li {
