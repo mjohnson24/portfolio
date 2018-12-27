@@ -39,11 +39,12 @@ header {
 
 header .social {
     float: right;
-    position: fixed;
+    position: relative;
     top: calc(50vh - 65px);
-    left: calc(100vw - 33px);
+    /* left: calc(100vw - 33px); */
     padding-left: 0;
     text-align: center;
+    margin-right: -33px;
 }
 
 header .social ul {
