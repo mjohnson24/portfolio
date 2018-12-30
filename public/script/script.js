@@ -37,7 +37,7 @@ document.addEventListener('readystatechange', function () {
 
     if (document.readyState === 'complete') {
         // The Typewriter
-        var textArray = ["Welcome! ", "I'm Edoardo Lunardi ", "nice to see you here. "];
+        var textArray = ["Welcome! ", "I'm Edoardo Lunardi. ", "nice to see you here. "];
         var typeWriterElement = document.getElementById('typewriter');
 
         function delWriter(text, i, cb) {
@@ -49,7 +49,7 @@ document.addEventListener('readystatechange', function () {
                     delWriter(text, i, cb);
                 }, rndBack);
             } else if (typeof cb == 'function') {
-                setTimeout(cb, 1000);
+                setTimeout(cb, 200);
             }
         };
 
@@ -57,7 +57,7 @@ document.addEventListener('readystatechange', function () {
             if (i < text.length) {
                 typeWriterElement.innerHTML = text.substring(0, i++);
                 // generate a random Number to emulate Typing on the Keyboard.
-                var randomTyping = 250 - Math.random() * 100
+                var randomTyping = 200 - Math.random() * 100
                 setTimeout(function () {
                     typeWriter(text, i++, cb)
                 }, randomTyping);
