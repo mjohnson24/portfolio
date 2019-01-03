@@ -168,7 +168,7 @@ $(window).on("scroll", function () {
     // Show footer only at the bottom of the page
     var scrollHeight = $(document).height();
     var scrollPosition = $(window).height() + $(window).scrollTop();
-    if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+    if ((scrollHeight - scrollPosition) / scrollHeight < 0.030) {
         footer.fadeIn();
     } else {
         footer.fadeOut();

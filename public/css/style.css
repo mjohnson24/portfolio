@@ -55,7 +55,7 @@ header {
 header .social {
     float: right;
     position: relative;
-    top: calc(50vh - 65px);
+    top: calc(50vh - 90px);
     /* left: calc(100vw - 33px); */
     padding-left: 0;
     text-align: center;
@@ -334,10 +334,10 @@ label .menu {
     z-index: 100;
     width: 40px;
     right: 5px;
-    top: calc(50vh - 80px);
+    top: calc(50vh - 70px);
     float: left;
     height: 50px;
-    transition: 0.5s ease-in-out;
+    transition: all .2s ease-in;
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     cursor: pointer;
@@ -361,14 +361,14 @@ label .hamburger {
     background: black;
     display: block;
     transform-origin: center;
-    transition: 0.5s ease-in-out;
+    transition: all .5s ease-in;
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
 }
 
 label .hamburger:after,
 label .hamburger:before {
-    transition: 0.5s ease-in-out;
+    transition: all .5s ease-in;
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     content: "";
@@ -434,8 +434,7 @@ label ul {
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
-    transition: visibility 0s,
-        opacity 0.5s linear;
+    transition: all .5s ease-in;
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     z-index: 1001;
@@ -758,16 +757,208 @@ label a {
     grid-template-columns: auto;
 }
 
-.portfolio .right div {
-    place-self: center;
-    text-align: center;
+.portfolio .right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center
 }
 
+.portfolio .works-grid {
+    display: grid;
+    grid-template-columns: auto;
+}
+
+
 .portfolio .right img {
-    width: 100%;
+    width: 70%;
     transition: all .2s ease-in-out;
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
+}
+
+.explore {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+
+.the-arrow {
+    width: 1px;
+    transition: all 0.2s;
+}
+
+.the-arrow.-left {
+    position: absolute;
+    top: 60%;
+    left: 0;
+}
+
+.the-arrow.-left>.shaft {
+    width: 0;
+    background-color: black;
+}
+
+.the-arrow.-left>.shaft:before,
+.the-arrow.-left>.shaft:after {
+    width: 0;
+    background-color: black;
+}
+
+.the-arrow.-left>.shaft:before {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+}
+
+.the-arrow.-left>.shaft:after {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+}
+
+.the-arrow.-right {
+    top: 3px;
+}
+
+.the-arrow.-right>.shaft {
+    width: 1px;
+    transition-delay: 0.2s;
+}
+
+.the-arrow.-right>.shaft:before,
+.the-arrow.-right>.shaft:after {
+    width: 8px;
+    transition-delay: 0.3s;
+    transition: all 0.5s;
+}
+
+.the-arrow.-right>.shaft:before {
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+}
+
+.the-arrow.-right>.shaft:after {
+    -webkit-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+}
+
+.the-arrow>.shaft {
+    background-color: black;
+    display: block;
+    height: 1px;
+    position: relative;
+    transition: all 0.2s;
+    transition-delay: 0;
+    will-change: transform;
+}
+
+.the-arrow>.shaft:before,
+.the-arrow>.shaft:after {
+    background-color: black;
+    content: '';
+    display: block;
+    height: 1px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.2s;
+    transition-delay: 0;
+}
+
+.the-arrow>.shaft:before {
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+}
+
+.the-arrow>.shaft:after {
+    -webkit-transform-origin: bottom right;
+    transform-origin: bottom right;
+}
+
+.animated-arrow {
+    display: inline-block;
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Metropolis';
+    letter-spacing: 5px;
+    font-weight: 800;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.animated-arrow:hover {
+    color: black;
+}
+
+.animated-arrow:hover>.the-arrow.-left>.shaft {
+    width: 64px;
+    transition-delay: 0.1s;
+    background-color: black;
+}
+
+.animated-arrow:hover>.the-arrow.-left>.shaft:before,
+.animated-arrow:hover>.the-arrow.-left>.shaft:after {
+    width: 8px;
+    transition-delay: 0.1s;
+    background-color: black;
+}
+
+.animated-arrow:hover>.the-arrow.-left>.shaft:before {
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+}
+
+.animated-arrow:hover>.the-arrow.-left>.shaft:after {
+    -webkit-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+}
+
+.animated-arrow:hover>.main {
+    -webkit-transform: translateX(17px);
+    transform: translateX(17px);
+    -webkit-transform: translateX(80px);
+    transform: translateX(80px);
+}
+
+.animated-arrow:hover>.main>.the-arrow.-right>.shaft {
+    width: 0;
+    -webkit-transform: translateX(200%);
+    transform: translateX(200%);
+    transition-delay: 0;
+}
+
+.animated-arrow:hover>.main>.the-arrow.-right>.shaft:before,
+.animated-arrow:hover>.main>.the-arrow.-right>.shaft:after {
+    width: 0;
+    transition-delay: 0;
+    transition: all 0.1s;
+}
+
+.animated-arrow:hover>.main>.the-arrow.-right>.shaft:before {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+}
+
+.animated-arrow:hover>.main>.the-arrow.-right>.shaft:after {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+}
+
+.animated-arrow>.main {
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.animated-arrow>.main>.text {
+    margin: 0 16px 0 0;
+    line-height: 1;
+}
+
+.animated-arrow>.main>.the-arrow {
+    position: relative;
 }
 
 .portfolio .right figcaption {
@@ -777,6 +968,49 @@ label a {
 
 .portfolio .right img:hover {
     transform: scale(0.95);
+}
+
+
+.all-projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 80px);
+    width: 100%;
+    background-color: rgb(248, 248, 248);
+    margin-top: 40px;
+}
+
+#goback {
+    position: relative;
+    z-index: 100;
+    font-size: 30px;
+    top: calc(50vh - 70px);
+    float: left;
+    margin-left: 10px;
+    transition: all .2s ease-in;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    cursor: pointer;
+}
+
+#goback-text {
+    float: left;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    padding-left: 0;
+    text-align: center;
+    color: black;
+    font-size: 10px;
+    font-family: 'Metropolis';
+    letter-spacing: 5px;
+    transform: rotate(-90deg);
+    text-transform: uppercase;
+}
+
+#goback:hover {
+    transform: scale(1.2)
 }
 
 .about .left {
@@ -1312,10 +1546,6 @@ label a {
 
 @media screen and (max-width: 768px) {
 
-    .container {
-        grid-template-columns: auto 1fr auto;
-    }
-
     main {
         margin: 0;
     }
@@ -1424,6 +1654,10 @@ label a {
 
 @media screen and (max-width: 500px) {
     label .menu {
+        top: 50px;
+    }
+
+    #goback {
         top: 50px;
     }
 
