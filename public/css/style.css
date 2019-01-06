@@ -55,7 +55,7 @@ header {
 header .social {
     float: right;
     position: relative;
-    top: calc(50vh - 90px);
+    top: calc(50vh - 55px);
     /* left: calc(100vw - 33px); */
     padding-left: 0;
     text-align: center;
@@ -334,7 +334,7 @@ label .menu {
     z-index: 100;
     width: 40px;
     right: 5px;
-    top: calc(50vh - 70px);
+    top: calc(50vh - 50px);
     float: left;
     height: 50px;
     transition: all .2s ease-in;
@@ -606,11 +606,11 @@ label a {
 }
 
 .progresspurple {
-    background-color: #9b59b6;
+    background-color: #f1c40f;
 }
 
 .progressorange {
-    background-color: #ffa500;
+    background-color: #e67e22;
 }
 
 .progressgreen {

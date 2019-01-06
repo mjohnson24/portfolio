@@ -158,8 +158,8 @@ $('a[href^="#"]').on('click', function (e) {
 
 var html = $(".progressred");
 var css = $(".progressblue");
-var js = $(".progresspurple");
-var ui = $(".progressorange");
+var js = $(".progressorange");
+var ui = $(".progresspurple");
 
 var footer = $("footer h2");
 footer.hide();
