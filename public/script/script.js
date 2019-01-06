@@ -214,10 +214,10 @@ $(window).on("scroll", function () {
     }
 });
 
-if (/Android|webOS|iPhone|iPad|iPod|Opera Mini/i.test(navigator.userAgent)) {
+if (/Android|webOS|iPhone|iPod|Opera Mini/i.test(navigator.userAgent)) {
     var rotatediv = $(".pleaserotate");
     var container = $(".container");
-    // Check if devide is rotated
+    // Check if device is rotated
     var mql = window.matchMedia("(orientation: portrait)");
 
     if (!mql.matches) {
