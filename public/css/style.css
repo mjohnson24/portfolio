@@ -184,12 +184,14 @@ h3 {
 
 .hero .left {
     /* background-color: rgb(252, 90, 86); */
-    background-color: #0D1F2D;
+    /* background-color: #0D1F2D; */
+    background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
 }
 
 .hero .right {
     /* background-color: rgb(248, 248, 248); */
-    background-color: #546A7B;
+    /* background-color: #546A7B; */
+    background-color: rgb(248, 248, 248);
 }
 
 /* Wrapper to Center the Typewriter */
@@ -218,7 +220,7 @@ h3 {
 /* The Typewriter */
 
 #typewriter {
-    color: white;
+    color: black;
     font-size: 50px;
     font-weight: 900;
     font-family: 'Metropolis';
@@ -237,78 +239,50 @@ h3 {
 
 .arrow {
     width: 2.1rem;
-    height: 100px;
-    top: 80vh;
+    height: 50px;
+    top: 88vh;
     left: calc(50vw - 1.05rem);
     position: absolute;
-    z-index: 9999;
+    z-index: 1;
+    transform: rotate(-90deg);
+    animation: bounce 800ms cubic-bezier(0.7, 0, 0.3, 1) infinite alternate
 }
 
-.chevron {
+#scrolldown {
+    width: 60px;
+    height: 1rem;
+    top: 80vh;
+    left: calc(50vw - 31px);
     position: absolute;
-    width: 2.1rem;
-    height: 0.48rem;
-    opacity: 0;
-    transform: scale(0.3);
-    animation: move-chevron 3s ease-out infinite;
+    z-index: 1;
+    transform: rotate(-90deg);
+    font-weight: 500;
+    font-size: 15px
 }
 
-.chevron:first-child {
-    animation: move-chevron 3s ease-out 1s infinite;
+.arrow svg {
+    transform: rotate(-90deg);
+    margin-left: auto;
+    margin-right: auto
 }
 
-.chevron:nth-child(2) {
-    animation: move-chevron 3s ease-out 2s infinite;
-}
-
-.chevron:before,
-.chevron:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    background: white;
-}
-
-.chevron:before {
-    left: 0;
-    transform: skewY(30deg);
-    -moz-transform: skewY(30deg);
-}
-
-.chevron:after {
-    right: 0;
-    width: 50%;
-    transform: skewY(-30deg);
-    -moz-transform: skewY(-30deg);
-}
-
-@keyframes move-chevron {
-    25% {
-        opacity: 1;
+@keyframes bounce {
+    from {
+        -webkit-transform: translateY(0px);
+        -moz-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px);
+        transform: translateY(0px);
     }
 
-    33.3% {
-        opacity: 1;
-        transform: translateY(2.28rem);
-        -moz-transform: translateY(2.28rem);
-    }
-
-    66.6% {
-        opacity: 1;
-        transform: translateY(3.12rem);
-        -moz-transform: translateY(3.12rem);
-    }
-
-    100% {
-        opacity: 0;
-        transform: translateY(4.8rem) scale(0.5);
-        -moz-transform: translateY(4.8rem) scale(0.5);
+    to {
+        -webkit-transform: translateY(10px);
+        -moz-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        -o-transform: translateY(10px);
+        transform: translateY(10px);
     }
 }
-
-
 
 .menu #menu-text {
     float: left;
@@ -426,6 +400,12 @@ label input:checked+.menu+ul {
     left: 40px;
 }
 
+label input:checked+.menu+ul li {
+    /* visibility: visible;
+    opacity: 1; */
+    margin-left: 50px;
+}
+
 label ul {
     list-style: none;
     display: flex;
@@ -464,7 +444,12 @@ label ul li {
     font-size: 30px;
     margin: 10px;
     text-align: left;
-    margin-left: 50px;
+    /* margin-left: 50px; */
+    -webkit-transition: all 1.4s cubic-bezier(1, 0, 0, 1);
+    transition: all 1.4s cubic-bezier(1, 0, 0, 1);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    margin-left: -200px;
 }
 
 label a {
