@@ -256,3 +256,11 @@ if (/Android|webOS|iPhone|iPod|Opera Mini/i.test(navigator.userAgent)) {
     });
 
 }
+
+// var menu = $("label .menu");
+// var menu_parent = $(".menu");
+// menu.on("mouseover", function () {
+//     menu_parent.addClass("stretched");
+// }).on("mouseout", function () {
+//     menu_parent.removeClass("stretched");
+// })
