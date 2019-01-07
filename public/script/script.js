@@ -33,59 +33,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Typewriter animation
 
-document.addEventListener('readystatechange', function () {
+document.addEventListener("DOMContentLoaded", function () {
+    // The Typewriter
+    var textArray = ["Welcome! ", "I'm Edoardo Lunardi. ", "nice to see you here. "];
+    var typeWriterElement = document.getElementById('typewriter');
 
-    if (document.readyState === 'complete') {
-        // The Typewriter
-        var textArray = ["Welcome! ", "I'm Edoardo Lunardi. ", "nice to see you here. "];
-        var typeWriterElement = document.getElementById('typewriter');
+    function delWriter(text, i, cb) {
+        if (i >= 0) {
+            typeWriterElement.innerHTML = text.substring(0, i--);
+            // generate a random Number to emulate backspace hitting.
+            var rndBack = 10 + Math.random() * 100;
+            setTimeout(function () {
+                delWriter(text, i, cb);
+            }, rndBack);
+        } else if (typeof cb == 'function') {
+            setTimeout(cb, 200);
+        }
+    };
 
-        function delWriter(text, i, cb) {
-            if (i >= 0) {
-                typeWriterElement.innerHTML = text.substring(0, i--);
-                // generate a random Number to emulate backspace hitting.
-                var rndBack = 10 + Math.random() * 100;
-                setTimeout(function () {
-                    delWriter(text, i, cb);
-                }, rndBack);
-            } else if (typeof cb == 'function') {
-                setTimeout(cb, 200);
-            }
-        };
+    function typeWriter(text, i, cb) {
+        if (i < text.length) {
+            typeWriterElement.innerHTML = text.substring(0, i++);
+            // generate a random Number to emulate Typing on the Keyboard.
+            var randomTyping = 200 - Math.random() * 100
+            setTimeout(function () {
+                typeWriter(text, i++, cb)
+            }, randomTyping);
+        } else if (i === text.length) {
+            setTimeout(function () {
+                delWriter(text, i, cb)
+            }, 1000);
+        }
+    };
 
-        function typeWriter(text, i, cb) {
-            if (i < text.length) {
-                typeWriterElement.innerHTML = text.substring(0, i++);
-                // generate a random Number to emulate Typing on the Keyboard.
-                var randomTyping = 200 - Math.random() * 100
-                setTimeout(function () {
-                    typeWriter(text, i++, cb)
-                }, randomTyping);
-            } else if (i === text.length) {
-                setTimeout(function () {
-                    delWriter(text, i, cb)
-                }, 1000);
-            }
-        };
-
-        function StartWriter(i) {
-            if (typeof textArray[i] == "undefined") {
-                setTimeout(function () {
-                    StartWriter(0)
-                }, 1000);
-            } else if (i < textArray[i].length) {
-                typeWriter(textArray[i], 0, function () {
-                    StartWriter(i + 1);
-                })
-            }
-
+    function StartWriter(i) {
+        if (typeof textArray[i] == "undefined") {
+            setTimeout(function () {
+                StartWriter(0)
+            }, 1000);
+        } else if (i < textArray[i].length) {
+            typeWriter(textArray[i], 0, function () {
+                StartWriter(i + 1);
+            })
         }
 
-        setTimeout(function () {
-            StartWriter(0);
-        }, 1000);
-
     }
+
+    setTimeout(function () {
+        StartWriter(0);
+    }, 1000);
 });
 
 // GRADIENT
