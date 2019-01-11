@@ -407,6 +407,10 @@ label input:checked+.menu+ul li {
     margin-left: 50px;
 }
 
+.social-mobile {
+    visibility: hidden;
+}
+
 label ul {
     list-style: none;
     display: flex;
@@ -453,6 +457,24 @@ label ul li {
     margin-left: -200px;
 }
 
+/* 
+.delay-1 {
+    animation-delay: 0.1s
+}
+
+.delay-1 {
+    animation-delay: 0.3s
+}
+
+.delay-1 {
+    animation-delay: 0.5s
+}
+
+.delay-1 {
+    animation-delay: 0.7s
+} */
+
+
 label a {
     /* margin-bottom: 1em;
     display: block;
@@ -461,10 +483,6 @@ label a {
     color: black;
     text-decoration: none;
     font-weight: 900;
-}
-
-.social-mobile {
-    visibility: hidden;
 }
 
 .underline--magical {

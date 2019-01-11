@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "animate.css": "^3.7.0",
     "express": "^4.16.4",
     "path": "^0.12.7"
   }
