@@ -767,7 +767,8 @@ label a {
 /* #################################### */
 
 .portfolio {
-    height: calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
+    height: auto;
     background-color: rgb(248, 248, 248);
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -778,25 +779,17 @@ label a {
 }
 
 .portfolio .right {
-    display: grid;
-    grid-template-columns: auto;
+    place-self: center;
 }
 
-.portfolio .right {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center
+.portfolio figure {
+    text-align: center;
+    margin: 0;
 }
 
-.portfolio .works-grid {
-    display: grid;
-    grid-template-columns: auto;
-}
-
-
-.portfolio .right img {
-    width: 70%;
+.portfolio img {
+    width: 80%;
+    vertical-align: middle;
     transition: all .2s ease-in-out;
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
@@ -806,6 +799,7 @@ label a {
     list-style: none;
     margin-left: 0;
     padding-left: 0;
+    text-align: center;
 }
 
 
@@ -988,7 +982,8 @@ label a {
 
 .portfolio .right figcaption {
     font-style: italic;
-    display: inline-block;
+    /* display: inline-block; */
+    text-align: center;
 }
 
 .portfolio .right img:hover {
@@ -1678,6 +1673,10 @@ label a {
 
     .portfolio .right img {
         width: 100%;
+    }
+
+    .portfolio .right figure {
+        margin: 1em;
     }
 
     .contact {
