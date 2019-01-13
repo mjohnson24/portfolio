@@ -1668,7 +1668,16 @@ label a {
 
     .portfolio {
         grid-template-columns: auto;
-        height: calc(100vh - 40px);
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .portfolio .left {
+        margin-top: 2em;
+    }
+
+    .portfolio .right img {
+        width: 100%;
     }
 
     .contact {
