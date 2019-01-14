@@ -30,7 +30,7 @@ if (isIE || isEdge || isOpera) {
     container.style.display = "none";
     change.style.display = "flex"
 } else {
-    container.style.display = "block"
+    container.style.display = "";
     change.style.display = "none"
 }
 
