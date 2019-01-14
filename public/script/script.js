@@ -15,6 +15,46 @@ check.addEventListener('click', function () {
     }
 });
 
+// Internet Explorer 6-11
+var isIE = /*@cc_on!@*/ false || !!document.documentMode;
+// Edge 20+
+var isEdge = !isIE && !!window.StyleMedia;
+// Opera 8.0+
+var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+const container = document.querySelector(".container");
+const change = document.querySelector(".change-browser");
+const rotateDiv = document.querySelector(".pleaserotate");
+
+if (isIE || isEdge || isOpera) {
+    container.style.display = "none";
+    change.style.display = "flex"
+} else {
+    container.style.display = "block"
+    change.style.display = "none"
+}
+
+if (/Android|webOS|iPhone|iPod|Opera Mini/i.test(navigator.userAgent)) {
+    var mql = window.matchMedia("(orientation: portrait)");
+    if (!mql.matches) {
+        rotateDiv.style.height = "100vh";
+        container.style.display = "none";
+    } else {
+        rotateDiv.style.height = "0";
+        container.style.display = "initial"
+    }
+    mql.addEventListener('change', function () {
+        if (!mql.matches) {
+            rotateDiv.style.height = "100vh";
+            container.style.display = "none";
+        } else {
+            rotateDiv.style.height = "0";
+            container.style.display = "initial"
+        }
+    })
+
+}
+
 // Loader gif
 var loader;
 
@@ -220,46 +260,3 @@ $(window).on("scroll", function () {
         })
     }
 });
-
-if (/Android|webOS|iPhone|iPod|Opera Mini/i.test(navigator.userAgent)) {
-    var rotatediv = $(".pleaserotate");
-    var container = $(".container");
-    // Check if device is rotated
-    var mql = window.matchMedia("(orientation: portrait)");
-
-    if (!mql.matches) {
-        rotatediv.css({
-            "height": "100vh"
-        })
-        container.css({
-            "display": "none"
-        })
-    } else {
-        rotatediv.css({
-            "height": "0"
-        })
-        container.css({
-            "display": "initial"
-        })
-    }
-
-    // Add a media query change listener
-    mql.addListener(function (m) {
-        if (!mql.matches) {
-            rotatediv.css({
-                "height": "100vh"
-            })
-            container.css({
-                "display": "none"
-            })
-        } else {
-            rotatediv.css({
-                "height": "0"
-            })
-            container.css({
-                "display": "initial"
-            })
-        }
-    });
-
-}

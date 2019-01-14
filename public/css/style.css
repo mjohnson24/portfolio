@@ -12,6 +12,26 @@
   src: url("../fonts/Metropolis-Bold.woff2") format("woff2");
 }
 
+.change-browser {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  height: 100vh;
+  background: white;
+}
+
 footer,
 .container,
 header,
