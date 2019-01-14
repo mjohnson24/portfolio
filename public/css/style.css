@@ -151,7 +151,7 @@ header h2 a {
 /* Theme switcher */
 .switcher {
   position: relative;
-  float: right;
+  right: 39px;
   top: -20px;
   opacity: 1;
   width: 100vw;
