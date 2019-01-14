@@ -4,6 +4,17 @@ $("body").delay(100).animate({
     "opacity": "1"
 }, 1000);
 
+const check = document.getElementById("cbx");
+const body = document.querySelector("body");
+
+check.addEventListener('click', function () {
+    if (check.checked) {
+        body.classList.add("dark-theme");
+    } else {
+        body.classList.remove("dark-theme");
+    }
+});
+
 // Loader gif
 var loader;
 
@@ -252,11 +263,3 @@ if (/Android|webOS|iPhone|iPod|Opera Mini/i.test(navigator.userAgent)) {
     });
 
 }
-
-// var menu = $("label .menu");
-// var menu_parent = $(".menu");
-// menu.on("mouseover", function () {
-//     menu_parent.addClass("stretched");
-// }).on("mouseout", function () {
-//     menu_parent.removeClass("stretched");
-// })
