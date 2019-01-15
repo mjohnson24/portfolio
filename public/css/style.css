@@ -12,6 +12,10 @@
   src: url("../fonts/Metropolis-Bold.woff2") format("woff2");
 }
 
+.transparent {
+  opacity: .2;
+}
+
 .change-browser {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,7 +48,6 @@ path,
 .hero .left,
 h2,
 a,
-header .social ul li a,
 .contact .contact-links li a,
 #typewriter,
 #scrolldown,
@@ -88,12 +91,16 @@ label input:checked + .menu .hamburger:before {
 }
 
 .dark-theme .hero .left {
-  background: #76797b;
+  background: #16222A;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, right top, left top, from(#76797b), to(#bebfbf));
+  background: linear-gradient(to left, #76797b, #bebfbf);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .dark-theme h2,
 .dark-theme a,
-.dark-theme header .social ul li a,
 .dark-theme .contact .contact-links li a,
 .dark-theme #typewriter,
 .dark-theme #scrolldown,
@@ -159,7 +166,7 @@ header {
   grid-area: header;
   background-color: white;
   position: fixed;
-  width: calc(100% - 40px);
+  width: 100%;
   height: 40px;
   z-index: 1000;
 }
@@ -177,6 +184,7 @@ header h2 a {
   width: 100vw;
   text-align: left;
   visibility: visible;
+  margin-right: 38px;
 }
 
 .mobile-switcher {
@@ -246,32 +254,6 @@ header h2 a {
 }
 
 /* ##################################### */
-header .social {
-  float: right;
-  position: relative;
-  top: calc(50vh - 100px);
-  /* left: calc(100vw - 33px); */
-  padding-left: 0;
-  text-align: center;
-  margin-right: -33px;
-}
-
-header .social ul {
-  list-style: none;
-  text-align: center;
-  font-size: 25px;
-  padding-left: 0;
-}
-
-header .social ul li {
-  -webkit-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
-}
-
-header .social ul li a {
-  color: black;
-}
-
 .fa-facebook,
 .fa-instagram,
 .fa-envelope,
@@ -315,8 +297,6 @@ main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: content;
-  margin-left: 40px;
-  margin-right: 40px;
   margin-bottom: 40px;
 }
 
@@ -399,7 +379,7 @@ h3 {
 /* Wrapper to Center the Typewriter */
 .wrapper {
   height: calc(100vh - 80px);
-  width: calc(100% - 80px);
+  width: 100%;
   margin: 0 auto;
   z-index: 1;
   position: absolute;
@@ -517,10 +497,10 @@ h3 {
 
 label .menu {
   position: relative;
-  z-index: 100;
+  z-index: 2000;
   width: 40px;
   right: 5px;
-  top: calc(50vh - 75px);
+  top: 50px;
   float: left;
   height: 50px;
   -webkit-transition: all 500ms cubic-bezier(1, 0, 0, 1);
@@ -611,17 +591,13 @@ label input:checked + .menu .hamburger:before {
 label input:checked + .menu + ul {
   /* visibility: visible;
     opacity: 1; */
-  left: 40px;
+  left: 0;
 }
 
 label input:checked + .menu + ul li {
   /* visibility: visible;
     opacity: 1; */
   margin-left: 53px;
-}
-
-.social-mobile {
-  visibility: hidden;
 }
 
 label ul {
@@ -639,28 +615,33 @@ label ul {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0;
-  height: 100vh;
-  width: 80vw;
-  /* visibility: hidden;
-    opacity: 0; */
+  height: calc(100vh - 40px);
+  width: 100%;
   z-index: 200;
   position: absolute;
   top: 40px;
-  /* left: 39px; */
   left: -100%;
   background: white;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0;
+  margin-top: auto;
+  margin-bottom: auto;
   -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
   transition: all 700ms cubic-bezier(1, 0, 0, 1);
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
-  z-index: 1001;
+}
+
+.vertical-box {
+  max-width: 300px;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
+  margin-left: auto;
 }
 
 label ul li {
-  font-size: 30px;
+  font-size: 25px;
   margin: 10px;
   text-align: left;
   /* margin-left: 50px; */
@@ -671,6 +652,11 @@ label ul li {
   margin-left: -200px;
 }
 
+label ul .based {
+  font-size: 15px;
+  margin-top: 40px;
+}
+
 label a {
   color: black;
   text-decoration: none;
@@ -678,7 +664,7 @@ label a {
 }
 
 .underline--magical {
-  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 88%;
@@ -701,10 +687,6 @@ label a {
   -ms-grid-rows: auto 1fr auto;
       grid-template-rows: auto 1fr auto;
   min-height: 100%;
-}
-
-.active {
-  background-size: 100% 88%;
 }
 
 .anchor {
@@ -1691,16 +1673,10 @@ label a {
   main {
     margin: 0;
   }
-  header .social {
-    visibility: hidden;
-  }
   label ul {
     left: 0;
     z-index: 0;
     left: -100%;
-  }
-  label .menu {
-    top: 50px;
   }
   label input:checked + .menu + ul {
     left: 0;
@@ -1803,13 +1779,6 @@ label a {
 @media screen and (max-width: 500px) {
   #goback {
     top: 50px;
-  }
-  /* label ul li {
-        margin-left: 50px;
-        margin-top: 20vh;
-    } */
-  label ul li a {
-    font-size: 30px;
   }
   .centeredBox {
     width: 100%;

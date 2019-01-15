@@ -1,8 +1,0 @@
-{
-  "data": [{
-    "name": "newLife",
-    "direction": "to right",
-    "colors": ["#43e97b", "#38f9d7"],
-    "positions": ["0%", "100%"]
-  }]
-}

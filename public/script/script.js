@@ -4,35 +4,40 @@ $("body").delay(100).animate({
     "opacity": "1"
 }, 1000);
 
-const check = document.getElementById("cbx");
-const body = document.querySelector("body");
+if (window.location.pathname === '/') {
+    const check = document.getElementById("cbx");
+    const body = document.querySelector("body");
 
-check.addEventListener('click', function () {
-    if (check.checked) {
-        body.classList.add("dark-theme");
+    check.addEventListener('click', function () {
+        if (check.checked) {
+            body.classList.add("dark-theme");
+        } else {
+            body.classList.remove("dark-theme");
+        }
+    });
+
+    // Internet Explorer 6-11
+    var isIE = /*@cc_on!@*/ false || !!document.documentMode;
+    // Edge 20+
+    var isEdge = !isIE && !!window.StyleMedia;
+    // Opera 8.0+
+    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+    const container = document.querySelector(".container");
+    const change = document.querySelector(".change-browser");
+    const rotateDiv = document.querySelector(".pleaserotate");
+
+    if (isIE || isEdge || isOpera) {
+        container.style.display = "none";
+        change.style.display = "flex"
     } else {
-        body.classList.remove("dark-theme");
+        container.style.display = "";
+        change.style.display = "none"
     }
-});
-
-// Internet Explorer 6-11
-var isIE = /*@cc_on!@*/ false || !!document.documentMode;
-// Edge 20+
-var isEdge = !isIE && !!window.StyleMedia;
-// Opera 8.0+
-var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-
-const container = document.querySelector(".container");
-const change = document.querySelector(".change-browser");
-const rotateDiv = document.querySelector(".pleaserotate");
-
-if (isIE || isEdge || isOpera) {
-    container.style.display = "none";
-    change.style.display = "flex"
-} else {
-    container.style.display = "";
-    change.style.display = "none"
 }
+
+
+
 
 if (/Android|webOS|iPhone|iPod|Opera Mini/i.test(navigator.userAgent)) {
     var mql = window.matchMedia("(orientation: portrait)");
@@ -135,56 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
 });
 
-// GRADIENT
 
-// VARIABLES
-const magicalUnderlines = Array.from(document.querySelectorAll('.underline--magical'));
-
-const gradientAPI = '../gradient.json';
-
-// HELPER FUNCTIONS
-
-// 1. Get random number in range. Used to get random index from array.
-const randNumInRange = max => Math.floor(Math.random() * (max - 1));
-
-// 2. Merge two separate array values at the same index to 
-// be the same value in new array.
-const mergeArrays = (arrOne, arrTwo) => arrOne
-    .map((item, i) => `${item} ${arrTwo[i]}`)
-    .join(', ');
-
-// 3. Curried function to add a background to array of elms
-const addBackground = (elms) => (color) => {
-    elms.forEach(el => {
-        el.style.backgroundImage = color;
-    });
-}
-// 4. Function to get data from API
-const getData = async (url) => {
-    const response = await fetch(url);
-    const data = await response.json();
-    return data.data;
-}
-
-// 5. Partial Application of addBackground to always apply 
-// background to the magicalUnderlines constant
-const addBackgroundToUnderlines = addBackground(magicalUnderlines);
-
-// GRADIENT FUNCTIONS
-
-// 1. Build CSS formatted linear-gradient from API data
-const buildGradient = (obj) => `linear-gradient(${obj.direction}, ${mergeArrays(obj.colors, obj.positions)})`;
-
-// 2. Get single gradient from data pulled in array and
-// apply single gradient to a callback function
-const applyGradient = async (url, callback) => {
-    const data = await getData(url);
-    const gradient = buildGradient(data[randNumInRange(data.length)]);
-    callback(gradient);
-}
-
-// RESULT
-applyGradient(gradientAPI, addBackgroundToUnderlines);
 
 // Smooth scrolling
 $('a[href^="#"]').on('click', function (e) {
