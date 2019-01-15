@@ -64,7 +64,9 @@ label .hamburger:after,
 label .hamburger:before,
 label input:checked + .menu .hamburger,
 label input:checked + .menu .hamburger:after,
-label input:checked + .menu .hamburger:before {
+label input:checked + .menu .hamburger:before,
+.based,
+.vertical-box {
   -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
   transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -90,7 +92,8 @@ label input:checked + .menu .hamburger:before {
   background-color: #393e46;
 }
 
-.dark-theme .hero .left {
+.dark-theme .hero .left,
+.dark-theme .vertical-box {
   background: #16222A;
   /* fallback for old browsers */
   /* Chrome 10-25, Safari 5.1-6 */
@@ -111,7 +114,8 @@ label input:checked + .menu .hamburger:before {
 .dark-theme .portfolio h1,
 .dark-theme .contact h1,
 .dark-theme .contact span,
-.dark-theme figcaption {
+.dark-theme figcaption,
+.dark-theme .based {
   color: #c2c2c2;
 }
 
@@ -181,15 +185,9 @@ header h2 a {
   top: 10px;
   right: 0;
   opacity: 1;
-  width: 100vw;
   text-align: left;
   visibility: visible;
   margin-right: 38px;
-}
-
-.mobile-switcher {
-  visibility: hidden;
-  opacity: 0;
 }
 
 .toggle {
@@ -205,15 +203,11 @@ header h2 a {
   float: right;
 }
 
-.toggle-mobile {
-  position: relative;
-  display: block;
-  width: 42px;
-  height: 24px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+.toggle i {
+  position: absolute;
+  font-size: 13px;
+  top: 5.5px;
+  left: 5.4px;
 }
 
 .toggle:before,
@@ -247,10 +241,13 @@ header h2 a {
   transition: all 0.2s ease;
 }
 
-#cbx:checked + .toggle span,
-#cbx:checked + .toggle-mobile span {
+#cbx:checked + .toggle span {
   -webkit-transform: translateX(18px);
           transform: translateX(18px);
+}
+
+#cbx:checked + .toggle #sun {
+  opacity: 0;
 }
 
 /* ##################################### */

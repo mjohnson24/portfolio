@@ -55,7 +55,9 @@ label .hamburger:after,
 label .hamburger:before,
 label input:checked+.menu .hamburger,
 label input:checked+.menu .hamburger:after,
-label input:checked+.menu .hamburger:before {
+label input:checked+.menu .hamburger:before,
+.based,
+.vertical-box {
     -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
     transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -83,7 +85,8 @@ label input:checked+.menu .hamburger:before {
         background-color: #393e46
     }
 
-    .hero .left {
+    .hero .left,
+    .vertical-box {
         // background: #76797b
         background: #16222A;
         /* fallback for old browsers */
@@ -105,7 +108,8 @@ label input:checked+.menu .hamburger:before {
     .portfolio h1,
     .contact h1,
     .contact span,
-    figcaption {
+    figcaption,
+    .based {
         color: rgb(194, 194, 194)
     }
 
@@ -169,15 +173,9 @@ header h2 a {
     top: 10px;
     right: 0;
     opacity: 1;
-    width: 100vw;
     text-align: left;
     visibility: visible;
     margin-right: 38px;
-}
-
-.mobile-switcher {
-    visibility: hidden;
-    opacity: 0;
 }
 
 .toggle {
@@ -192,14 +190,11 @@ header h2 a {
     float: right;
 }
 
-.toggle-mobile {
-    position: relative;
-    display: block;
-    width: 42px;
-    height: 24px;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transform: translate3d(0, 0, 0);
+.toggle i {
+    position: absolute;
+    font-size: 13px;
+    top: 5.5px;
+    left: 5.4px;
 }
 
 .toggle:before,
@@ -230,9 +225,12 @@ header h2 a {
     transition: all 0.2s ease;
 }
 
-#cbx:checked+.toggle span,
-#cbx:checked+.toggle-mobile span {
+#cbx:checked+.toggle span {
     transform: translateX(18px);
+}
+
+#cbx:checked+.toggle #sun {
+    opacity: 0;
 }
 
 
