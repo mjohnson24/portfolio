@@ -4,6 +4,9 @@ $("body").delay(100).animate({
     "opacity": "1"
 }, 1000);
 
+const container = document.querySelector(".container");
+const rotateDiv = document.querySelector(".pleaserotate");
+
 if (window.location.pathname === '/') {
     const check = document.getElementById("cbx");
     const body = document.querySelector("body");
@@ -23,9 +26,8 @@ if (window.location.pathname === '/') {
     // Opera 8.0+
     var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
 
-    const container = document.querySelector(".container");
+
     const change = document.querySelector(".change-browser");
-    const rotateDiv = document.querySelector(".pleaserotate");
 
     if (isIE || isEdge || isOpera) {
         container.style.display = "none";
