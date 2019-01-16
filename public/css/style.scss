@@ -1861,10 +1861,6 @@ label a {
         top: 50px;
     }
 
-    .centeredBox {
-        width: 100%;
-    }
-
     .contact .contact-links li {
         margin: 20px;
     }
@@ -1875,5 +1871,13 @@ label a {
 
     footer h2 {
         font-size: 12px;
+    }
+
+    #typewriter {
+        font-size: 30px;
+    }
+
+    .cursor {
+        font-size: 30px;
     }
 }
