@@ -42,24 +42,18 @@ if (window.location.pathname === '/') {
 
 
 if (/Android|webOS|iPhone|iPod|Opera Mini/i.test(navigator.userAgent)) {
-    var mql = window.matchMedia("(orientation: portrait)");
-    if (!mql.matches) {
-        rotateDiv.style.height = "100vh";
-        container.style.display = "none";
-    } else {
-        rotateDiv.style.height = "0";
-        container.style.display = "initial"
-    }
-    mql.addEventListener('change', function () {
-        if (!mql.matches) {
+    window.addEventListener("resize", function () {
+        var screenOrientation = ($(window).width() > $(window).height()) ? 90 : 0;
+
+        // if rotated
+        if (screenOrientation != 0) {
             rotateDiv.style.height = "100vh";
             container.style.display = "none";
         } else {
             rotateDiv.style.height = "0";
-            container.style.display = "initial"
+            container.style.display = "initial";
         }
-    })
-
+    });
 }
 
 // Loader gif
