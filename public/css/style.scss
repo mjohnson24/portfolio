@@ -50,9 +50,6 @@ h3,
 .contact h1,
 .contact span,
 figcaption,
-label .hamburger,
-label .hamburger:after,
-label .hamburger:before,
 label input:checked+.menu .hamburger,
 label input:checked+.menu .hamburger:after,
 label input:checked+.menu .hamburger:before,
@@ -88,13 +85,9 @@ label input:checked+.menu .hamburger:before,
 
     .hero .left,
     .vertical-box {
-        // background: #76797b
         background: #16222A;
-        /* fallback for old browsers */
-        background: -webkit-linear-gradient(to left, #76797b, #bebfbf);
-        /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to left, #76797b, #bebfbf);
-        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: -webkit-linear-gradient(to left, #5f6163, #959696);
+        background: linear-gradient(to left, #5f6163, #959696);
     }
 
     h2,
@@ -114,14 +107,6 @@ label input:checked+.menu .hamburger:before,
         color: rgb(194, 194, 194)
     }
 
-    label .hamburger,
-    label .hamburger:after,
-    label .hamburger:before,
-    label input:checked+.menu .hamburger,
-    label input:checked+.menu .hamburger:after,
-    label input:checked+.menu .hamburger:before {
-        background: #ADADAD
-    }
 }
 
 html {
@@ -162,6 +147,7 @@ header {
     width: 100%;
     height: 40px;
     z-index: 1000;
+    // border-bottom: 1px solid black;
 }
 
 header h2 a {
@@ -374,7 +360,7 @@ h3 {
 }
 
 .centeredBox {
-    width: 60%;
+    width: 90%;
     text-align: center;
 }
 
@@ -382,18 +368,11 @@ h3 {
 
 #typewriter {
     color: black;
-    font-size: 50px;
+    font-size: 6em;
     font-weight: 900;
     font-family: 'Metropolis';
     text-transform: uppercase;
-}
-
-.cursor {
-    font-size: 50px;
-    border-left: 4px solid white;
-    animation: blink 1s infinite;
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
+    overflow: hidden;
 }
 
 /* Scroll down arrow */
@@ -445,20 +424,6 @@ h3 {
     }
 }
 
-.menu #menu-text {
-    float: left;
-    position: fixed;
-    top: 10px;
-    left: 30px;
-    padding-left: 0;
-    text-align: center;
-    color: white;
-    font-size: 10px;
-    font-family: 'Metropolis';
-    letter-spacing: 5px;
-    transform: rotate(-90deg);
-    text-transform: uppercase;
-}
 
 
 .stretched {
@@ -467,18 +432,20 @@ h3 {
 
 label .menu {
     position: relative;
-    z-index: 2000;
-    width: 40px;
-    right: 5px;
-    top: 50px;
     float: left;
-    height: 50px;
+    z-index: 2000;
+    top: 50px;
+    left: 30px;
+    height: 40px;
+    width: 40px;
+    background: white;
     -webkit-transition: all 500ms cubic-bezier(1, 0, 0, 1);
     transition: all 500ms cubic-bezier(1, 0, 0, 1);
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
     cursor: pointer;
-    border-radius: 25px;
+    border: 1px solid black;
+    // border-radius: 25px;
 }
 
 label .menu:hover {
@@ -495,8 +462,8 @@ label .hamburger {
     z-index: 9999;
     position: relative;
     top: 18px;
-    left: 10px;
-    width: 30px;
+    left: 9px;
+    width: 20px;
     height: 2px;
     background: black;
     display: block;
@@ -520,11 +487,11 @@ label .hamburger:before {
 }
 
 label .hamburger:before {
-    top: -10px;
+    top: -6px;
 }
 
 label .hamburger:after {
-    bottom: -10px;
+    bottom: -6px;
 }
 
 label input {
@@ -533,7 +500,6 @@ label input {
 
 label input:checked+.menu {
     z-index: 1000;
-    border-radius: 0;
 }
 
 label input:checked+.menu .hamburger {
@@ -1774,13 +1740,6 @@ label a {
         position: unset;
     }
 
-    label .hamburger,
-    label .hamburger:after,
-    label .hamburger:before {
-        background: white;
-        z-index: 9999;
-    }
-
     label input:checked+.menu .hamburger {
         background: black;
     }
@@ -1877,10 +1836,6 @@ label a {
     }
 
     #typewriter {
-        font-size: 30px;
-    }
-
-    .cursor {
-        font-size: 30px;
+        font-size: 3em;
     }
 }

@@ -59,9 +59,6 @@ h3,
 .contact h1,
 .contact span,
 figcaption,
-label .hamburger,
-label .hamburger:after,
-label .hamburger:before,
 label input:checked + .menu .hamburger,
 label input:checked + .menu .hamburger:after,
 label input:checked + .menu .hamburger:before,
@@ -96,11 +93,8 @@ label input:checked + .menu .hamburger:before,
 .dark-theme .hero .left,
 .dark-theme .vertical-box {
   background: #16222A;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: -webkit-gradient(linear, right top, left top, from(#76797b), to(#bebfbf));
-  background: linear-gradient(to left, #76797b, #bebfbf);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-gradient(linear, right top, left top, from(#5f6163), to(#959696));
+  background: linear-gradient(to left, #5f6163, #959696);
 }
 
 .dark-theme h2,
@@ -118,15 +112,6 @@ label input:checked + .menu .hamburger:before,
 .dark-theme figcaption,
 .dark-theme .based {
   color: #c2c2c2;
-}
-
-.dark-theme label .hamburger,
-.dark-theme label .hamburger:after,
-.dark-theme label .hamburger:before,
-.dark-theme label input:checked + .menu .hamburger,
-.dark-theme label input:checked + .menu .hamburger:after,
-.dark-theme label input:checked + .menu .hamburger:before {
-  background: #ADADAD;
 }
 
 html {
@@ -393,26 +378,18 @@ h3 {
 }
 
 .centeredBox {
-  width: 60%;
+  width: 90%;
   text-align: center;
 }
 
 /* The Typewriter */
 #typewriter {
   color: black;
-  font-size: 50px;
+  font-size: 6em;
   font-weight: 900;
   font-family: 'Metropolis';
   text-transform: uppercase;
-}
-
-.cursor {
-  font-size: 50px;
-  border-left: 4px solid white;
-  -webkit-animation: blink 1s infinite;
-          animation: blink 1s infinite;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
+  overflow: hidden;
 }
 
 /* Scroll down arrow */
@@ -471,40 +448,25 @@ h3 {
   }
 }
 
-.menu #menu-text {
-  float: left;
-  position: fixed;
-  top: 10px;
-  left: 30px;
-  padding-left: 0;
-  text-align: center;
-  color: white;
-  font-size: 10px;
-  font-family: 'Metropolis';
-  letter-spacing: 5px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  text-transform: uppercase;
-}
-
 .stretched {
   width: 100px;
 }
 
 label .menu {
   position: relative;
-  z-index: 2000;
-  width: 40px;
-  right: 5px;
-  top: 50px;
   float: left;
-  height: 50px;
+  z-index: 2000;
+  top: 50px;
+  left: 30px;
+  height: 40px;
+  width: 40px;
+  background: white;
   -webkit-transition: all 500ms cubic-bezier(1, 0, 0, 1);
   transition: all 500ms cubic-bezier(1, 0, 0, 1);
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   cursor: pointer;
-  border-radius: 25px;
+  border: 1px solid black;
 }
 
 label .menu:hover {
@@ -520,8 +482,8 @@ label .hamburger {
   z-index: 9999;
   position: relative;
   top: 18px;
-  left: 10px;
-  width: 30px;
+  left: 9px;
+  width: 20px;
   height: 2px;
   background: black;
   display: block;
@@ -548,11 +510,11 @@ label .hamburger:before {
 }
 
 label .hamburger:before {
-  top: -10px;
+  top: -6px;
 }
 
 label .hamburger:after {
-  bottom: -10px;
+  bottom: -6px;
 }
 
 label input {
@@ -561,7 +523,6 @@ label input {
 
 label input:checked + .menu {
   z-index: 1000;
-  border-radius: 0;
 }
 
 label input:checked + .menu .hamburger {
@@ -1704,12 +1665,6 @@ label a {
   footer {
     position: unset;
   }
-  label .hamburger,
-  label .hamburger:after,
-  label .hamburger:before {
-    background: white;
-    z-index: 9999;
-  }
   label input:checked + .menu .hamburger {
     background: black;
   }
@@ -1788,10 +1743,7 @@ label a {
     font-size: 12px;
   }
   #typewriter {
-    font-size: 30px;
-  }
-  .cursor {
-    font-size: 30px;
+    font-size: 3em;
   }
 }
 /*# sourceMappingURL=style.css.map */

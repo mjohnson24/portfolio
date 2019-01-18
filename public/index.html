@@ -60,7 +60,6 @@
                     <label>
                         <input type='checkbox'>
                         <span class='menu'>
-                            <div id="menu-text">Menu</div>
                             <span class='hamburger'></span>
                         </span>
                         <ul>
@@ -100,7 +99,6 @@
                 <div class="wrapper">
                     <div class="centeredBox">
                         <span id="typewriter"></span>
-                        <span class="cursor"></span>
                     </div>
                 </div>
                 <span class="anchor" id="home"></span>
@@ -243,9 +241,17 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="script/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.1/dist/typeit.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+        new TypeIt('#typewriter', {
+            strings: 'HELLO.',
+            speed: 500,
+            waitUntilVisible: true,
+            cursor: false,
+            startDelay: 2000
+        }).go();
     </script>
 </body>
 

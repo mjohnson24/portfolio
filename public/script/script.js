@@ -85,56 +85,57 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Typewriter animation
 
-document.addEventListener("DOMContentLoaded", function () {
-    // The Typewriter
-    var textArray = ["Welcome! ", "Nice to see you here. "];
-    var typeWriterElement = document.getElementById('typewriter');
 
-    function delWriter(text, i, cb) {
-        if (i >= 0) {
-            typeWriterElement.innerHTML = text.substring(0, i--);
-            // generate a random Number to emulate backspace hitting.
-            var rndBack = 10 + Math.random() * 100;
-            setTimeout(function () {
-                delWriter(text, i, cb);
-            }, rndBack);
-        } else if (typeof cb == 'function') {
-            setTimeout(cb, 200);
-        }
-    };
+// document.addEventListener("DOMContentLoaded", function () {
+//     // The Typewriter
+//     var textArray = ["HELLO. "];
+//     var typeWriterElement = document.getElementById('typewriter');
 
-    function typeWriter(text, i, cb) {
-        if (i < text.length) {
-            typeWriterElement.innerHTML = text.substring(0, i++);
-            // generate a random Number to emulate Typing on the Keyboard.
-            var randomTyping = 200 - Math.random() * 100
-            setTimeout(function () {
-                typeWriter(text, i++, cb)
-            }, randomTyping);
-        } else if (i === text.length) {
-            setTimeout(function () {
-                delWriter(text, i, cb)
-            }, 1000);
-        }
-    };
+//     function delWriter(text, i, cb) {
+//         if (i >= 0) {
+//             typeWriterElement.innerHTML = text.substring(0, i--);
+//             // generate a random Number to emulate backspace hitting.
+//             var rndBack = 10 + Math.random() * 100;
+//             setTimeout(function () {
+//                 delWriter(text, i, cb);
+//             }, rndBack);
+//         } else if (typeof cb == 'function') {
+//             setTimeout(cb, 200);
+//         }
+//     };
 
-    function StartWriter(i) {
-        if (typeof textArray[i] == "undefined") {
-            setTimeout(function () {
-                StartWriter(0)
-            }, 1000);
-        } else if (i < textArray[i].length) {
-            typeWriter(textArray[i], 0, function () {
-                StartWriter(i + 1);
-            })
-        }
+//     function typeWriter(text, i, cb) {
+//         if (i < text.length) {
+//             typeWriterElement.innerHTML = text.substring(0, i++);
+//             // generate a random Number to emulate Typing on the Keyboard.
+//             var randomTyping = 200 - Math.random() * 100
+//             setTimeout(function () {
+//                 typeWriter(text, i++, cb)
+//             }, randomTyping);
+//         } else if (i === text.length) {
+//             setTimeout(function () {
+//                 delWriter(text, i, cb)
+//             }, 1000);
+//         }
+//     };
 
-    }
+//     function StartWriter(i) {
+//         if (typeof textArray[i] == "undefined") {
+//             setTimeout(function () {
+//                 StartWriter(0)
+//             }, 1000);
+//         } else if (i < textArray[i].length) {
+//             typeWriter(textArray[i], 0, function () {
+//                 StartWriter(i + 1);
+//             })
+//         }
 
-    setTimeout(function () {
-        StartWriter(0);
-    }, 1000);
-});
+//     }
+
+//     setTimeout(function () {
+//         StartWriter(0);
+//     }, 1000);
+// });
 
 // var menuToggle = document.querySelector('label .menu');
 // var menu = document.querySelector('label ul');
@@ -143,19 +144,18 @@ document.addEventListener("DOMContentLoaded", function () {
 // var clicked = 0;
 
 // menuToggle.addEventListener('click', function () {
-//     console.log(input.checked);
 //     clicked++;
 //     if (clicked % 2 !== 0) {
-//         console.log("Menu open ", input.checked);
 //         for (let i = 0; i < menu_li.length; i++) {
 //             menu_li[i].addEventListener('click', function (e) {
 //                 // menu.classList.toggle("closed");
 //                 menu.style.left = '-100%';
+//                 input.checked = '';
 //             })
 //         }
 //     } else {
 //         menu.style.left = '';
-//         console.log("Menu closed", input.checked);
+//         input.checked = '';
 //     }
 // })
 
@@ -195,32 +195,5 @@ $(window).on("scroll", function () {
         css.attr("id", "");
         js.attr("id", "");
         ui.attr("id", "");
-    }
-
-    var about_position = $(".about").offset().top;
-    var about_height = $(".about").height();
-    // var skills_position = $(".skills").offset().top;
-    // var skills_height = $(".skills").height();
-    var portfolio_position = $(".portfolio").offset().top;
-    var portfolio_height = $(".portfolio").height();
-    var about_position = $(".about").offset().top;
-    var about_height = $(".about").height();
-
-    var menu_pos = $("#menu-text").offset().top;
-
-    // Change color of menu label on scroll
-    if (menu_pos > about_position && menu_pos < (about_position + about_height)) {
-        $("#menu-text").css({
-            "color": "black"
-        })
-
-    } else if (menu_pos > portfolio_position && menu_pos < (portfolio_position + portfolio_height)) {
-        $("#menu-text").css({
-            "color": "black"
-        })
-    } else {
-        $("#menu-text").css({
-            "color": "white"
-        })
     }
 });
