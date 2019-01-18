@@ -365,7 +365,6 @@ h3 {
   z-index: 1;
   position: absolute;
   padding: 0;
-  margin: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -382,10 +381,63 @@ h3 {
   text-align: center;
 }
 
+.centeredBox path {
+  stroke-dasharray: 600;
+  opacity: 10;
+  -webkit-animation: animate-svg 5s cubic-bezier(0, 0.23, 1, 0.1);
+          animation: animate-svg 5s cubic-bezier(0, 0.23, 1, 0.1);
+}
+
+.centeredBox svg {
+  width: 100%;
+}
+
+@-webkit-keyframes animate-svg {
+  0% {
+    opacity: 0;
+    fill: none;
+    stroke-dashoffset: 600;
+  }
+  30% {
+    opacity: 10;
+    fill: none;
+    stroke-dasharray: 600;
+  }
+  90% {
+    fill: rgba(0, 0, 0, 0);
+  }
+  100% {
+    opacity: 10;
+    fill: black;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-svg {
+  0% {
+    opacity: 0;
+    fill: none;
+    stroke-dashoffset: 600;
+  }
+  30% {
+    opacity: 10;
+    fill: none;
+    stroke-dasharray: 600;
+  }
+  90% {
+    fill: rgba(0, 0, 0, 0);
+  }
+  100% {
+    opacity: 10;
+    fill: black;
+    stroke-dashoffset: 0;
+  }
+}
+
 /* The Typewriter */
 #typewriter {
   color: black;
-  font-size: 6em;
+  font-size: 120px;
   font-weight: 900;
   font-family: 'Metropolis';
   text-transform: uppercase;
@@ -1742,8 +1794,8 @@ label a {
   footer h2 {
     font-size: 12px;
   }
-  #typewriter {
-    font-size: 3em;
+  .wrapper {
+    margin-top: 40px;
   }
 }
 /*# sourceMappingURL=style.css.map */

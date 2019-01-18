@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const TextToSVG = require('text-to-svg');
 
 app.use(express.static('public'));
 
