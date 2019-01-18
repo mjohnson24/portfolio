@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     // The Typewriter
-    var textArray = ["Welcome! ", "I'm Edoardo Lunardi. ", "nice to see you here. "];
+    var textArray = ["Welcome! ", "Nice to see you here. "];
     var typeWriterElement = document.getElementById('typewriter');
 
     function delWriter(text, i, cb) {
@@ -136,6 +136,29 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
 });
 
+// var menuToggle = document.querySelector('label .menu');
+// var menu = document.querySelector('label ul');
+// var menu_li = document.querySelectorAll('label ul li');
+// var input = document.querySelector('label input');
+// var clicked = 0;
+
+// menuToggle.addEventListener('click', function () {
+//     console.log(input.checked);
+//     clicked++;
+//     if (clicked % 2 !== 0) {
+//         console.log("Menu open ", input.checked);
+//         for (let i = 0; i < menu_li.length; i++) {
+//             menu_li[i].addEventListener('click', function (e) {
+//                 // menu.classList.toggle("closed");
+//                 menu.style.left = '-100%';
+//             })
+//         }
+//     } else {
+//         menu.style.left = '';
+//         console.log("Menu closed", input.checked);
+//     }
+// })
+
 
 
 // Smooth scrolling
@@ -160,20 +183,9 @@ var css = $(".progressblue");
 var js = $(".progressorange");
 var ui = $(".progresspurple");
 
-var footer = $("footer h2");
-footer.hide();
-
 $(window).on("scroll", function () {
-    // Show footer only at the bottom of the page
-    var scrollHeight = $(document).height();
-    var scrollPosition = $(window).height() + $(window).scrollTop();
-    if ((scrollHeight - scrollPosition) / scrollHeight < 0.030) {
-        footer.fadeIn();
-    } else {
-        footer.fadeOut();
-    }
     // Animate progess bars on scroll
-    if ($(window).scrollTop() > 900) {
+    if ($(window).scrollTop() > 1000) {
         html.attr("id", "progress-html");
         css.attr("id", "progress-css");
         js.attr("id", "progress-javascript");

@@ -294,7 +294,6 @@ main {
   -ms-grid-row: 2;
   -ms-grid-column: 1;
   grid-area: content;
-  margin-bottom: 40px;
 }
 
 footer {
@@ -306,8 +305,6 @@ footer {
   width: 100%;
   background-color: white;
   top: calc(100vh - 40px);
-  position: fixed;
-  z-index: 99999;
 }
 
 footer h2 {
@@ -357,7 +354,7 @@ h3 {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 40px);
   margin-top: 40px;
 }
 
@@ -375,7 +372,8 @@ h3 {
 
 /* Wrapper to Center the Typewriter */
 .wrapper {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 40px);
+  margin-top: 40px;
   width: 100%;
   margin: 0 auto;
   z-index: 1;
@@ -420,7 +418,7 @@ h3 {
 .arrow {
   width: 2.1rem;
   height: 50px;
-  top: 88vh;
+  top: 93vh;
   left: calc(50vw - 1.05rem);
   position: absolute;
   z-index: 1;
@@ -433,7 +431,7 @@ h3 {
 #scrolldown {
   width: 60px;
   height: 1rem;
-  top: 80vh;
+  top: 85vh;
   left: calc(50vw - 31px);
   position: absolute;
   z-index: 1;
@@ -694,7 +692,7 @@ label a {
 }
 
 .about {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 40px);
   background-color: #f8f8f8;
   display: -ms-grid;
   display: grid;
@@ -709,7 +707,7 @@ label a {
 }
 
 .skills {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 40px);
   background-color: #1c1b1f;
   display: -ms-grid;
   display: grid;
@@ -806,23 +804,23 @@ label a {
 }
 
 .progressred {
-  background-color: #c0392b;
+  background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
 }
 
 .progressblue {
-  background-color: #1199ff;
+  background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
 }
 
 .progresspurple {
-  background-color: #f1c40f;
+  background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
 }
 
 .progressorange {
-  background-color: #e67e22;
+  background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
 }
 
 .progressgreen {
-  background-color: #27ae60;
+  background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
 }
 
 @-webkit-keyframes progress-html {
@@ -899,7 +897,7 @@ label a {
 
 /* #################################### */
 .portfolio {
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 40px);
   height: auto;
   background-color: #f8f8f8;
   display: -ms-grid;
@@ -1141,6 +1139,7 @@ label a {
 
 .portfolio .right figcaption {
   font-style: italic;
+  padding: 5px;
   /* display: inline-block; */
   text-align: center;
 }
@@ -1160,7 +1159,7 @@ label a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 40px);
   width: 100%;
   background-color: #f8f8f8;
   margin-top: 40px;
@@ -1212,7 +1211,7 @@ label a {
 }
 
 .contact {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 40px);
   background-color: #1c1b1f;
   display: -ms-grid;
   display: grid;
@@ -1234,11 +1233,12 @@ label a {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 40px);
   display: block;
   -o-object-fit: cover;
      object-fit: cover;
   border: 40px solid white;
+  border-bottom: none;
 }
 
 .contact .contact-links {
