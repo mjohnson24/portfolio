@@ -80,6 +80,7 @@ label input:checked + .menu .hamburger:before,
 
 .dark-theme .contact .right img {
   border: 40px solid #232931;
+  border-bottom: none;
 }
 
 .dark-theme path {

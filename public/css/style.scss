@@ -72,7 +72,8 @@ label input:checked+.menu .hamburger:before,
     }
 
     .contact .right img {
-        border: 40px solid #232931
+        border: 40px solid #232931;
+        border-bottom: none;
     }
 
     path {
