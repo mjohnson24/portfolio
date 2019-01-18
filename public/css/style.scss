@@ -74,7 +74,8 @@ label input:checked+.menu .hamburger:before,
     }
 
     path {
-        fill: rgb(194, 194, 194)
+        fill: rgb(194, 194, 194);
+        stroke: rgb(194, 194, 194);
     }
 
     .about,
@@ -364,7 +365,7 @@ h3 {
 }
 
 .centeredBox path {
-    stroke-dasharray: 600;
+    stroke-dasharray: 800;
     opacity: 10;
     animation: animate-svg 5s cubic-bezier(0, 0.23, 1, .1);
 }

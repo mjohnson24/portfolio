@@ -83,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
-
 // Smooth scrolling
 $('a[href^="#"]').on('click', function (e) {
     e.preventDefault();

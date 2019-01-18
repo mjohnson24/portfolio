@@ -82,6 +82,7 @@ label input:checked + .menu .hamburger:before,
 
 .dark-theme path {
   fill: #c2c2c2;
+  stroke: #c2c2c2;
 }
 
 .dark-theme .about,
@@ -382,7 +383,7 @@ h3 {
 }
 
 .centeredBox path {
-  stroke-dasharray: 600;
+  stroke-dasharray: 800;
   opacity: 10;
   -webkit-animation: animate-svg 5s cubic-bezier(0, 0.23, 1, 0.1);
           animation: animate-svg 5s cubic-bezier(0, 0.23, 1, 0.1);
