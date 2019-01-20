@@ -9,7 +9,11 @@
 @font-face {
     font-family: 'Metropolis';
     src: url('../fonts/Metropolis-Bold.woff2') format('woff2');
+}
 
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Light.otf') format('woff2');
 }
 
 .transparent {
@@ -229,9 +233,9 @@ header h2 a {
 .fa-instagram,
 .fa-envelope,
 .fa-telegram-plane,
-.fa-github {
+.fa-github,
+.fa-desktop {
     transition: all 0.2s ease-in;
-    transform: scale(1.2);
 }
 
 .fa-facebook:hover {
@@ -251,7 +255,8 @@ header h2 a {
     color: #cd486b
 }
 
-.fa-envelope:hover {
+.fa-envelope:hover,
+.fa-desktop:hover {
     color: #ffa500
 }
 
@@ -488,8 +493,6 @@ label .menu:hover {
     transform: scale(1.2);
 }
 
-
-
 label .text {
     left: 40px;
 }
@@ -660,6 +663,8 @@ label a {
     background-color: rgb(248, 248, 248);
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 
 .about h1 {
@@ -672,6 +677,8 @@ label a {
     background-color: rgb(28, 27, 31);
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: 3em;
+    padding-bottom: 3em
 }
 
 .skills h1 {
@@ -918,6 +925,8 @@ label a {
     background-color: rgb(248, 248, 248);
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 
 .portfolio h1 {
@@ -1137,6 +1146,7 @@ label a {
     padding: 5px;
     /* display: inline-block; */
     text-align: center;
+    margin-bottom: 2em;
 }
 
 .portfolio .right img:hover {
@@ -1148,17 +1158,52 @@ label a {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: calc(100vh - 40px);
+    min-height: calc(100vh - 40px);
     width: 100%;
     background-color: rgb(248, 248, 248);
     margin-top: 40px;
+    flex-direction: column;
+}
+
+.all-projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 85%;
+    grid-gap: 5em;
+}
+
+.all-projects-grid div {
+    place-self: center;
+}
+
+.all-projects-grid div img {
+    width: 100%;
+}
+
+.all-projects div p {
+    font-family: 'Gilroy';
+    text-align: center;
+    font-style: italic;
+}
+
+.all-projects div p a {
+    text-decoration: none;
+    color: black;
+    margin: 5px;
+}
+
+.all-projects div #description {
+    letter-spacing: 2px;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-style: normal;
 }
 
 #goback {
     position: relative;
     z-index: 100;
     font-size: 30px;
-    top: calc(50vh - 70px);
+    top: 40px;
     float: left;
     margin-left: 10px;
     transition: all .2s ease-in;
@@ -1202,6 +1247,8 @@ label a {
     background-color: rgb(28, 27, 31);
     display: grid;
     grid-template-columns: 1fr 1fr;
+    padding-top: 3em;
+    padding-bottom: 3em;
 }
 
 .contact h1 {
@@ -1227,6 +1274,7 @@ label a {
 
 .contact .contact-links {
     list-style: none;
+    margin-top: 0;
     padding-left: 0;
 }
 
@@ -1728,6 +1776,13 @@ label a {
     }
 }
 
+@media screen and (max-width: 800px) {
+    .all-projects-grid {
+        grid-template-columns: auto;
+        width: 90%;
+    }
+}
+
 @media screen and (max-width: 768px) {
 
     main {
@@ -1794,9 +1849,9 @@ label a {
         height: auto;
     }
 
-    .about .left {
-        margin-top: 2em;
-    }
+    // .about .left {
+    //     margin-top: 2em;
+    // }
 
     .about .right {
         margin-right: 3em;
@@ -1810,9 +1865,9 @@ label a {
         min-height: 100vh;
     }
 
-    .skills .left {
-        margin-top: 3em;
-    }
+    // .skills .left {
+    //     margin-top: 3em;
+    // }
 
     .skills-bar-container {
         margin-left: auto;
@@ -1826,9 +1881,9 @@ label a {
         height: auto;
     }
 
-    .portfolio .left {
-        margin-top: 2em;
-    }
+    // .portfolio .left {
+    //     margin-top: 2em;
+    // }
 
     .portfolio .right img {
         width: 100%;
@@ -1841,15 +1896,16 @@ label a {
     .contact {
         grid-template-columns: auto;
         height: auto;
+        padding-bottom: 0;
     }
 
     .contact .right img {
         height: calc(100vh - 200px);
     }
 
-    .contact .left {
-        margin-top: 2em;
-    }
+    // .contact .left {
+    //     margin-top: 2em;
+    // }
 
 }
 
