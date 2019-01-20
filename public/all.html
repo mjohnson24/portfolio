@@ -36,11 +36,26 @@
 <body>
     <div id="loader"></div>
     <div class="pleaserotate"></div>
+    <div class="change-browser">
+        <h1 style="text-align:center; width:unset">Please change browser</h1>
+        <span style="font-size: 11px">(It's 2019: maybe it's time to use Chrome)</span>
+    </div>
     <div id="content">
         <div class="container">
             <header>
 
-                <h2><a href="/" style="text-decoration: none; color: black">EDOARDO LUNARDI</a></h2>
+                <h2><a href="/" style="text-decoration: none;">EDOARDO LUNARDI</a></h2>
+                <div class="switcher">
+                    <input type="checkbox" id="cbx" style="display:none" />
+                    <label for="cbx" class="toggle">
+                        <span>
+                            <svg width="10px" height="10px" viewBox="0 0 10 10"></svg>
+                        </span>
+                        <span id="moon"><i class="fas fa-moon"></i></span>
+                        <span id="sun"><i class="fas fa-sun"></i></span>
+                    </label>
+
+                </div>
                 <div id="goback">
                     <a href="/#portfolio" style="text-decoration:none; color:black"><i class="fas fa-chevron-left"></i>
                         <div id="goback-text">Back</div>

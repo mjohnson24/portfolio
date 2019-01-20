@@ -58,7 +58,9 @@ label input:checked+.menu .hamburger,
 label input:checked+.menu .hamburger:after,
 label input:checked+.menu .hamburger:before,
 .based,
-.vertical-box {
+.vertical-box,
+.all-projects,
+#goback-text {
     -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
     transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -84,8 +86,9 @@ label input:checked+.menu .hamburger:before,
 
     .about,
     .hero .right,
-    .portfolio {
-        background-color: #393e46
+    .portfolio,
+    .all-projects {
+        background-color: #393e46;
     }
 
     .hero .left,
@@ -108,7 +111,25 @@ label input:checked+.menu .hamburger:before,
     .contact h1,
     .contact span,
     figcaption,
-    .based {
+    .based,
+    #goback-text {
+        color: rgb(194, 194, 194);
+    }
+
+    .the-arrow>.shaft,
+    .the-arrow.-left>.shaft,
+    .the-arrow.-left>.shaft:before,
+    .the-arrow.-left>.shaft:after,
+    .the-arrow>.shaft:before,
+    .the-arrow>.shaft:after,
+    .animated-arrow:hover>.the-arrow.-left>.shaft,
+    .animated-arrow:hover>.the-arrow.-left>.shaft:before,
+    .animated-arrow:hover>.the-arrow.-left>.shaft:after {
+        background-color: rgb(194, 194, 194);
+    }
+
+    .animated-arrow:hover,
+    a {
         color: rgb(194, 194, 194)
     }
 
@@ -128,6 +149,10 @@ body {
     margin: 0;
     opacity: 0;
     height: 100%;
+}
+
+p a {
+    color: black;
 }
 
 .pleaserotate {

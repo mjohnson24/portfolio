@@ -7,7 +7,7 @@ $("body").delay(100).animate({
 const container = document.querySelector(".container");
 const rotateDiv = document.querySelector(".pleaserotate");
 
-if (window.location.pathname === '/') {
+if (window.location.pathname === '/' || window.location.pathname === '/all') {
     const check = document.getElementById("cbx");
     const body = document.querySelector("body");
 
@@ -37,8 +37,6 @@ if (window.location.pathname === '/') {
         change.style.display = "none"
     }
 }
-
-
 
 
 if (/Android|webOS|iPhone|iPod|Opera Mini/i.test(navigator.userAgent)) {

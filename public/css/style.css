@@ -68,7 +68,9 @@ label input:checked + .menu .hamburger,
 label input:checked + .menu .hamburger:after,
 label input:checked + .menu .hamburger:before,
 .based,
-.vertical-box {
+.vertical-box,
+.all-projects,
+#goback-text {
   -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
   transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -92,7 +94,8 @@ label input:checked + .menu .hamburger:before,
 
 .dark-theme .about,
 .dark-theme .hero .right,
-.dark-theme .portfolio {
+.dark-theme .portfolio,
+.dark-theme .all-projects {
   background-color: #393e46;
 }
 
@@ -116,7 +119,25 @@ label input:checked + .menu .hamburger:before,
 .dark-theme .contact h1,
 .dark-theme .contact span,
 .dark-theme figcaption,
-.dark-theme .based {
+.dark-theme .based,
+.dark-theme #goback-text {
+  color: #c2c2c2;
+}
+
+.dark-theme .the-arrow > .shaft,
+.dark-theme .the-arrow.-left > .shaft,
+.dark-theme .the-arrow.-left > .shaft:before,
+.dark-theme .the-arrow.-left > .shaft:after,
+.dark-theme .the-arrow > .shaft:before,
+.dark-theme .the-arrow > .shaft:after,
+.dark-theme .animated-arrow:hover > .the-arrow.-left > .shaft,
+.dark-theme .animated-arrow:hover > .the-arrow.-left > .shaft:before,
+.dark-theme .animated-arrow:hover > .the-arrow.-left > .shaft:after {
+  background-color: #c2c2c2;
+}
+
+.dark-theme .animated-arrow:hover,
+.dark-theme a {
   color: #c2c2c2;
 }
 
@@ -133,6 +154,10 @@ body {
   margin: 0;
   opacity: 0;
   height: 100%;
+}
+
+p a {
+  color: black;
 }
 
 .pleaserotate {
