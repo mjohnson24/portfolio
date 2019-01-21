@@ -7,7 +7,7 @@ $("body").delay(100).animate({
 const container = document.querySelector(".container");
 const rotateDiv = document.querySelector(".pleaserotate");
 
-if (window.location.pathname === '/' || window.location.pathname === '/all') {
+if (window.location.pathname === '/') {
     const check = document.getElementById("cbx");
     const body = document.querySelector("body");
 
