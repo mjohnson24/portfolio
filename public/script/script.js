@@ -139,7 +139,10 @@ function modalEvent(button) {
             modal.classList.remove('open')
             document.body.style.overflow = '';
         });
-        modal.addEventListener('click', () => modal.classList.remove('open'));
+        modal.addEventListener('click', () => {
+            modal.classList.remove('open')
+            document.body.style.overflow = '';
+        });
         contentWrapper.addEventListener('click', (e) => e.stopPropagation());
 
         modal.classList.toggle('open');
