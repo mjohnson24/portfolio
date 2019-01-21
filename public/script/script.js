@@ -125,13 +125,20 @@ for (let button of buttons) {
 }
 
 function modalEvent(button) {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
         const trigger = button.getAttribute('data-modal-trigger');
         const modal = document.querySelector(`[data-modal=${trigger}]`);
         const contentWrapper = modal.querySelector('.content-wrapper');
         const close = modal.querySelector('.close');
 
-        close.addEventListener('click', () => modal.classList.remove('open'));
+        if (event.target.tagName === 'BUTTON') {
+            document.body.style.overflow = 'hidden';
+        }
+
+        close.addEventListener('click', () => {
+            modal.classList.remove('open')
+            document.body.style.overflow = '';
+        });
         modal.addEventListener('click', () => modal.classList.remove('open'));
         contentWrapper.addEventListener('click', (e) => e.stopPropagation());
 
