@@ -207,7 +207,7 @@
                     <div class="all-projects-grid">
                         <div data-aos="fade-up">
                             <a href="https://gabrieledefino.netlify.com/" target="_blank"><img src="img/gabriele.jpg"></a>
-                            <p>Freelance Photographer Website</p>
+                            <p class="caption">Freelance Photographer Website</p>
                             <p>
                                 <a href="https://gabrieledefino.netlify.com/" target="_blank"><i class="fas fa-desktop"></i></a>
                                 <a href="https://github.com/edoardolunardi/photographer" target="_blank"><i class="fab fa-github"
@@ -216,10 +216,15 @@
                             <p id="description">
                                 Html5, CSS3, Javascript, LazyLoading, Lightgallery
                             </p>
+                            <p><button data-modal-trigger="trigger-1" class="trigger">
+                                    <i class="fa fa-fire" aria-hidden="true"></i>
+                                    Details
+                                </button>
+                            </p>
                         </div>
                         <div data-aos="fade-up">
                             <a href="https://restaurantjack.netlify.com/" target="_blank"><img src="img/restaurant.png"></a>
-                            <p>Restaurant website</p>
+                            <p class="caption">Restaurant website</p>
                             <p>
                                 <a href="https://restaurantjack.netlify.com/" target="_blank"><i class="fas fa-desktop"></i></a>
                                 <a href="https://github.com/edoardolunardi/Restaurant" target="_blank"><i class="fab fa-github"
@@ -228,7 +233,100 @@
                             <p id="description">
                                 Html5, CSS3, Javascript, Google Sheet as CMS
                             </p>
+                            <p><button data-modal-trigger="trigger-2" class="trigger">
+                                    <i class="fa fa-fire" aria-hidden="true"></i>
+                                    Details
+                                </button>
+                            </p>
+
                         </div>
+                    </div>
+                    <!-- Modal for photographer -->
+                    <div data-modal="trigger-1" class="modal">
+                        <article class="content-wrapper">
+                            <button class="close"></button>
+                            <header class="modal-header">
+                                <h1>Photographer</h1>
+                            </header>
+                            <div class="content">
+                                <div>
+                                    <img src="img/projects/photographer2.jpg">
+                                </div>
+                                <div>
+                                    <p>
+                                        The project is mainly a single
+                                        page application. A <b>Masonry Layout</b> is used to display the gallery.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        The gallery plugin is called <b>Lightgallery</b>, a lightweight Javascript
+                                        gallery.
+                                        <b>Lazy loading</b> is essential, expecially
+                                        in a grid of images. Basically the layout is pre-built using low-quality
+                                        previews: once the full quality images are ready,
+                                        they replace the preview with a nice blur animation.
+                                    </p>
+                                </div>
+                                <div>
+                                    <img src="img/projects/photographer1.jpg">
+                                </div>
+                                <div>
+                                    <img src="img/projects/photographer3.jpg" style="width: 50%">
+                                </div>
+                                <div>
+                                    <p>
+                                        The website if <b>fully responsive</b> and mobile-friendly.
+                                    </p>
+                                </div>
+                                <div>
+
+                                </div>
+                        </article>
+                    </div>
+                    <!-- Modal for restaurant -->
+                    <div data-modal="trigger-2" class="modal">
+                        <article class="content-wrapper">
+                            <button class="close"></button>
+                            <header class="modal-header">
+                                <h1>Restaurant</h1>
+                            </header>
+                            <div class="content">
+                                <div>
+                                    <img src="img/projects/restaurant1.jpg">
+                                </div>
+                                <div>
+                                    <p>The main features of this project are the Menu page and the Reservation page.
+                                        <br>
+                                        The Menu is directly taken from a <b>Google Sheet</b>, which is converted to
+                                        .json and
+                                        then
+                                        parsed. In this way, if the owner want to modify the menu, he can simply modify
+                                        the Google Sheet.
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>
+                                        The Reservation form send data directly to the Google Sheet, in this way the
+                                        owner can
+                                        easily collect all the reservations. <br>
+                                        The Google Sheet act exactly like a <b>CMS</b> .
+                                    </p>
+                                </div>
+                                <div>
+                                    <img src="img/projects/restaurant2.jpg">
+                                </div>
+                                <div>
+                                    <img src="img/projects/restaurant3.jpg" style="width: 50%">
+                                </div>
+                                <div>
+                                    <p>
+                                        The website if <b>fully responsive</b> and mobile-friendly.
+                                    </p>
+                                </div>
+                                <div>
+                                </div>
+                        </article>
                     </div>
                 </div>
                 <span class="anchor" id="contact"></span>
@@ -247,7 +345,6 @@
                                 <li><a href="https://t.me/edw98" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
                             </ul>
                             <img src="img/profile2.png">
-
                         </div>
                     </div>
                 </section>
