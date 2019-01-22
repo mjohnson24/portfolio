@@ -21,6 +21,10 @@
     src: url('../fonts/Gilroy-ExtraBold.otf') format('woff2');
 }
 
+// html {
+//     overflow-y: scroll;
+// }
+
 .content-wrapper::-webkit-scrollbar,
 body::-webkit-scrollbar {
     width: 5px;
