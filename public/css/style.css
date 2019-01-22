@@ -103,7 +103,6 @@ label input:checked + .menu .hamburger:before,
 
 .dark-theme footer,
 .dark-theme .container,
-.dark-theme header,
 .dark-theme label ul {
   background-color: #232931;
 }
@@ -118,14 +117,22 @@ label input:checked + .menu .hamburger:before,
   stroke: #c2c2c2;
 }
 
+.dark-theme .arrow path {
+  fill: white;
+  stroke: white;
+}
+
 .dark-theme .about,
-.dark-theme .hero .right,
 .dark-theme .portfolio,
 .dark-theme .all-projects,
 .dark-theme .modal .content-wrapper,
 .dark-theme .modal .content-wrapper .modal-header,
 .dark-theme .modal .content-wrapper .content {
   background-color: #393e46;
+}
+
+.dark-theme .hero .right {
+  background-image: url("../img/dark.svg");
 }
 
 .dark-theme .hero .left,
@@ -139,7 +146,6 @@ label input:checked + .menu .hamburger:before,
 .dark-theme a,
 .dark-theme .contact .contact-links li a,
 .dark-theme #typewriter,
-.dark-theme #scrolldown,
 .dark-theme p,
 .dark-theme h3,
 .dark-theme .about h1,
@@ -161,6 +167,10 @@ label input:checked + .menu .hamburger:before,
 
 .dark-theme a {
   color: #c2c2c2;
+}
+
+.dark-theme #scrolldown {
+  color: white;
 }
 
 .dark-theme .menu .hamburger,
@@ -216,11 +226,18 @@ header {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: header;
-  background-color: white;
   position: fixed;
   width: 100%;
   height: 40px;
   z-index: 1000;
+}
+
+.scrolled {
+  background-color: white;
+}
+
+.dark-header-scrolled {
+  background-color: #232931;
 }
 
 header h2 a {
@@ -399,56 +416,43 @@ h3 {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  height: calc(100vh - 40px);
-  margin-top: 40px;
+  height: 100vh;
 }
 
 .hero .left {
-  /* background-color: rgb(252, 90, 86); */
-  /* background-color: #0D1F2D; */
-  background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
-}
-
-.hero .right {
-  /* background-color: rgb(248, 248, 248); */
-  /* background-color: #546A7B; */
-  background-color: #f8f8f8;
-}
-
-/* Wrapper to Center the Typewriter */
-.wrapper {
-  height: calc(100vh - 40px);
-  margin-top: 40px;
-  width: 100%;
-  margin: 0 auto;
-  z-index: 1;
-  position: absolute;
-  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.centeredBox {
-  width: 90%;
-  text-align: center;
-}
-
-.centeredBox path {
+.hero .left path {
   stroke-dasharray: 800;
   opacity: 10;
   -webkit-animation: animate-svg 5s cubic-bezier(0, 0.23, 1, 0.1);
           animation: animate-svg 5s cubic-bezier(0, 0.23, 1, 0.1);
 }
 
-.centeredBox svg {
+.hero .left svg {
   width: 100%;
+  margin-right: auto;
+  margin-right: auto;
+}
+
+.hero .right {
+  background-image: url("../img/light.svg");
+  background-attachment: fixed;
+  background-size: cover;
+  /* background by SVGBackgrounds.com */
 }
 
 @-webkit-keyframes animate-svg {
@@ -1436,17 +1440,6 @@ button {
     visibility: hidden;
     opacity: 0;
   }
-  .mobile-switcher {
-    visibility: visible;
-    opacity: 1;
-  }
-  .wrapper {
-    width: 100%;
-  }
-  .hero {
-    height: calc(100vh - 40px);
-    /* margin-top: 0; */
-  }
   footer {
     position: unset;
   }
@@ -1520,6 +1513,24 @@ button {
     margin-right: 3em;
     margin-left: 3em;
   }
+  .hero {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: 1fr 0;
+        grid-template-rows: 1fr 0;
+  }
+  .hero .left {
+    background-image: url("../img/light.svg");
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .hero .left svg {
+    width: 70%;
+    margin-right: 0;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -1534,9 +1545,6 @@ button {
   }
   footer h2 {
     font-size: 12px;
-  }
-  .wrapper {
-    margin-top: 40px;
   }
   label ul li {
     font-size: 30px;

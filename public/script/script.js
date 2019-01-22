@@ -7,35 +7,33 @@ $("body").delay(100).animate({
 const container = document.querySelector(".container");
 const rotateDiv = document.querySelector(".pleaserotate");
 
-if (window.location.pathname === '/') {
-    const check = document.getElementById("cbx");
-    const body = document.querySelector("body");
+const check = document.getElementById("cbx");
+const body = document.querySelector("body");
 
-    check.addEventListener('click', function () {
-        if (check.checked) {
-            body.classList.add("dark-theme");
-        } else {
-            body.classList.remove("dark-theme");
-        }
-    });
-
-    // Internet Explorer 6-11
-    var isIE = /*@cc_on!@*/ false || !!document.documentMode;
-    // Edge 20+
-    var isEdge = !isIE && !!window.StyleMedia;
-    // Opera 8.0+
-    var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
-
-
-    const change = document.querySelector(".change-browser");
-
-    if (isIE || isEdge || isOpera) {
-        container.style.display = "none";
-        change.style.display = "flex"
+check.addEventListener('click', function () {
+    if (check.checked) {
+        body.classList.add("dark-theme");
     } else {
-        container.style.display = "";
-        change.style.display = "none"
+        body.classList.remove("dark-theme");
     }
+});
+
+// Internet Explorer 6-11
+var isIE = /*@cc_on!@*/ false || !!document.documentMode;
+// Edge 20+
+var isEdge = !isIE && !!window.StyleMedia;
+// Opera 8.0+
+var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+
+
+const change = document.querySelector(".change-browser");
+
+if (isIE || isEdge || isOpera) {
+    container.style.display = "none";
+    change.style.display = "flex"
+} else {
+    container.style.display = "";
+    change.style.display = "none"
 }
 
 
@@ -169,5 +167,44 @@ menu_button.addEventListener('click', function () {
         menu_ul.style.left = '';
     } else {
         document.body.style.overflow = '';
+    }
+})
+
+const header = document.querySelector('header');
+const switcher = document.getElementById('cbx');
+var apply_dark = false;
+var scrolled = false;
+
+switcher.addEventListener('click', function () {
+    if (switcher.checked) {
+        apply_dark = true;
+        header.classList.remove('scrolled');
+        header.classList.add('dark-header-scrolled');
+
+    } else {
+        apply_dark = false;
+        header.classList.remove('dark-header-scrolled');
+        header.classList.add('scrolled');
+    }
+})
+
+document.addEventListener('scroll', function () {
+    var height = window.innerHeight;
+    if (window.pageYOffset > height) {
+        scrolled = true;
+        if (scrolled && !apply_dark) {
+            header.classList.add('scrolled');
+            header.classList.remove('dark-header-scrolled');
+        } else if (scrolled && apply_dark) {
+            header.classList.add('dark-header-scrolled');
+            header.classList.remove('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+            header.classList.remove('dark-header-scrolled');
+        }
+    } else {
+        scrolled = false;
+        header.classList.remove('scrolled');
+        header.classList.remove('dark-header-scrolled');
     }
 })
