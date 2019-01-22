@@ -148,3 +148,26 @@ function modalEvent(button) {
         modal.classList.toggle('open');
     });
 }
+
+const menu_button = document.querySelector('label .menu');
+const label_menu = document.querySelector('label input');
+const menu_li = document.querySelectorAll('label ul li');
+const menu_ul = document.querySelector('label ul');
+var clicked = 0;
+menu_button.addEventListener('click', function () {
+    clicked++;
+    if (clicked % 2 === 1) {
+        document.body.style.overflow = 'hidden';
+        for (let i = 0; i < menu_li.length; i++) {
+            menu_li[i].addEventListener('click', function () {
+                menu_ul.style.left = '-100%';
+                label_menu.checked = '';
+                menu_ul.style.left = '';
+                document.body.style.overflow = '';
+            })
+        }
+        menu_ul.style.left = '';
+    } else {
+        document.body.style.overflow = '';
+    }
+})

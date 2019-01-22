@@ -12,8 +12,13 @@
 }
 
 @font-face {
-    font-family: 'Gilroy';
+    font-family: 'Gilroy-Light';
     src: url('../fonts/Gilroy-Light.otf') format('woff2');
+}
+
+@font-face {
+    font-family: 'Gilroy-Bold';
+    src: url('../fonts/Gilroy-ExtraBold.otf') format('woff2');
 }
 
 .transparent {
@@ -63,7 +68,9 @@ label input:checked+.menu .hamburger:before,
 .modal .content-wrapper .modal-header,
 .modal .content-wrapper .modal-header h1,
 .modal .content-wrapper .close:before,
-.modal .content-wrapper .close:after {
+.modal .content-wrapper .close:after,
+.modal .content-wrapper .content,
+.modal .content-wrapper .content div h1 {
     -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
     transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -92,7 +99,8 @@ label input:checked+.menu .hamburger:before,
     .portfolio,
     .all-projects,
     .modal .content-wrapper,
-    .modal .content-wrapper .modal-header {
+    .modal .content-wrapper .modal-header,
+    .modal .content-wrapper .content {
         background-color: #393e46;
     }
 
@@ -117,7 +125,8 @@ label input:checked+.menu .hamburger:before,
     .contact span,
     .based,
     #goback-text,
-    .modal .content-wrapper .modal-header h1 {
+    .modal .content-wrapper .modal-header h1,
+    .modal .content-wrapper .content div h1 {
         color: rgb(194, 194, 194);
     }
 
@@ -1099,7 +1108,7 @@ button {
     width: 90%;
     margin: 0;
     padding: 2.5rem;
-    background-color: rgb(248, 248, 248);
+    background-color: white;
     border-radius: 0.3125rem;
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.5);
     transform: scale(0);
@@ -1157,7 +1166,7 @@ button {
     width: 100%;
     margin: 0;
     padding: 0 0 1.25rem;
-    background-color: rgb(248, 248, 248);
+    background-color: white;
 }
 
 .modal .content-wrapper .modal-header h1 {
@@ -1168,24 +1177,42 @@ button {
     width: auto;
 }
 
+.modal .content-wrapper .content div h1 {
+    font-family: 'Gilroy-Bold';
+    text-transform: none;
+    font-size: 42px;
+    text-align: left;
+    position: unset;
+    width: auto;
+    margin-right: auto;
+}
+
 .modal .content-wrapper .content {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 5em;
     margin-top: 3em;
+    background-color: rgb(248, 248, 248);
+    padding: 3em;
 }
 
 .modal .content-wrapper .content div {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .modal .content-wrapper .content p {
-    font-size: 18px;
+    font-size: 15px;
     line-height: 1.75;
     text-align: left;
+    font-family: 'Montserrat',
+        sans-serif;
+    font-weight: 500;
+    color: #888888;
+    margin-right: auto;
 }
 
 .modal .content-wrapper .content div img {
