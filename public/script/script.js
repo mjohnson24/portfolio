@@ -215,12 +215,15 @@ document.addEventListener('scroll', function () {
     }
 })
 
-const time = new Date()
-const currentHour = time.getHours();
+var mql = window.matchMedia('(min-width: 768px)');
+if (mql.matches) {
+    const time = new Date()
+    const currentHour = time.getHours();
 
-window.addEventListener('DOMContentLoaded', function () {
-    if (!(currentHour >= 6 && currentHour <= 21)) {
-        switcher.checked = true;
-        body.classList.add("dark-theme");
-    }
-})
+    window.addEventListener('DOMContentLoaded', function () {
+        if (!(currentHour >= 6 && currentHour <= 21)) {
+            switcher.checked = true;
+            body.classList.add("dark-theme");
+        }
+    })
+}
