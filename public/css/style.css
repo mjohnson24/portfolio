@@ -565,16 +565,6 @@ h3 {
   }
 }
 
-/* The Typewriter */
-#typewriter {
-  color: black;
-  font-size: 120px;
-  font-weight: 900;
-  font-family: 'Metropolis';
-  text-transform: uppercase;
-  overflow: hidden;
-}
-
 /* Scroll down arrow */
 .arrow {
   width: 2.1rem;
