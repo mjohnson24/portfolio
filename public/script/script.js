@@ -176,16 +176,22 @@ var apply_dark = false;
 var scrolled = false;
 
 switcher.addEventListener('click', function () {
-    if (switcher.checked) {
-        apply_dark = true;
-        header.classList.remove('scrolled');
-        header.classList.add('dark-header-scrolled');
+    if (window.pageYOffset > window.innerHeight) {
+        if (switcher.checked) {
+            apply_dark = true;
+            header.classList.remove('scrolled');
+            header.classList.add('dark-header-scrolled');
 
+        } else {
+            apply_dark = false;
+            header.classList.remove('dark-header-scrolled');
+            header.classList.add('scrolled');
+        }
     } else {
-        apply_dark = false;
         header.classList.remove('dark-header-scrolled');
-        header.classList.add('scrolled');
+        header.classList.remove('scrolled');
     }
+
 })
 
 document.addEventListener('scroll', function () {
@@ -206,5 +212,15 @@ document.addEventListener('scroll', function () {
         scrolled = false;
         header.classList.remove('scrolled');
         header.classList.remove('dark-header-scrolled');
+    }
+})
+
+const time = new Date()
+const currentHour = time.getHours();
+
+window.addEventListener('DOMContentLoaded', function () {
+    if (!(currentHour >= 6 && currentHour <= 21)) {
+        switcher.checked = true;
+        body.classList.add("dark-theme");
     }
 })
