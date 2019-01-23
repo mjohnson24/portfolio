@@ -173,7 +173,6 @@ menu_button.addEventListener('click', function () {
 const header = document.querySelector('header');
 const switcher = document.getElementById('cbx');
 var apply_dark = false;
-var scrolled = false;
 
 switcher.addEventListener('click', function () {
     if (window.pageYOffset > window.innerHeight) {
