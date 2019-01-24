@@ -4,6 +4,10 @@ $("body").delay(100).animate({
     "opacity": "1"
 }, 1000);
 
+var myScrollbar = new GeminiScrollbar({
+    element: document.querySelector('body')
+}).create();
+
 const container = document.querySelector(".container");
 const rotateDiv = document.querySelector(".pleaserotate");
 
