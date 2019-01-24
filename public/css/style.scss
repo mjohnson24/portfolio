@@ -21,6 +21,20 @@
     src: url('../fonts/Gilroy-ExtraBold.otf') format('woff2');
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
+    // outline: 1px solid slategrey;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+}
+
 .transparent {
     opacity: .2;
 }
