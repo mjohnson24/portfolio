@@ -203,7 +203,7 @@ if (mql.matches) {
     const time = new Date()
     const currentHour = time.getHours();
     window.addEventListener('DOMContentLoaded', function () {
-        if (!(currentHour >= 6 && currentHour <= 21)) {
+        if (currentHour >= 22 || currentHour <= 6) {
             switcher.checked = true;
             body.classList.add("dark-theme");
         }
