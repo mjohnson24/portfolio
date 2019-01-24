@@ -162,6 +162,7 @@ menu_button.addEventListener('click', function () {
                 label_menu.checked = '';
                 menu_ul.style.left = '';
                 document.body.style.overflow = '';
+                clicked--;
             })
         }
         menu_ul.style.left = '';
@@ -170,56 +171,37 @@ menu_button.addEventListener('click', function () {
     }
 })
 
+// Transparent header depending on the scroll position
 const header = document.querySelector('header');
 const switcher = document.getElementById('cbx');
-var apply_dark = false;
-var scrolled = false;
+document.addEventListener('DOMContentLoaded', function () {
+    if (window.pageYOffset < window.innerHeight) {
+        header.style.background = 'none';
+    } else {
+        header.style.background = '';
+    }
+})
 
 switcher.addEventListener('click', function () {
-    if (window.pageYOffset > window.innerHeight) {
-        if (switcher.checked) {
-            apply_dark = true;
-            header.classList.remove('scrolled');
-            header.classList.add('dark-header-scrolled');
-
-        } else {
-            apply_dark = false;
-            header.classList.remove('dark-header-scrolled');
-            header.classList.add('scrolled');
-        }
+    if (window.pageYOffset < window.innerHeight) {
+        header.style.background = 'none';
     } else {
-        header.classList.remove('dark-header-scrolled');
-        header.classList.remove('scrolled');
+        header.style.background = '';
     }
-
 })
-
 document.addEventListener('scroll', function () {
-    var height = window.innerHeight;
-    if (window.pageYOffset > height) {
-        scrolled = true;
-        if (scrolled && !apply_dark) {
-            header.classList.add('scrolled');
-            header.classList.remove('dark-header-scrolled');
-        } else if (scrolled && apply_dark) {
-            header.classList.add('dark-header-scrolled');
-            header.classList.remove('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-            header.classList.remove('dark-header-scrolled');
-        }
+    if (window.pageYOffset < window.innerHeight) {
+        header.style.background = 'none';
     } else {
-        scrolled = false;
-        header.classList.remove('scrolled');
-        header.classList.remove('dark-header-scrolled');
+        header.style.background = '';
     }
 })
 
+// Automatically set the theme based on the hour
 var mql = window.matchMedia('(min-width: 768px)');
 if (mql.matches) {
     const time = new Date()
-    const currentHour = time.getHours();
-
+    const currentHour = time.getHours() + 6;
     window.addEventListener('DOMContentLoaded', function () {
         if (!(currentHour >= 6 && currentHour <= 21)) {
             switcher.checked = true;
