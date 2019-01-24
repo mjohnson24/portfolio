@@ -21,6 +21,7 @@
     src: url('../fonts/Gilroy-ExtraBold.otf') format('woff2');
 }
 
+
 .content-wrapper::-webkit-scrollbar,
 body::-webkit-scrollbar {
     width: 5px;
@@ -196,7 +197,7 @@ body {
         sans-serif;
     margin: 0;
     opacity: 0;
-    height: 100%;
+    height: 100vh;
 }
 
 p a {
@@ -721,6 +722,7 @@ label a {
     background-size: 100% 88%;
 }
 
+
 .container {
     width: 100%;
     position: absolute;
@@ -732,13 +734,6 @@ label a {
     grid-template-columns: auto;
     grid-template-rows: auto 1fr auto;
     min-height: 100%;
-}
-
-.anchor {
-    display: block;
-    height: 40px;
-    margin-top: -40px;
-    visibility: hidden;
 }
 
 .about {
