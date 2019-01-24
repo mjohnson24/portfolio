@@ -129,7 +129,7 @@ function modalEvent(button) {
         const contentWrapper = modal.querySelector('.content-wrapper');
         const close = modal.querySelector('.close');
 
-        if (event.target.tagName === 'BUTTON') {
+        if (e.target.tagName === 'BUTTON') {
             document.body.style.overflow = 'hidden';
         }
 
