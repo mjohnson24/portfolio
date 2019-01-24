@@ -22,22 +22,6 @@
   src: url("../fonts/Gilroy-ExtraBold.otf") format("woff2");
 }
 
-.content-wrapper::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  width: 5px;
-}
-
-.content-wrapper::-webkit-scrollbar-track,
-body::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-.content-wrapper::-webkit-scrollbar-thumb,
-body::-webkit-scrollbar-thumb {
-  background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
-  outline: 1px solid slategrey;
-}
-
 .transparent {
   opacity: .2;
 }
