@@ -201,7 +201,7 @@ document.addEventListener('scroll', function () {
 var mql = window.matchMedia('(min-width: 768px)');
 if (mql.matches) {
     const time = new Date()
-    const currentHour = time.getHours() + 6;
+    const currentHour = time.getHours();
     window.addEventListener('DOMContentLoaded', function () {
         if (!(currentHour >= 6 && currentHour <= 21)) {
             switcher.checked = true;
