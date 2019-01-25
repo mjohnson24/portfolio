@@ -72,7 +72,8 @@ label input:checked+.menu .hamburger:before,
 .modal .content-wrapper .content div h1,
 #hero-sun,
 #hero-moon,
-.hero .left {
+.hero .left,
+.underline--magical:hover {
     -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
     transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -89,11 +90,6 @@ label input:checked+.menu .hamburger:before,
     .contact .right img {
         border: 40px solid #232931;
         border-bottom: none;
-    }
-
-    path {
-        fill: rgb(194, 194, 194);
-        stroke: rgb(194, 194, 194);
     }
 
     .arrow path {
@@ -144,9 +140,16 @@ label input:checked+.menu .hamburger:before,
         background-color: rgb(194, 194, 194)
     }
 
-    a {
+    a,
+    .about #frontend {
         color: rgb(194, 194, 194)
     }
+
+    .underline--magical:hover,
+    .about #frontend:hover {
+        color: #546A7B
+    }
+
 
     #scrolldown {
         color: white;
@@ -421,16 +424,26 @@ h3 {
     align-content: flex-end;
 }
 
-.hero .left path {
-    stroke-dasharray: 800;
+.hero .left .cls-1 {
+    stroke-dasharray: 600;
     opacity: 10;
-    animation: animate-svg 5s cubic-bezier(0, 0.23, 1, .1);
+    animation: animate-svg 4s cubic-bezier(0, 0.23, 1, .1);
 }
 
+.hero .left .cls-2 {
+    stroke-dasharray: 600;
+    opacity: 10;
+    animation: animate-svg-green 4s cubic-bezier(0, 0.23, 1, .1);
+}
+
+// .hero .left .cls-2 {
+//     animation: animate-svg-green 4s cubic-bezier(0, 0.23, 1, .1);
+// }
+
 .hero .left svg {
-    width: 100%;
+    width: 75%;
     margin-right: auto;
-    margin-right: auto;
+    margin-left: auto;
     z-index: 1;
 }
 
@@ -489,6 +502,30 @@ h3 {
     100% {
         opacity: 10;
         fill: rgba(0, 0, 0, 1);
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes animate-svg-green {
+    0% {
+        opacity: 0;
+        fill: none;
+        stroke-dashoffset: 600
+    }
+
+    30% {
+        opacity: 10;
+        fill: none;
+        stroke-dasharray: 600;
+    }
+
+    90% {
+        fill: rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        opacity: 10;
+        fill: #43e97b;
         stroke-dashoffset: 0;
     }
 }
@@ -740,6 +777,10 @@ label a {
     grid-template-columns: 1fr 1fr;
     padding-top: 4em;
     padding-bottom: 4em;
+}
+
+.about #frontend {
+    color: #546A7B;
 }
 
 .about h1 {

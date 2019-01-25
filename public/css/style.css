@@ -82,7 +82,8 @@ label input:checked + .menu .hamburger:before,
 .modal .content-wrapper .content div h1,
 #hero-sun,
 #hero-moon,
-.hero .left {
+.hero .left,
+.underline--magical:hover {
   -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
   transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -97,11 +98,6 @@ label input:checked + .menu .hamburger:before,
 .dark-theme .contact .right img {
   border: 40px solid #232931;
   border-bottom: none;
-}
-
-.dark-theme path {
-  fill: #c2c2c2;
-  stroke: #c2c2c2;
 }
 
 .dark-theme .arrow path {
@@ -152,8 +148,14 @@ label input:checked + .menu .hamburger:before,
   background-color: #c2c2c2;
 }
 
-.dark-theme a {
+.dark-theme a,
+.dark-theme .about #frontend {
   color: #c2c2c2;
+}
+
+.dark-theme .underline--magical:hover,
+.dark-theme .about #frontend:hover {
+  color: #546A7B;
 }
 
 .dark-theme #scrolldown {
@@ -454,17 +456,24 @@ h3 {
       align-content: flex-end;
 }
 
-.hero .left path {
-  stroke-dasharray: 800;
+.hero .left .cls-1 {
+  stroke-dasharray: 600;
   opacity: 10;
-  -webkit-animation: animate-svg 5s cubic-bezier(0, 0.23, 1, 0.1);
-          animation: animate-svg 5s cubic-bezier(0, 0.23, 1, 0.1);
+  -webkit-animation: animate-svg 4s cubic-bezier(0, 0.23, 1, 0.1);
+          animation: animate-svg 4s cubic-bezier(0, 0.23, 1, 0.1);
+}
+
+.hero .left .cls-2 {
+  stroke-dasharray: 600;
+  opacity: 10;
+  -webkit-animation: animate-svg-green 4s cubic-bezier(0, 0.23, 1, 0.1);
+          animation: animate-svg-green 4s cubic-bezier(0, 0.23, 1, 0.1);
 }
 
 .hero .left svg {
-  width: 100%;
+  width: 75%;
   margin-right: auto;
-  margin-right: auto;
+  margin-left: auto;
   z-index: 1;
 }
 
@@ -559,6 +568,48 @@ h3 {
   100% {
     opacity: 10;
     fill: black;
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes animate-svg-green {
+  0% {
+    opacity: 0;
+    fill: none;
+    stroke-dashoffset: 600;
+  }
+  30% {
+    opacity: 10;
+    fill: none;
+    stroke-dasharray: 600;
+  }
+  90% {
+    fill: rgba(0, 0, 0, 0);
+  }
+  100% {
+    opacity: 10;
+    fill: #43e97b;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes animate-svg-green {
+  0% {
+    opacity: 0;
+    fill: none;
+    stroke-dashoffset: 600;
+  }
+  30% {
+    opacity: 10;
+    fill: none;
+    stroke-dasharray: 600;
+  }
+  90% {
+    fill: rgba(0, 0, 0, 0);
+  }
+  100% {
+    opacity: 10;
+    fill: #43e97b;
     stroke-dashoffset: 0;
   }
 }
@@ -836,6 +887,10 @@ label a {
       grid-template-columns: 1fr 1fr;
   padding-top: 4em;
   padding-bottom: 4em;
+}
+
+.about #frontend {
+  color: #546A7B;
 }
 
 .about h1 {
