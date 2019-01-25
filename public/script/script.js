@@ -94,27 +94,29 @@ $('a[href^="#"]').on('click', function (e) {
 
 });
 
+const html_bar = document.querySelector('.progressred');
+const css_bar = document.querySelector('.progressblue');
+const js_bar = document.querySelector('.progressorange');
+const ui_bar = document.querySelector('.progresspurple');
+const fortnite_bar = document.querySelector('.progressfortnite');
 
-
-var html = $(".progressred");
-var css = $(".progressblue");
-var js = $(".progressorange");
-var ui = $(".progresspurple");
-
-$(window).on("scroll", function () {
-    // Animate progess bars on scroll
-    if ($(window).scrollTop() > 1000) {
-        html.attr("id", "progress-html");
-        css.attr("id", "progress-css");
-        js.attr("id", "progress-javascript");
-        ui.attr("id", "progress-design");
+document.addEventListener('scroll', function () {
+    // Animate progress bars on scroll
+    if (window.pageYOffset > (window.innerHeight + window.innerHeight / 3)) {
+        html_bar.setAttribute('id', 'progress-html');
+        css_bar.setAttribute('id', 'progress-css');
+        js_bar.setAttribute('id', 'progress-javascript');
+        ui_bar.setAttribute('id', 'progress-design');
+        fortnite_bar.setAttribute('id', 'progress-fortnite');
     } else {
-        html.attr("id", "");
-        css.attr("id", "");
-        js.attr("id", "");
-        ui.attr("id", "");
+        html_bar.removeAttribute('id');
+        css_bar.removeAttribute('id');
+        js_bar.removeAttribute('id');
+        ui_bar.removeAttribute('id');
+        fortnite_bar.removeAttribute('id');
+
     }
-});
+})
 
 const buttons = document.querySelectorAll(`button[data-modal-trigger]`);
 

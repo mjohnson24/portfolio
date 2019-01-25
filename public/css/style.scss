@@ -891,106 +891,21 @@ label a {
     animation-delay: 2.8s;
 }
 
-.progressred {
+.skills-bar-container li .bar-container #progress-fortnite {
+    -webkit-animation-name: progress-fortnite;
+    animation-name: progress-fortnite;
+    -webkit-animation-delay: 3.5s;
+    animation-delay: 3.5s;
+}
+
+.progressred,
+.progressblue,
+.progresspurple,
+.progressorange,
+.progressgreen,
+.progressfortnite {
     background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
 }
-
-.progressblue {
-    background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
-}
-
-.progresspurple {
-    background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
-}
-
-.progressorange {
-    background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
-}
-
-.progressgreen {
-    background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
-}
-
-@-webkit-keyframes progress-html {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 90%;
-    }
-}
-
-@-webkit-keyframes progress-css {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 70%;
-    }
-}
-
-@-webkit-keyframes progress-javascript {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 60%;
-    }
-}
-
-@-webkit-keyframes progress-design {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 60%;
-    }
-}
-
-@-moz-keyframes progress-html {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 90%;
-    }
-}
-
-@-moz-keyframes progress-css {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 70%;
-    }
-}
-
-@-moz-keyframes progress-javascript {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 60%;
-    }
-}
-
-@-moz-keyframes progress-design {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 60%;
-    }
-}
-
 
 @keyframes progress-html {
     0% {
@@ -1032,6 +947,16 @@ label a {
     }
 }
 
+@keyframes progress-fortnite {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
 
 /* #################################### */
 
@@ -1059,6 +984,11 @@ label a {
 .portfolio .right {
     place-self: center;
     margin-right: 14%;
+}
+
+#meme {
+    font-size: 10px;
+    font-style: italic;
 }
 
 .portfolio figure {
