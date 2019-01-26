@@ -153,23 +153,24 @@ const menu_button = document.querySelector('label .menu');
 const label_menu = document.querySelector('label input');
 const menu_li = document.querySelectorAll('label ul li');
 const menu_ul = document.querySelector('label ul');
+const dark_overlay = document.querySelector('.dark-overlay');
 var clicked = 0;
 menu_button.addEventListener('click', function () {
     clicked++;
     if (clicked % 2 === 1) {
-        document.body.style.overflow = 'hidden';
+        dark_overlay.style.opacity = '1';
         for (let i = 0; i < menu_li.length; i++) {
             menu_li[i].addEventListener('click', function () {
                 menu_ul.style.left = '-100%';
                 label_menu.checked = '';
                 menu_ul.style.left = '';
-                document.body.style.overflow = '';
-                clicked--;
+                dark_overlay.style.opacity = '';
+                clicked = 0;
             })
         }
         menu_ul.style.left = '';
     } else {
-        document.body.style.overflow = '';
+        dark_overlay.style.opacity = '0';
     }
 })
 
