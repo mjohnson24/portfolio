@@ -773,6 +773,7 @@ label input:checked + .menu + ul {
   -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
   transition: all 700ms cubic-bezier(1, 0, 0, 1);
   opacity: 0;
+  visibility: hidden;
 }
 
 label ul {

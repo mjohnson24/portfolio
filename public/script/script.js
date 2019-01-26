@@ -159,18 +159,21 @@ menu_button.addEventListener('click', function () {
     clicked++;
     if (clicked % 2 === 1) {
         dark_overlay.style.opacity = '1';
+        dark_overlay.style.visibility = 'visible';
         for (let i = 0; i < menu_li.length; i++) {
             menu_li[i].addEventListener('click', function () {
                 menu_ul.style.left = '-100%';
                 label_menu.checked = '';
                 menu_ul.style.left = '';
                 dark_overlay.style.opacity = '';
+                dark_overlay.style.visibility = '';
                 clicked = 0;
             })
         }
         menu_ul.style.left = '';
     } else {
         dark_overlay.style.opacity = '0';
+        dark_overlay.style.visibility = 'hidden';
     }
 })
 
