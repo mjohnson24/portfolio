@@ -339,9 +339,6 @@ header h2 {
 
 main {
     grid-area: content;
-    // margin-left: 40px;
-    // margin-right: 40px;
-    // margin-bottom: 40px;
 }
 
 footer {
@@ -351,7 +348,6 @@ footer {
     width: 100%;
     background-color: white;
     top: calc(100vh - 40px);
-    // position: fixed;
 }
 
 footer h2 {
@@ -429,10 +425,6 @@ h3 {
     opacity: 10;
     animation: animate-svg-green 4s cubic-bezier(0, 0.23, 1, .1);
 }
-
-// .hero .left .cls-2 {
-//     animation: animate-svg-green 4s cubic-bezier(0, 0.23, 1, .1);
-// }
 
 .hero .left svg {
     width: 75%;
@@ -664,8 +656,6 @@ label input:checked+.menu .hamburger:before {
 }
 
 label input:checked+.menu+ul {
-    /* visibility: visible;
-    opacity: 1; */
     left: 0;
 }
 
@@ -691,7 +681,6 @@ label ul {
     width: 330px;
     z-index: 200;
     position: absolute;
-    // top: 40px;
     left: -100%;
     background: white;
     margin-left: auto;

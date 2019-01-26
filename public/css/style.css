@@ -759,8 +759,6 @@ label input:checked + .menu .hamburger:before {
 }
 
 label input:checked + .menu + ul {
-  /* visibility: visible;
-    opacity: 1; */
   left: 0;
 }
 

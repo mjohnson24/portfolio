@@ -6,7 +6,6 @@ $("body").delay(100).animate({
 
 const container = document.querySelector(".container");
 const rotateDiv = document.querySelector(".pleaserotate");
-
 const check = document.getElementById("cbx");
 const body = document.querySelector("body");
 
