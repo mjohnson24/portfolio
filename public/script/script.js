@@ -215,15 +215,3 @@ if (mql.matches) {
         }
     })
 }
-
-var OSName = "Unknown";
-if (window.navigator.userAgent.indexOf("Windows NT 10.0") != -1) OSName = "Windows";
-if (window.navigator.userAgent.indexOf("Windows NT 6.2") != -1) OSName = "Windows";
-if (window.navigator.userAgent.indexOf("Windows NT 6.1") != -1) OSName = "Windows";
-if (window.navigator.userAgent.indexOf("Windows NT 6.0") != -1) OSName = "Windows";
-if (window.navigator.userAgent.indexOf("Windows NT 5.1") != -1) OSName = "Windows";
-
-if (OSName !== 'Windows') {
-    document.body.classList.add('.windows');
-    console.log('ok')
-}
