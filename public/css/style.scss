@@ -25,6 +25,27 @@
     opacity: .2;
 }
 
+*:focus {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #43e97b;
+    outline: 1px solid slategrey;
+    border-radius: 5px;
+}
+
+
 .change-browser {
     display: flex;
     align-items: center;
