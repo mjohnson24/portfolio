@@ -133,7 +133,8 @@ label input:checked + .menu .hamburger:before,
 .dark-theme .based,
 .dark-theme #goback-text,
 .dark-theme .modal .content-wrapper .modal-header h1,
-.dark-theme .modal .content-wrapper .content div h1 {
+.dark-theme .modal .content-wrapper .content div h1,
+.dark-theme .menu ul li a {
   color: #c2c2c2;
 }
 
