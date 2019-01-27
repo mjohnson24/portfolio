@@ -184,6 +184,7 @@ body {
     margin: 0;
     opacity: 0;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 p a {
@@ -748,7 +749,7 @@ label input:checked+.menu .hamburger:before {
 
 .about {
     height: 100vh;
-    background-color: rgb(248, 248, 248);
+    background-color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 4em;
@@ -762,6 +763,14 @@ label input:checked+.menu .hamburger:before {
 .about h1 {
     color: rgb(84, 106, 123);
     background-image: linear-gradient(to right, rgb(67, 233, 123) 0%, rgb(56, 249, 215) 100%);
+}
+
+#little-svg-skills {
+    width: 340px;
+    height: auto;
+    position: absolute;
+    transform: rotate(180deg);
+    // margin-left: -90px;
 }
 
 .skills {
@@ -936,10 +945,18 @@ label input:checked+.menu .hamburger:before {
 
 /* #################################### */
 
+#little-svg-portfolio {
+    width: 340px;
+    height: auto;
+    position: absolute;
+    transform: rotate(180deg) scaleX(-1);
+    margin-left: calc(100vw - 340px);
+}
+
 .portfolio {
     min-height: 70vh;
     height: auto;
-    background-color: rgb(248, 248, 248);
+    background-color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 3em;
@@ -986,7 +1003,6 @@ label input:checked+.menu .hamburger:before {
     justify-content: center;
     height: auto;
     width: 100%;
-    background-color: rgb(248, 248, 248);
     flex-direction: column;
     padding-bottom: 10em;
 }
@@ -994,16 +1010,23 @@ label input:checked+.menu .hamburger:before {
 .all-projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 85%;
-    grid-gap: 5em;
+    width: 83%;
+    grid-gap: 2em;
 }
 
 .all-projects-grid div {
     place-self: center;
+    box-shadow: 0 0 15px -1px rgba(0, 0, 0, .1);
+    border-radius: 5px;
+    padding: 20px;
 }
 
 .all-projects-grid div img {
     width: 100%;
+}
+
+.all-projects-grid div img:hover {
+    opacity: .8;
 }
 
 .all-projects div p {
@@ -1019,13 +1042,6 @@ label input:checked+.menu .hamburger:before {
     margin: 5px;
 }
 
-.all-projects div #description {
-    letter-spacing: 2px;
-    font-size: 15px;
-    text-transform: uppercase;
-    font-style: normal;
-}
-
 button {
     cursor: pointer;
 }
@@ -1037,7 +1053,7 @@ button {
     border-radius: 0.25rem;
     box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.12), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
     transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-    font-size: 0.875rem;
+    font-size: 15px;
     font-weight: 300;
 }
 
@@ -1096,6 +1112,7 @@ button {
     transform: scale(0);
     transition: transform 0.25s;
     transition-delay: 0.15s;
+    border-radius: 5px;
 }
 
 .modal .content-wrapper .close {
@@ -1209,6 +1226,14 @@ button {
     place-self: center;
     margin-right: 5em;
 
+}
+
+#little-svg-about {
+    width: 340px;
+    height: auto;
+    position: absolute;
+    transform: rotate(180deg);
+    margin-left: -90px;
 }
 
 .contact {
@@ -1460,5 +1485,12 @@ button {
     .hero .right img {
         margin-top: 90px;
         margin-right: 90px
+    }
+
+    #little-svg-skills,
+    #little-svg-portfolio,
+    #little-svg-about {
+        width: 200px;
+        margin-left: 0;
     }
 }

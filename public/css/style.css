@@ -188,6 +188,7 @@ body {
   margin: 0;
   opacity: 0;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 p a {
@@ -866,7 +867,7 @@ label input:checked + .menu .hamburger:before {
 
 .about {
   height: 100vh;
-  background-color: #f8f8f8;
+  background-color: #fff;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -883,6 +884,14 @@ label input:checked + .menu .hamburger:before {
   color: #546a7b;
   background-image: -webkit-gradient(linear, left top, right top, from(#43e97b), to(#38f9d7));
   background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+}
+
+#little-svg-skills {
+  width: 340px;
+  height: auto;
+  position: absolute;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .skills {
@@ -1091,10 +1100,19 @@ label input:checked + .menu .hamburger:before {
 }
 
 /* #################################### */
+#little-svg-portfolio {
+  width: 340px;
+  height: auto;
+  position: absolute;
+  -webkit-transform: rotate(180deg) scaleX(-1);
+          transform: rotate(180deg) scaleX(-1);
+  margin-left: calc(100vw - 340px);
+}
+
 .portfolio {
   min-height: 70vh;
   height: auto;
-  background-color: #f8f8f8;
+  background-color: #fff;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -1150,7 +1168,6 @@ label input:checked + .menu .hamburger:before {
           justify-content: center;
   height: auto;
   width: 100%;
-  background-color: #f8f8f8;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1163,16 +1180,24 @@ label input:checked + .menu .hamburger:before {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  width: 85%;
-  grid-gap: 5em;
+  width: 83%;
+  grid-gap: 2em;
 }
 
 .all-projects-grid div {
   place-self: center;
+  -webkit-box-shadow: 0 0 15px -1px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 15px -1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
 }
 
 .all-projects-grid div img {
   width: 100%;
+}
+
+.all-projects-grid div img:hover {
+  opacity: .8;
 }
 
 .all-projects div p {
@@ -1188,13 +1213,6 @@ label input:checked + .menu .hamburger:before {
   margin: 5px;
 }
 
-.all-projects div #description {
-  letter-spacing: 2px;
-  font-size: 15px;
-  text-transform: uppercase;
-  font-style: normal;
-}
-
 button {
   cursor: pointer;
 }
@@ -1208,7 +1226,7 @@ button {
           box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.12), 0 0.0625rem 0.125rem rgba(0, 0, 0, 0.24);
   -webkit-transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  font-size: 0.875rem;
+  font-size: 15px;
   font-weight: 300;
 }
 
@@ -1292,6 +1310,7 @@ button {
   transition: transform 0.25s, -webkit-transform 0.25s;
   -webkit-transition-delay: 0.15s;
           transition-delay: 0.15s;
+  border-radius: 5px;
 }
 
 .modal .content-wrapper .close {
@@ -1431,6 +1450,15 @@ button {
 .about .right {
   place-self: center;
   margin-right: 5em;
+}
+
+#little-svg-about {
+  width: 340px;
+  height: auto;
+  position: absolute;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  margin-left: -90px;
 }
 
 .contact {
@@ -1661,6 +1689,12 @@ button {
   .hero .right img {
     margin-top: 90px;
     margin-right: 90px;
+  }
+  #little-svg-skills,
+  #little-svg-portfolio,
+  #little-svg-about {
+    width: 200px;
+    margin-left: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
