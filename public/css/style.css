@@ -949,7 +949,7 @@ label input:checked + .menu .hamburger:before {
   height: 100%;
   border-radius: 5px;
   -webkit-animation-duration: 2s;
-  animation-duration: 2s;
+  animation-duration: 1s;
   -webkit-animation-timing-function: ease-out;
   animation-timing-function: ease-out;
   -webkit-animation-fill-mode: both;
@@ -959,36 +959,36 @@ label input:checked + .menu .hamburger:before {
 .skills-bar-container li .bar-container #progress-html {
   -webkit-animation-name: progress-html;
   animation-name: progress-html;
-  -webkit-animation-delay: 0.7s;
-  animation-delay: 0.7s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
 }
 
 .skills-bar-container li .bar-container #progress-css {
   -webkit-animation-name: progress-css;
   animation-name: progress-css;
-  -webkit-animation-delay: 1.4s;
-  animation-delay: 1.4s;
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
 }
 
 .skills-bar-container li .bar-container #progress-javascript {
   -webkit-animation-name: progress-javascript;
   animation-name: progress-javascript;
-  -webkit-animation-delay: 2.1s;
-  animation-delay: 2.1s;
+  -webkit-animation-delay: 1.5s;
+  animation-delay: 1.5s;
 }
 
 .skills-bar-container li .bar-container #progress-design {
   -webkit-animation-name: progress-design;
   animation-name: progress-design;
-  -webkit-animation-delay: 2.8s;
-  animation-delay: 2.8s;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
 }
 
 .skills-bar-container li .bar-container #progress-fortnite {
   -webkit-animation-name: progress-fortnite;
   animation-name: progress-fortnite;
-  -webkit-animation-delay: 3.5s;
-  animation-delay: 3.5s;
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
 }
 
 .progressred,
@@ -1333,11 +1333,6 @@ button {
 .modal .content-wrapper .close:after {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-}
-
-.modal .content-wrapper .close:hover {
-  -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
 }
 
 .modal .content-wrapper .close:hover:before,
