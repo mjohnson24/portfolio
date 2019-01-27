@@ -49,8 +49,8 @@
 footer,
 .container,
 header,
-label ul,
-label a,
+.menu ul,
+.menu ul li a,
 .contact .right img,
 path,
 .about,
@@ -90,7 +90,7 @@ label input:checked + .menu .hamburger:before,
 
 .dark-theme footer,
 .dark-theme .container,
-.dark-theme label ul,
+.dark-theme .menu ul,
 .dark-theme header {
   background-color: #232931;
 }
@@ -758,10 +758,6 @@ label input:checked + .menu .hamburger:before {
   top: 0;
 }
 
-label input:checked + .menu + ul {
-  left: 0;
-}
-
 .dark-overlay {
   width: 100%;
   position: fixed;
@@ -774,7 +770,7 @@ label input:checked + .menu + ul {
   z-index: 1;
 }
 
-label ul {
+.menu ul {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -819,7 +815,7 @@ label ul {
           align-items: center;
 }
 
-label ul li {
+.menu ul li {
   font-size: 40px;
   margin: 10px;
   text-align: left;
@@ -830,12 +826,12 @@ label ul li {
   -webkit-transform: translate3d(0, 0, 0);
 }
 
-label ul .based {
+.menu ul .based {
   font-size: 15px;
   margin-top: 40px;
 }
 
-label a {
+.menu ul li a {
   color: black;
   text-decoration: none;
   font-weight: 900;
@@ -1540,7 +1536,7 @@ button {
   main {
     margin: 0;
   }
-  label ul {
+  .menu ul {
     left: 0;
     left: -100%;
     width: 100%;
@@ -1655,7 +1651,7 @@ button {
   footer h2 {
     font-size: 12px;
   }
-  label ul li {
+  .menu ul li {
     font-size: 30px;
     margin-left: 30px;
   }

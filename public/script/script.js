@@ -150,8 +150,8 @@ function modalEvent(button) {
 
 const menu_button = document.querySelector('label .menu');
 const label_menu = document.querySelector('label input');
-const menu_li = document.querySelectorAll('label ul li');
-const menu_ul = document.querySelector('label ul');
+const menu_li = document.querySelectorAll('.menu ul li');
+const menu_ul = document.querySelector('.menu ul');
 const dark_overlay = document.querySelector('.dark-overlay');
 var clicked = 0;
 menu_button.addEventListener('click', function () {
@@ -160,6 +160,7 @@ menu_button.addEventListener('click', function () {
         dark_overlay.style.opacity = '1';
         dark_overlay.style.visibility = 'visible';
         for (let i = 0; i < menu_li.length; i++) {
+            menu_ul.style.left = '0';
             menu_li[i].addEventListener('click', function () {
                 menu_ul.style.left = '-100%';
                 label_menu.checked = '';
@@ -169,10 +170,10 @@ menu_button.addEventListener('click', function () {
                 clicked = 0;
             })
         }
-        menu_ul.style.left = '';
     } else {
         dark_overlay.style.opacity = '0';
         dark_overlay.style.visibility = 'hidden';
+        menu_ul.style.left = '';
     }
 })
 
