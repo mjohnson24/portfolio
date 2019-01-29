@@ -117,37 +117,6 @@ document.addEventListener('scroll', function () {
     }
 })
 
-const buttons = document.querySelectorAll(`button[data-modal-trigger]`);
-
-for (let button of buttons) {
-    modalEvent(button);
-}
-
-function modalEvent(button) {
-    button.addEventListener('click', (e) => {
-        const trigger = button.getAttribute('data-modal-trigger');
-        const modal = document.querySelector(`[data-modal=${trigger}]`);
-        const contentWrapper = modal.querySelector('.content-wrapper');
-        const close = modal.querySelector('.close');
-
-        if (e.target.tagName === 'BUTTON') {
-            document.body.style.overflow = 'hidden';
-        }
-
-        close.addEventListener('click', () => {
-            modal.classList.remove('open')
-            document.body.style.overflow = '';
-        });
-        modal.addEventListener('click', () => {
-            modal.classList.remove('open')
-            document.body.style.overflow = '';
-        });
-        contentWrapper.addEventListener('click', (e) => e.stopPropagation());
-
-        modal.classList.toggle('open');
-    });
-}
-
 const menu_button = document.querySelector('label .menu');
 const label_menu = document.querySelector('label input');
 const menu_li = document.querySelectorAll('.menu ul li');
