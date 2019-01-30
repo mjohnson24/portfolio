@@ -72,7 +72,8 @@ label input:checked + .menu .hamburger:before,
 #hero-sun,
 #hero-moon,
 .hero .left,
-.underline--magical:hover {
+.underline--magical:hover,
+main {
   -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
   transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -97,7 +98,8 @@ label input:checked + .menu .hamburger:before,
 .dark-theme .about,
 .dark-theme .portfolio,
 .dark-theme .all-projects,
-.dark-theme .hero .right {
+.dark-theme .hero .right,
+.dark-theme main {
   background-color: #393e46;
 }
 
@@ -1189,8 +1191,8 @@ label input:checked + .menu .hamburger:before {
 
 .all-projects-grid .hover span {
   margin-left: 50px;
-  margin-top: 180px;
-  width: 70%;
+  margin-top: 200px;
+  width: 80%;
   display: none;
 }
 
@@ -1375,6 +1377,7 @@ label input:checked + .menu .hamburger:before {
 
 .contact .left {
   place-self: center;
+  margin-bottom: 5em;
 }
 
 .contact .right {
@@ -1395,6 +1398,13 @@ label input:checked + .menu .hamburger:before {
   .hero {
     -ms-grid-rows: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .all-projects-grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -1502,6 +1512,9 @@ label input:checked + .menu .hamburger:before {
     height: auto;
     padding-bottom: 0;
   }
+  .contact .left {
+    margin-bottom: 0;
+  }
   .contact .right img {
     height: calc(100vh - 200px);
   }
@@ -1551,6 +1564,9 @@ label input:checked + .menu .hamburger:before {
   }
   .all-projects {
     padding-bottom: 3em;
+  }
+  .portfolio {
+    min-height: 100vh;
   }
 }
 /*# sourceMappingURL=style.css.map */
