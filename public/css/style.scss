@@ -705,7 +705,6 @@ label input:checked+.menu .hamburger:before {
     background-repeat: no-repeat;
     background-size: 100% 0.2em;
     background-position: 0 88%;
-    transition: background-size 0.25s ease-in;
 }
 
 .underline--magical:hover {
@@ -981,9 +980,10 @@ label input:checked+.menu .hamburger:before {
     align-items: center;
     justify-content: center;
     height: auto;
-    width: 100%;
+    width: 85%;
+    margin: 0 auto;
     flex-direction: column;
-    padding-bottom: 10em;
+    padding-bottom: 5em;
 }
 
 .all-projects-grid {
@@ -1295,7 +1295,6 @@ label input:checked+.menu .hamburger:before {
 
     .portfolio {
         grid-template-columns: auto;
-        min-height: 100vh;
         height: auto;
     }
 
@@ -1385,5 +1384,9 @@ label input:checked+.menu .hamburger:before {
     #little-svg-about {
         width: 200px;
         margin-left: 0;
+    }
+
+    .all-projects {
+        padding-bottom: 3em;
     }
 }
