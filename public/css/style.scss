@@ -64,7 +64,8 @@ label input:checked+.menu .hamburger:before,
 .hero .left,
 .underline--magical:hover,
 main,
-all-projects-grid {
+.all-projects-grid,
+.single-project-grid div h1 {
     -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
     transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -113,13 +114,14 @@ all-projects-grid {
     .contact span,
     .based,
     #goback-text,
-    .menu ul li a {
-        color: rgb(194, 194, 194);
+    .menu ul li a,
+    .single-project-grid div h1 {
+        color: #fff;
     }
 
     a,
     .about #frontend {
-        color: rgb(194, 194, 194)
+        color: #fff
     }
 
     .underline--magical:hover,
@@ -1258,8 +1260,8 @@ header .menu #back a {
     padding-left: 7em;
     padding-right: 7em;
     margin: 0 auto;
-    margin-top: 3em;
-    grid-gap: 3em;
+    margin-top: 5em;
+    grid-gap: 5em 3em;
 }
 
 .single-project-grid div h1 {
@@ -1293,11 +1295,16 @@ header .menu #back a {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .single-project-grid #project-video video {
     width: 75%;
     padding: 3em;
+}
+
+.single-project-grid #project-video #mobile {
+    width: 30%
 }
 
 @media screen and (max-width: 1400px) {
@@ -1469,6 +1476,14 @@ header .menu #back a {
         grid-column: auto;
     }
 
+    .single-project-grid #project-video video {
+        width: 100%;
+    }
+
+    .single-project-grid #project-video #mobile {
+        width: 70%;
+    }
+
 }
 
 @media screen and (max-width: 500px) {
@@ -1530,5 +1545,9 @@ header .menu #back a {
     .single-project-header {
         padding-left: 1em;
         padding-right: 1em;
+    }
+
+    .single-project-grid #project-video video {
+        padding: 1em;
     }
 }

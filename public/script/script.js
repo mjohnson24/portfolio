@@ -153,28 +153,52 @@ if (window.location.pathname === '/') {
 // Transparent header depending on the scroll position
 const header = document.querySelector('header');
 const switcher = document.getElementById('cbx');
-document.addEventListener('DOMContentLoaded', function () {
-    if (window.pageYOffset < window.innerHeight) {
-        header.style.background = 'none';
-    } else {
-        header.style.background = '';
-    }
-})
-
-switcher.addEventListener('click', function () {
-    if (window.pageYOffset < window.innerHeight) {
-        header.style.background = 'none';
-    } else {
-        header.style.background = '';
-    }
-})
-document.addEventListener('scroll', function () {
-    if (window.pageYOffset < window.innerHeight) {
-        header.style.background = 'none';
-    } else {
-        header.style.background = '';
-    }
-})
+if (window.location.pathname === '/') {
+    document.addEventListener('DOMContentLoaded', function () {
+        if (window.pageYOffset < window.innerHeight) {
+            header.style.background = 'none';
+        } else {
+            header.style.background = '';
+        }
+    });
+    switcher.addEventListener('click', function () {
+        if (window.pageYOffset < window.innerHeight) {
+            header.style.background = 'none';
+        } else {
+            header.style.background = '';
+        }
+    })
+    document.addEventListener('scroll', function () {
+        if (window.pageYOffset < window.innerHeight) {
+            header.style.background = 'none';
+        } else {
+            header.style.background = '';
+        }
+    })
+} else {
+    const projectgrid_header = document.querySelector('.single-project-header');
+    document.addEventListener('DOMContentLoaded', function () {
+        if (window.pageYOffset < projectgrid_header.offsetHeight) {
+            header.style.background = 'none';
+        } else {
+            header.style.background = '';
+        }
+    });
+    switcher.addEventListener('click', function () {
+        if (window.pageYOffset < projectgrid_header.offsetHeight) {
+            header.style.background = 'none';
+        } else {
+            header.style.background = '';
+        }
+    })
+    document.addEventListener('scroll', function () {
+        if (window.pageYOffset < projectgrid_header.offsetHeight) {
+            header.style.background = 'none';
+        } else {
+            header.style.background = '';
+        }
+    })
+}
 
 // Automatically set the theme based on the hour
 var mql = window.matchMedia('(min-width: 768px)');
