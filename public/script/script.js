@@ -43,10 +43,12 @@ if (/Android|webOS|iPhone|iPod|Opera Mini/i.test(navigator.userAgent)) {
         // if rotated
         if (screenOrientation != 0) {
             rotateDiv.style.height = "100vh";
+            rotateDiv.style.display = 'flex';
             container.style.display = "none";
         } else {
             rotateDiv.style.height = "0";
-            container.style.display = "initial";
+            rotateDiv.style.display = 'none'
+            container.style.display = "block";
         }
     });
 }
@@ -93,58 +95,60 @@ $('a[href^="#"]').on('click', function (e) {
 
 });
 
-const html_bar = document.querySelector('.progressred');
-const css_bar = document.querySelector('.progressblue');
-const js_bar = document.querySelector('.progressorange');
-const ui_bar = document.querySelector('.progresspurple');
-const fortnite_bar = document.querySelector('.progressfortnite');
+if (window.location.pathname === '/') {
+    const html_bar = document.querySelector('.progressred');
+    const css_bar = document.querySelector('.progressblue');
+    const js_bar = document.querySelector('.progressorange');
+    const ui_bar = document.querySelector('.progresspurple');
+    const fortnite_bar = document.querySelector('.progressfortnite');
 
-document.addEventListener('scroll', function () {
-    // Animate progress bars on scroll
-    if (window.pageYOffset > (window.innerHeight + window.innerHeight / 3)) {
-        html_bar.setAttribute('id', 'progress-html');
-        css_bar.setAttribute('id', 'progress-css');
-        js_bar.setAttribute('id', 'progress-javascript');
-        ui_bar.setAttribute('id', 'progress-design');
-        fortnite_bar.setAttribute('id', 'progress-fortnite');
-    } else {
-        html_bar.removeAttribute('id');
-        css_bar.removeAttribute('id');
-        js_bar.removeAttribute('id');
-        ui_bar.removeAttribute('id');
-        fortnite_bar.removeAttribute('id');
+    document.addEventListener('scroll', function () {
+        // Animate progress bars on scroll
+        if (window.pageYOffset > (window.innerHeight + window.innerHeight / 3)) {
+            html_bar.setAttribute('id', 'progress-html');
+            css_bar.setAttribute('id', 'progress-css');
+            js_bar.setAttribute('id', 'progress-javascript');
+            ui_bar.setAttribute('id', 'progress-design');
+            fortnite_bar.setAttribute('id', 'progress-fortnite');
+        } else {
+            html_bar.removeAttribute('id');
+            css_bar.removeAttribute('id');
+            js_bar.removeAttribute('id');
+            ui_bar.removeAttribute('id');
+            fortnite_bar.removeAttribute('id');
 
-    }
-})
-
-const menu_button = document.querySelector('label .menu');
-const label_menu = document.querySelector('label input');
-const menu_li = document.querySelectorAll('.menu ul li');
-const menu_ul = document.querySelector('.menu ul');
-const dark_overlay = document.querySelector('.dark-overlay');
-var clicked = 0;
-menu_button.addEventListener('click', function () {
-    clicked++;
-    if (clicked % 2 === 1) {
-        dark_overlay.style.opacity = '1';
-        dark_overlay.style.visibility = 'visible';
-        for (let i = 0; i < menu_li.length; i++) {
-            menu_ul.style.left = '0';
-            menu_li[i].addEventListener('click', function () {
-                menu_ul.style.left = '-100%';
-                label_menu.checked = '';
-                menu_ul.style.left = '';
-                dark_overlay.style.opacity = '';
-                dark_overlay.style.visibility = '';
-                clicked = 0;
-            })
         }
-    } else {
-        dark_overlay.style.opacity = '0';
-        dark_overlay.style.visibility = 'hidden';
-        menu_ul.style.left = '';
-    }
-})
+    })
+
+    const menu_button = document.querySelector('label .menu');
+    const label_menu = document.querySelector('label input');
+    const menu_li = document.querySelectorAll('.menu ul li');
+    const menu_ul = document.querySelector('.menu ul');
+    const dark_overlay = document.querySelector('.dark-overlay');
+    var clicked = 0;
+    menu_button.addEventListener('click', function () {
+        clicked++;
+        if (clicked % 2 === 1) {
+            dark_overlay.style.opacity = '1';
+            dark_overlay.style.visibility = 'visible';
+            for (let i = 0; i < menu_li.length; i++) {
+                menu_ul.style.left = '0';
+                menu_li[i].addEventListener('click', function () {
+                    menu_ul.style.left = '-100%';
+                    label_menu.checked = '';
+                    menu_ul.style.left = '';
+                    dark_overlay.style.opacity = '';
+                    dark_overlay.style.visibility = '';
+                    clicked = 0;
+                })
+            }
+        } else {
+            dark_overlay.style.opacity = '0';
+            dark_overlay.style.visibility = 'hidden';
+            menu_ul.style.left = '';
+        }
+    })
+}
 
 // Transparent header depending on the scroll position
 const header = document.querySelector('header');

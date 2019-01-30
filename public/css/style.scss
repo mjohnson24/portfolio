@@ -63,7 +63,8 @@ label input:checked+.menu .hamburger:before,
 #hero-moon,
 .hero .left,
 .underline--magical:hover,
-main {
+main,
+all-projects-grid {
     -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
     transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -186,6 +187,7 @@ p a {
     height: 0;
     background-color: white;
     z-index: 99999;
+    display: none;
 }
 
 .pleaserotate>h1 {
@@ -548,8 +550,6 @@ h3 {
         transform: translateY(10px);
     }
 }
-
-
 
 .stretched {
     width: 100px;
@@ -939,7 +939,7 @@ label input:checked+.menu .hamburger:before {
     background-color: #fff;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding-top: 3em;
+    padding-top: 6em;
     padding-bottom: 3em;
 }
 
@@ -985,7 +985,9 @@ label input:checked+.menu .hamburger:before {
     width: 85%;
     margin: 0 auto;
     flex-direction: column;
-    padding-bottom: 5em;
+    grid-column: 1/3;
+    margin-top: 6em;
+    margin-bottom: 3em;
 }
 
 .all-projects-grid {
@@ -1201,6 +1203,103 @@ label input:checked+.menu .hamburger:before {
     width: 100%
 }
 
+// Single project
+header .menu #back {
+    position: absolute;
+    float: left;
+    z-index: 2000;
+    left: 15px;
+    height: 40px;
+    width: 40px;
+    -webkit-transition: all 500ms cubic-bezier(1, 0, 0, 1);
+    transition: all 500ms cubic-bezier(1, 0, 0, 1);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .menu #back a {
+    color: black;
+}
+
+.single-project-header {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
+    padding-left: 7em;
+    padding-right: 7em;
+    padding-top: 5em;
+    padding-bottom: 5em;
+}
+
+.single-project-header #title {
+    font-family: 'Gilroy-Bold';
+    font-size: 42px;
+    color: white;
+}
+
+.single-project-header #title2 {
+    font-family: 'Gilroy-Bold';
+    font-size: 42px;
+    color: black;
+}
+
+.single-project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    padding-left: 7em;
+    padding-right: 7em;
+    margin: 0 auto;
+    margin-top: 3em;
+    grid-gap: 3em;
+}
+
+.single-project-grid div h1 {
+    font-family: 'Gilroy-Bold';
+    font-size: 42px;
+    width: auto;
+    text-transform: none;
+    text-align: left;
+}
+
+.single-project-grid div {
+    justify-self: center;
+    align-self: center;
+
+}
+
+.single-project-grid #title {
+    justify-self: center;
+    align-self: center;
+}
+
+.single-project-grid div p {
+    line-height: 25px;
+    font-size: 15px;
+    color: #888888;
+}
+
+.single-project-grid #project-video {
+    background-color: #f0f0f0;
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-project-grid #project-video video {
+    width: 75%;
+    padding: 3em;
+}
+
 @media screen and (max-width: 1400px) {
     .hero {
         grid-template-rows: 1fr 1fr;
@@ -1305,8 +1404,16 @@ label input:checked+.menu .hamburger:before {
     .portfolio {
         grid-template-columns: auto;
         height: auto;
+        padding-bottom: 0;
     }
 
+    .portfolio .all-projects {
+        grid-column: auto;
+    }
+
+    .portfolio .right {
+        margin-top: 3em;
+    }
 
     .portfolio .right img {
         width: 100%;
@@ -1352,6 +1459,14 @@ label input:checked+.menu .hamburger:before {
     .hero .left svg {
         width: 70%;
         margin: 0 auto;
+    }
+
+    .single-project-grid {
+        grid-template-columns: auto;
+    }
+
+    .single-project-grid #project-video {
+        grid-column: auto;
     }
 
 }
@@ -1405,5 +1520,15 @@ label input:checked+.menu .hamburger:before {
 
     .portfolio {
         min-height: 100vh;
+    }
+
+    .single-project-grid {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+
+    .single-project-header {
+        padding-left: 1em;
+        padding-right: 1em;
     }
 }
