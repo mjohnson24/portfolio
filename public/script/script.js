@@ -129,6 +129,7 @@ if (window.location.pathname === '/') {
     menu_button.addEventListener('click', function () {
         clicked++;
         if (clicked % 2 === 1) {
+            bodyScrollLock.disableBodyScroll(menu_ul);
             dark_overlay.style.opacity = '1';
             dark_overlay.style.visibility = 'visible';
             for (let i = 0; i < menu_li.length; i++) {
@@ -143,6 +144,7 @@ if (window.location.pathname === '/') {
                 })
             }
         } else {
+            bodyScrollLock.clearAllBodyScrollLocks();
             dark_overlay.style.opacity = '0';
             dark_overlay.style.visibility = 'hidden';
             menu_ul.style.left = '';
