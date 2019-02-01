@@ -141,6 +141,7 @@ if (window.location.pathname === '/') {
                     dark_overlay.style.opacity = '';
                     dark_overlay.style.visibility = '';
                     clicked = 0;
+                    bodyScrollLock.clearAllBodyScrollLocks();
                 })
             }
         } else {
