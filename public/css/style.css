@@ -48,41 +48,31 @@ header,
 .menu ul,
 .menu ul li a,
 .contact .right img,
-path,
-.about,
-.hero .right,
-.portfolio,
 h2,
 a,
 .contact .contact-links li a,
-#typewriter,
 #scrolldown,
 p,
 h3,
-.skills h1,
-.about h1,
-.portfolio h1,
 .contact h1,
 .contact span,
 label input:checked + .menu .hamburger,
 label input:checked + .menu .hamburger:after,
 label input:checked + .menu .hamburger:before,
 .based,
-.all-projects,
 #hero-sun,
 #hero-moon,
-.hero .left,
 .underline--magical:hover,
 main,
 .single-project-grid div h1,
 .single-project-grid div p,
-header .menu #back a {
+header .menu #back a,
+.hero .left,
+.title {
   -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
   transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
 
-.dark-theme footer,
-.dark-theme .container,
 .dark-theme .menu ul,
 .dark-theme header {
   background-color: #232931;
@@ -98,10 +88,8 @@ header .menu #back a {
   stroke: white;
 }
 
-.dark-theme .about,
-.dark-theme .portfolio,
-.dark-theme .hero .right,
-.dark-theme main {
+.dark-theme main,
+.dark-theme footer {
   background-color: #393e46;
 }
 
@@ -115,9 +103,6 @@ header .menu #back a {
 .dark-theme #typewriter,
 .dark-theme p,
 .dark-theme h3,
-.dark-theme .about h1,
-.dark-theme .skills h1,
-.dark-theme .portfolio h1,
 .dark-theme .contact h1,
 .dark-theme .contact span,
 .dark-theme .based,
@@ -129,7 +114,8 @@ header .menu #back a {
 }
 
 .dark-theme a,
-.dark-theme .about #frontend {
+.dark-theme .about #frontend,
+.dark-theme .title {
   color: #fff;
 }
 
@@ -180,9 +166,16 @@ p a {
   color: black;
 }
 
+hr {
+  width: 70%;
+  border: 1px solid #EBECEE;
+  margin: 0 auto;
+}
+
 .anchor {
   display: block;
-  height: 0px;
+  height: 78px;
+  margin-top: -78px;
   visibility: hidden;
 }
 
@@ -215,7 +208,7 @@ header {
   grid-area: header;
   position: fixed;
   width: 100%;
-  height: 40px;
+  height: 80px;
   z-index: 1000;
   background-color: white;
 }
@@ -233,14 +226,15 @@ header h2 a {
 }
 
 header h2 {
-  text-align: center;
-  margin-left: 0;
+  text-align: left;
+  margin-left: 80px;
+  margin-top: 31px;
 }
 
 /* Theme switcher */
 .switcher {
   position: absolute;
-  top: 8px;
+  top: 30px;
   right: 0;
   opacity: 1;
   text-align: left;
@@ -375,12 +369,10 @@ footer h2 {
 }
 
 h1 {
-  font-size: 60px;
-  font-family: 'Metropolis';
+  font-size: 40px;
+  font-family: 'Gilroy-Bold';
   text-transform: uppercase;
-  text-align: right;
-  width: 240px;
-  margin: 0;
+  margin: 0 auto;
 }
 
 h2 {
@@ -390,7 +382,6 @@ h2 {
   font-size: 15px;
   font-weight: 800;
   line-height: 15px;
-  letter-spacing: 5px;
 }
 
 h3 {
@@ -404,8 +395,6 @@ h3 {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 1fr 26vw;
-      grid-template-rows: 1fr 26vw;
   height: 100vh;
 }
 
@@ -416,40 +405,15 @@ h3 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-column: 1 / 2;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1 / 3;
   background-color: white;
-}
-
-.hero.left img {
-  margin-top: auto;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
-}
-
-.hero .left .cls-1 {
-  stroke-dasharray: 600;
-  opacity: 10;
-  -webkit-animation: animate-svg 4s cubic-bezier(0, 0.23, 1, 0.1);
-          animation: animate-svg 4s cubic-bezier(0, 0.23, 1, 0.1);
-}
-
-.hero .left .cls-2 {
-  stroke-dasharray: 600;
-  opacity: 10;
-  -webkit-animation: animate-svg-green 4s cubic-bezier(0, 0.23, 1, 0.1);
-          animation: animate-svg-green 4s cubic-bezier(0, 0.23, 1, 0.1);
+  padding: 150px;
 }
 
 .hero .left svg {
@@ -460,14 +424,9 @@ h3 {
 }
 
 .hero .right {
-  background-color: #f8f8f8;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1 / 3;
   text-align: center;
+  background: url("../img/main.svg") no-repeat center center;
+  background-size: 90%;
 }
 
 .hero .right img {
@@ -483,117 +442,12 @@ h3 {
 
 #hero-sun {
   margin-top: 100px;
+  margin-left: 10%;
 }
 
 #hero-moon {
   margin-top: -100vh;
-}
-
-.single-mountain {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1 / 3;
-  -ms-grid-row: 2;
-  grid-row: 2;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background: url("../img/light2.svg") no-repeat center center;
-  background-size: cover;
-}
-
-@-webkit-keyframes animate-svg {
-  0% {
-    opacity: 0;
-    fill: none;
-    stroke-dashoffset: 600;
-  }
-  30% {
-    opacity: 10;
-    fill: none;
-    stroke-dasharray: 600;
-  }
-  90% {
-    fill: rgba(0, 0, 0, 0);
-  }
-  100% {
-    opacity: 10;
-    fill: black;
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes animate-svg {
-  0% {
-    opacity: 0;
-    fill: none;
-    stroke-dashoffset: 600;
-  }
-  30% {
-    opacity: 10;
-    fill: none;
-    stroke-dasharray: 600;
-  }
-  90% {
-    fill: rgba(0, 0, 0, 0);
-  }
-  100% {
-    opacity: 10;
-    fill: black;
-    stroke-dashoffset: 0;
-  }
-}
-
-@-webkit-keyframes animate-svg-green {
-  0% {
-    opacity: 0;
-    fill: none;
-    stroke-dashoffset: 600;
-  }
-  30% {
-    opacity: 10;
-    fill: none;
-    stroke-dasharray: 600;
-  }
-  90% {
-    fill: rgba(0, 0, 0, 0);
-  }
-  100% {
-    opacity: 10;
-    fill: #43e97b;
-    stroke-dashoffset: 0;
-  }
-}
-
-@keyframes animate-svg-green {
-  0% {
-    opacity: 0;
-    fill: none;
-    stroke-dashoffset: 600;
-  }
-  30% {
-    opacity: 10;
-    fill: none;
-    stroke-dasharray: 600;
-  }
-  90% {
-    fill: rgba(0, 0, 0, 0);
-  }
-  100% {
-    opacity: 10;
-    fill: #43e97b;
-    stroke-dashoffset: 0;
-  }
+  margin-left: 10%;
 }
 
 /* Scroll down arrow */
@@ -660,7 +514,8 @@ label .menu {
   position: absolute;
   float: left;
   z-index: 2000;
-  left: 30px;
+  top: 20px;
+  left: 20px;
   height: 40px;
   width: 40px;
   -webkit-transition: all 500ms cubic-bezier(1, 0, 0, 1);
@@ -826,7 +681,7 @@ label input:checked + .menu .hamburger:before {
 }
 
 .underline--magical {
-  background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
+  background-image: linear-gradient(120deg, #4285f4 0%, #63bbf5 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0 88%;
@@ -849,276 +704,48 @@ label input:checked + .menu .hamburger:before {
   min-height: 100%;
 }
 
+.title {
+  font-weight: 800;
+  font-size: 15px;
+}
+
 .about {
-  height: 100vh;
-  background-color: #fff;
+  height: calc(100vh - 80px);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  padding-top: 4em;
-  padding-bottom: 4em;
 }
 
 .about #frontend {
   color: #546A7B;
 }
 
-.about h1 {
-  color: #546a7b;
-  background-image: -webkit-gradient(linear, left top, right top, from(#43e97b), to(#38f9d7));
-  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
-}
-
-#little-svg-skills {
-  width: 340px;
-  height: auto;
-  position: absolute;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-}
-
 .skills {
-  height: 100vh;
-  background-color: #1c1b1f;
+  height: calc(100vh - 80px);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  padding-top: 3em;
-  padding-bottom: 3em;
-}
-
-.skills h1 {
-  color: white;
-  text-transform: none;
-  width: 210px;
-  background-image: -webkit-gradient(linear, left top, right top, from(#43e97b), to(#38f9d7));
-  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
-}
-
-/* Skills progress bars */
-.skills-bar-container {
-  width: 80%;
-  padding-left: 0;
-  list-style: none;
-  height: 80%;
-}
-
-.skills-bar-container li {
-  /* position: absolute; */
-  width: 100%;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-
-.skills-bar-container li .progressbar-title {
-  color: #fff;
-}
-
-.skills-bar-container li .progressbar-title h3 {
-  display: inline-block;
-}
-
-.skills-bar-container li .progressbar-title .percent {
-  position: absolute;
-  right: 5px;
-}
-
-.skills-bar-container li .bar-container {
-  background: #555;
-  position: relative;
-  -webkit-transform: translate3d(0, 0, 0);
-  width: 100%;
-  height: 5px;
-  margin-top: 5px;
-  display: block;
-  border-radius: 5px;
-}
-
-.skills-bar-container li .bar-container .progressbar {
-  position: absolute;
-  width: 0%;
-  height: 100%;
-  border-radius: 5px;
-  -webkit-animation-duration: 2s;
-  animation-duration: 1s;
-  -webkit-animation-timing-function: ease-out;
-  animation-timing-function: ease-out;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.skills-bar-container li .bar-container #progress-html {
-  -webkit-animation-name: progress-html;
-  animation-name: progress-html;
-  -webkit-animation-delay: 0.5s;
-  animation-delay: 0.5s;
-}
-
-.skills-bar-container li .bar-container #progress-css {
-  -webkit-animation-name: progress-css;
-  animation-name: progress-css;
-  -webkit-animation-delay: 1s;
-  animation-delay: 1s;
-}
-
-.skills-bar-container li .bar-container #progress-javascript {
-  -webkit-animation-name: progress-javascript;
-  animation-name: progress-javascript;
-  -webkit-animation-delay: 1.5s;
-  animation-delay: 1.5s;
-}
-
-.skills-bar-container li .bar-container #progress-design {
-  -webkit-animation-name: progress-design;
-  animation-name: progress-design;
-  -webkit-animation-delay: 2s;
-  animation-delay: 2s;
-}
-
-.skills-bar-container li .bar-container #progress-fortnite {
-  -webkit-animation-name: progress-fortnite;
-  animation-name: progress-fortnite;
-  -webkit-animation-delay: 2.5s;
-  animation-delay: 2.5s;
-}
-
-.progressred,
-.progressblue,
-.progresspurple,
-.progressorange,
-.progressgreen,
-.progressfortnite {
-  background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
-}
-
-@-webkit-keyframes progress-html {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 90%;
-  }
-}
-
-@keyframes progress-html {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 90%;
-  }
-}
-
-@-webkit-keyframes progress-css {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 70%;
-  }
-}
-
-@keyframes progress-css {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 70%;
-  }
-}
-
-@-webkit-keyframes progress-javascript {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 60%;
-  }
-}
-
-@keyframes progress-javascript {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 60%;
-  }
-}
-
-@-webkit-keyframes progress-design {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 60%;
-  }
-}
-
-@keyframes progress-design {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 60%;
-  }
-}
-
-@-webkit-keyframes progress-fortnite {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes progress-fortnite {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
 }
 
 /* #################################### */
-#little-svg-portfolio {
-  width: 340px;
-  height: auto;
-  position: absolute;
-  -webkit-transform: rotate(180deg) scaleX(-1);
-          transform: rotate(180deg) scaleX(-1);
-  margin-left: calc(100vw - 340px);
-}
-
 .portfolio {
   min-height: 70vh;
   height: auto;
-  background-color: #fff;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  padding-top: 6em;
-  padding-bottom: 3em;
-}
-
-.portfolio h1 {
-  color: #546A7B;
-  text-transform: none;
-  width: 180px;
-  text-align: left;
-}
-
-.portfolio .left {
-  place-self: center;
-}
-
-.portfolio .right {
-  place-self: center;
-  margin-right: 14%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 #meme {
@@ -1161,7 +788,7 @@ label input:checked + .menu .hamburger:before {
   -ms-grid-column-span: 2;
   grid-column: 1/3;
   margin-top: 10em;
-  margin-bottom: 3em;
+  margin-bottom: 10em;
 }
 
 .all-projects-grid {
@@ -1180,7 +807,7 @@ label input:checked + .menu .hamburger:before {
 .all-projects-grid .hover {
   height: 0;
   width: 100%;
-  background: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
+  background: linear-gradient(120deg, #4285f4 0%, #63bbf5 100%);
   position: absolute;
   bottom: 0;
   opacity: 0;
@@ -1226,6 +853,7 @@ label input:checked + .menu .hamburger:before {
   line-height: 40px;
   -webkit-transition: all 500ms cubic-bezier(1, 0, 0, 1);
   transition: all 500ms cubic-bezier(1, 0, 0, 1);
+  border-radius: 8px;
 }
 
 .all-projects-grid div #type {
@@ -1341,23 +969,19 @@ label input:checked + .menu .hamburger:before {
   text-align: center;
 }
 
-.about .right {
-  place-self: center;
-  margin-right: 5em;
+.about .left img {
+  width: 60%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
-#little-svg-about {
-  width: 340px;
-  height: auto;
-  position: absolute;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  margin-left: -90px;
+.about .right {
+  place-self: center;
+  padding: 5em;
 }
 
 .contact {
   height: 100vh;
-  background-color: #1c1b1f;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr;
@@ -1367,25 +991,22 @@ label input:checked + .menu .hamburger:before {
 }
 
 .contact h1 {
-  color: white;
+  color: black;
   text-transform: none;
-  width: 230px;
+  width: 220px;
+  text-align: center;
 }
 
 .contact span {
-  color: white;
+  color: black;
 }
 
-.contact .right img {
+.contact .left img {
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100vh;
-  display: block;
   -o-object-fit: cover;
      object-fit: cover;
-  border: 40px solid white;
-  border-bottom: none;
+  border-radius: 8px;
+  margin-left: 6em;
 }
 
 .contact .contact-links {
@@ -1396,7 +1017,7 @@ label input:checked + .menu .hamburger:before {
 
 .contact .contact-links li {
   display: inline-block;
-  margin: 30px;
+  margin: 10px;
   -webkit-transition: -webkit-transform 0.5s;
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
@@ -1404,8 +1025,8 @@ label input:checked + .menu .hamburger:before {
 }
 
 .contact .contact-links li a {
-  color: white;
-  font-size: 40px;
+  color: black;
+  font-size: 25px;
 }
 
 .contact .contact-links li:hover {
@@ -1415,7 +1036,7 @@ label input:checked + .menu .hamburger:before {
 
 .contact .left {
   place-self: center;
-  margin-bottom: 5em;
+  text-align: center;
 }
 
 .contact .right {
@@ -1425,11 +1046,18 @@ label input:checked + .menu .hamburger:before {
 
 .skills .left {
   place-self: center;
+  padding: 5em;
 }
 
 .skills .right {
   place-self: center;
   width: 100%;
+  text-align: center;
+}
+
+.skills .right img {
+  width: 60%;
+  place-self: center;
 }
 
 header .menu #back {
@@ -1484,7 +1112,7 @@ header .menu #back:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-image: linear-gradient(120deg, #43e97b 0%, #38f9d7 100%);
+  background-image: linear-gradient(120deg, #4285f4 0%, #63bbf5 100%);
   padding-left: 7em;
   padding-right: 7em;
   padding-top: 5em;
@@ -1595,13 +1223,6 @@ header .menu #back:hover {
   color: white;
 }
 
-@media screen and (max-width: 1400px) {
-  .hero {
-    -ms-grid-rows: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-  }
-}
-
 @media screen and (max-width: 995px) {
   .all-projects-grid {
     -ms-grid-columns: 1fr 1fr;
@@ -1615,20 +1236,39 @@ header .menu #back:hover {
         grid-template-columns: auto;
     width: 90%;
   }
-  .hero {
-    -ms-grid-columns: auto;
-        grid-template-columns: auto;
-  }
 }
 
 @media screen and (max-width: 768px) {
   main {
     margin: 0;
   }
+  .hero {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    -ms-grid-rows: .5fr 1fr;
+        grid-template-rows: .5fr 1fr;
+  }
+  .arrow,
+  #scrolldown {
+    display: none;
+  }
+  .hero .left {
+    padding: 50px;
+  }
+  .hero .left p {
+    text-align: center;
+  }
   .menu ul {
     left: 0;
     left: -100%;
     width: 100%;
+  }
+  .about .left {
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
+  .about .left img {
+    width: 40%;
   }
   header h2 {
     text-align: center;
@@ -1714,18 +1354,15 @@ header .menu #back:hover {
     padding-bottom: 0;
   }
   .contact .left {
-    margin-bottom: 0;
+    -ms-grid-row: 2;
+    grid-row: 2;
   }
-  .contact .right img {
-    height: calc(100vh - 200px);
+  .contact .left img {
+    margin-left: 0;
   }
   .portfolio .right {
     margin-right: 3em;
     margin-left: 3em;
-  }
-  .hero .left svg {
-    width: 70%;
-    margin: 0 auto;
   }
   .single-project-grid {
     -ms-grid-columns: auto;
@@ -1749,11 +1386,13 @@ header .menu #back:hover {
   #goback {
     top: 50px;
   }
-  .about .right {
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-bottom: 3em;
-    margin-top: 3em;
+  .hero .right {
+    background-size: 90%;
+  }
+  .about .right,
+  .skills .left {
+    margin: 0;
+    padding: 2em;
   }
   .skills-bar-container {
     width: 90%;
@@ -1775,23 +1414,6 @@ header .menu #back:hover {
     font-size: 30px;
     margin-left: 30px;
   }
-  .hero {
-    -ms-grid-columns: 1fr 0;
-        grid-template-columns: 1fr 0;
-  }
-  .hero .left svg {
-    margin-bottom: 250px;
-  }
-  .hero .right img {
-    margin-top: 90px;
-    margin-right: 90px;
-  }
-  #little-svg-skills,
-  #little-svg-portfolio,
-  #little-svg-about {
-    width: 200px;
-    margin-left: 0;
-  }
   .all-projects {
     padding-bottom: 3em;
   }
@@ -1800,11 +1422,12 @@ header .menu #back:hover {
   }
   .portfolio .all-projects {
     width: 100%;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding: 0;
   }
-  .contact .right img {
-    width: 100%;
+  .contact .left img {
+    width: 90%;
   }
   .single-project-grid {
     padding-left: 1em;

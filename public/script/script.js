@@ -96,30 +96,6 @@ $('a[href^="#"]').on('click', function (e) {
 });
 
 if (window.location.pathname === '/') {
-    const html_bar = document.querySelector('.progressred');
-    const css_bar = document.querySelector('.progressblue');
-    const js_bar = document.querySelector('.progressorange');
-    const ui_bar = document.querySelector('.progresspurple');
-    const fortnite_bar = document.querySelector('.progressfortnite');
-
-    document.addEventListener('scroll', function () {
-        // Animate progress bars on scroll
-        if (window.pageYOffset > (window.innerHeight + window.innerHeight / 3)) {
-            html_bar.setAttribute('id', 'progress-html');
-            css_bar.setAttribute('id', 'progress-css');
-            js_bar.setAttribute('id', 'progress-javascript');
-            ui_bar.setAttribute('id', 'progress-design');
-            fortnite_bar.setAttribute('id', 'progress-fortnite');
-        } else {
-            html_bar.removeAttribute('id');
-            css_bar.removeAttribute('id');
-            js_bar.removeAttribute('id');
-            ui_bar.removeAttribute('id');
-            fortnite_bar.removeAttribute('id');
-
-        }
-    })
-
     const menu_button = document.querySelector('label .menu');
     const label_menu = document.querySelector('label input');
     const menu_li = document.querySelectorAll('.menu ul li');
@@ -204,14 +180,14 @@ if (window.location.pathname === '/') {
 }
 
 // Automatically set the theme based on the hour
-var mql = window.matchMedia('(min-width: 768px)');
-if (mql.matches) {
-    const time = new Date()
-    const currentHour = time.getHours();
-    window.addEventListener('DOMContentLoaded', function () {
-        if (currentHour >= 22 || currentHour <= 6) {
-            switcher.checked = true;
-            body.classList.add("dark-theme");
-        }
-    })
-}
+// var mql = window.matchMedia('(min-width: 768px)');
+// if (mql.matches) {
+//     const time = new Date()
+//     const currentHour = time.getHours();
+//     window.addEventListener('DOMContentLoaded', function () {
+//         if (currentHour >= 22 || currentHour <= 6) {
+//             switcher.checked = true;
+//             body.classList.add("dark-theme");
+//         }
+//     })
+// }
