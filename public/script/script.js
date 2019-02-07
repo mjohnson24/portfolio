@@ -76,8 +76,19 @@ document.addEventListener("DOMContentLoaded", function () {
     loader = document.getElementById('loader');
     setTimeout(function () {
         loadNow(1);
-    }, 1500);
+    }, 1000);
 
+    if (window.location.pathname === '/') {
+        var t1 = anime.timeline({
+            easing: 'easeOutExpo',
+            duration: '1500',
+            delay: '1000'
+        })
+        t1.add({
+            targets: '.hero',
+            translateY: [150, 0]
+        })
+    }
 })
 
 // Smooth scrolling
@@ -108,8 +119,8 @@ if (window.location.pathname === '/') {
             bodyScrollLock.disableBodyScroll(menu_ul);
             dark_overlay.style.opacity = '1';
             dark_overlay.style.visibility = 'visible';
+            menu_ul.style.left = '0';
             for (let i = 0; i < menu_li.length; i++) {
-                menu_ul.style.left = '0';
                 menu_li[i].addEventListener('click', function () {
                     menu_ul.style.left = '-100%';
                     label_menu.checked = '';

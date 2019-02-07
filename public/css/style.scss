@@ -35,8 +35,6 @@
 footer,
 .container,
 header,
-.menu ul,
-.menu ul li a,
 .contact .right img,
 h2,
 a,
@@ -135,7 +133,7 @@ header .menu #back a,
     }
 
     #hero-moon {
-        margin-top: 100px
+        margin-top: 20vh
     }
 
 }
@@ -341,12 +339,25 @@ footer h2 {
 
 #loader {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
     z-index: 9999;
     overflow: visible;
-    background: rgb(255, 255, 255) url("../img/loader.gif") no-repeat center center;
-    background-size: 300px 300px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#loader svg {
+    width: 100%;
+    height: 40px;
+}
+
+#loader svg path,
+#loader svg rect {
+    fill: #000;
 }
 
 h1 {
@@ -410,7 +421,7 @@ h3 {
 }
 
 #hero-sun {
-    margin-top: 100px;
+    margin-top: 20vh;
     margin-left: 10%;
 }
 
@@ -603,10 +614,9 @@ label input:checked+.menu .hamburger:before {
     margin: 10px;
     text-align: left;
     margin-left: 53px;
-    -webkit-transition: all 1.4s cubic-bezier(1, 0, 0, 1);
-    transition: all 1.4s cubic-bezier(1, 0, 0, 1);
     transform: translate3d(0, 0, 0);
     -webkit-transform: translate3d(0, 0, 0);
+
 }
 
 .menu ul .based {
@@ -957,10 +967,11 @@ label input:checked+.menu .hamburger:before {
 // Single project
 header .menu #back {
     position: absolute;
+    top: 20px;
+    left: 20px;
     font-size: 18px;
     float: left;
     z-index: 2000;
-    left: 15px;
     height: 40px;
     width: 40px;
     -webkit-transition: all 500ms cubic-bezier(1, 0, 0, 1);
