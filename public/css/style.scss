@@ -993,12 +993,6 @@ header .menu #back:hover {
     color: white;
 }
 
-@media screen and (max-width: 995px) {
-    .all-projects-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
 @media screen and (max-width: 800px) {
     .all-projects-grid {
         grid-template-columns: auto;
