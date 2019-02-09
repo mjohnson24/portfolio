@@ -8,6 +8,7 @@ const container = document.querySelector(".container");
 const rotateDiv = document.querySelector(".pleaserotate");
 const check = document.getElementById("cbx");
 const body = document.querySelector("body");
+const header = document.querySelector("header");
 
 check.addEventListener('click', function () {
     if (check.checked) {
@@ -79,15 +80,43 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000);
 
     if (window.location.pathname === '/') {
-        var t1 = anime.timeline({
-            easing: 'easeOutExpo',
-            duration: '1500',
-            delay: '1000'
-        })
-        t1.add({
-            targets: '.hero',
-            translateY: [150, 0]
-        })
+        anime.timeline({
+                easing: 'easeOutExpo',
+                delay: 1000
+            })
+            .add({
+                targets: '.hero .left',
+                opacity: [0, 1],
+                translateY: [200, 0],
+                delay: 1500
+            })
+            .add({
+                targets: '.hero .right',
+                opacity: [0, 1],
+                translateX: [200, 0]
+            }, '-=1600')
+            .add({
+                targets: header,
+                opacity: [0, 1],
+                translateY: [-100, 0]
+            }, '-=1200')
+            .add({
+                targets: '#scrolldown',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                rotate: -90
+            }, '-=2000')
+            .add({
+                targets: '.arrow svg',
+                opacity: [0, 1],
+                translateY: [20, 0],
+                rotate: -90
+            }, '-=2000')
+
+        setTimeout(() => {
+            document.querySelector('.hero .left').classList.add('animation');
+            document.querySelector('.hero .right').classList.add('animation');
+        }, 4000)
     }
 })
 
@@ -105,100 +134,3 @@ $('a[href^="#"]').on('click', function (e) {
     });
 
 });
-
-if (window.location.pathname === '/') {
-    const menu_button = document.querySelector('label .menu');
-    const label_menu = document.querySelector('label input');
-    const menu_li = document.querySelectorAll('.menu ul li');
-    const menu_ul = document.querySelector('.menu ul');
-    const dark_overlay = document.querySelector('.dark-overlay');
-    var clicked = 0;
-    menu_button.addEventListener('click', function () {
-        clicked++;
-        if (clicked % 2 === 1) {
-            bodyScrollLock.disableBodyScroll(menu_ul);
-            dark_overlay.style.opacity = '1';
-            dark_overlay.style.visibility = 'visible';
-            menu_ul.style.left = '0';
-            for (let i = 0; i < menu_li.length; i++) {
-                menu_li[i].addEventListener('click', function () {
-                    menu_ul.style.left = '-100%';
-                    label_menu.checked = '';
-                    menu_ul.style.left = '';
-                    dark_overlay.style.opacity = '';
-                    dark_overlay.style.visibility = '';
-                    clicked = 0;
-                    bodyScrollLock.clearAllBodyScrollLocks();
-                })
-            }
-        } else {
-            bodyScrollLock.clearAllBodyScrollLocks();
-            dark_overlay.style.opacity = '0';
-            dark_overlay.style.visibility = 'hidden';
-            menu_ul.style.left = '';
-        }
-    })
-}
-
-// Transparent header depending on the scroll position
-const header = document.querySelector('header');
-const switcher = document.getElementById('cbx');
-if (window.location.pathname === '/') {
-    document.addEventListener('DOMContentLoaded', function () {
-        if (window.pageYOffset < window.innerHeight) {
-            header.style.background = 'none';
-        } else {
-            header.style.background = '';
-        }
-    });
-    switcher.addEventListener('click', function () {
-        if (window.pageYOffset < window.innerHeight) {
-            header.style.background = 'none';
-        } else {
-            header.style.background = '';
-        }
-    })
-    document.addEventListener('scroll', function () {
-        if (window.pageYOffset < window.innerHeight) {
-            header.style.background = 'none';
-        } else {
-            header.style.background = '';
-        }
-    })
-} else {
-    const projectgrid_header = document.querySelector('.single-project-header');
-    document.addEventListener('DOMContentLoaded', function () {
-        if (window.pageYOffset < projectgrid_header.offsetHeight) {
-            header.style.background = 'none';
-        } else {
-            header.style.background = '';
-        }
-    });
-    switcher.addEventListener('click', function () {
-        if (window.pageYOffset < projectgrid_header.offsetHeight) {
-            header.style.background = 'none';
-        } else {
-            header.style.background = '';
-        }
-    })
-    document.addEventListener('scroll', function () {
-        if (window.pageYOffset < projectgrid_header.offsetHeight) {
-            header.style.background = 'none';
-        } else {
-            header.style.background = '';
-        }
-    })
-}
-
-// Automatically set the theme based on the hour
-// var mql = window.matchMedia('(min-width: 768px)');
-// if (mql.matches) {
-//     const time = new Date()
-//     const currentHour = time.getHours();
-//     window.addEventListener('DOMContentLoaded', function () {
-//         if (currentHour >= 22 || currentHour <= 6) {
-//             switcher.checked = true;
-//             body.classList.add("dark-theme");
-//         }
-//     })
-// }

@@ -32,22 +32,21 @@
     background: white;
 }
 
+a {
+    text-decoration: none;
+
+}
+
 footer,
 .container,
-header,
 .contact .right img,
 h2,
 a,
 .contact .contact-links li a,
-#scrolldown,
 p,
 h3,
 .contact h1,
 .contact span,
-label input:checked+.menu .hamburger,
-label input:checked+.menu .hamburger:after,
-label input:checked+.menu .hamburger:before,
-.based,
 #hero-sun,
 #hero-moon,
 .underline--magical:hover,
@@ -55,18 +54,17 @@ main,
 .single-project-grid div h1,
 .single-project-grid div p,
 header .menu #back a,
-.hero .left,
 .title {
     -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
     transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
 
-.dark-theme {
+.animation {
+    -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
+    transition: all 700ms cubic-bezier(1, 0, 0, 1);
+}
 
-    .menu ul,
-    header {
-        background-color: #232931
-    }
+.dark-theme {
 
     .contact .right img {
         border: 40px solid #232931;
@@ -79,7 +77,8 @@ header .menu #back a,
     }
 
     main,
-    footer {
+    footer,
+    .container {
         background-color: #393e46;
     }
 
@@ -87,16 +86,17 @@ header .menu #back a,
         background-color: #7d7f83
     }
 
+    .hero .right {
+        background-color: #393e46
+    }
+
     h2,
     a,
     .contact .contact-links li a,
-    #typewriter,
     p,
     h3,
     .contact h1,
     .contact span,
-    .based,
-    .menu ul li a,
     .single-project-grid div h1,
     .single-project-grid div p,
     header .menu #back a {
@@ -109,23 +109,8 @@ header .menu #back a,
         color: #fff
     }
 
-    .underline--magical:hover,
     .about #frontend:hover {
         color: #546A7B
-    }
-
-
-    #scrolldown {
-        color: white;
-    }
-
-    .menu .hamburger,
-    .menu .hamburger:after,
-    .menu .hamburger:before,
-    label input:checked+.menu .hamburger,
-    label input:checked+.menu .hamburger:after,
-    label input:checked+.menu .hamburger:before {
-        background: rgb(194, 194, 194)
     }
 
     #hero-sun {
@@ -141,6 +126,7 @@ header .menu #back a,
 html {
     font-size: 15px;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 section {
@@ -168,8 +154,7 @@ hr {
 
 .anchor {
     display: block;
-    height: 78px;
-    margin-top: -78px;
+    height: 0;
     visibility: hidden;
 }
 
@@ -192,19 +177,13 @@ hr {
 
 header {
     grid-area: header;
-    position: fixed;
     width: 100%;
     height: 80px;
     z-index: 1000;
-    background-color: white;
 }
 
 .scrolled {
     background-color: white;
-}
-
-.dark-header-scrolled {
-    background-color: #232931
 }
 
 header h2 a {
@@ -221,7 +200,7 @@ header h2 {
 .switcher {
     position: absolute;
     top: 30px;
-    right: 0;
+    right: 30px;
     opacity: 1;
     text-align: left;
     visibility: visible;
@@ -386,6 +365,7 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100vh;
+    margin-top: -80px;
 }
 
 .hero .left {
@@ -395,6 +375,71 @@ h3 {
     flex-direction: column;
     background-color: white;
     padding: 150px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 1px solid #4f4f4f;
+    border-radius: 5px;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    color: #000;
+    margin-left: .5em;
+    margin-right: .5em;
+    margin-bottom: .5em;
+}
+
+.button:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.button:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #4285F4;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.button:hover {
+    color: #ffffff;
+    border: 1px solid #4285F4;
+}
+
+.button:hover:before {
+    top: -35%;
+    background-color: #4285F4;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.button:hover:after {
+    top: -45%;
+    background-color: #4285F4;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
 
@@ -443,18 +488,6 @@ h3 {
     animation: bounce 800ms cubic-bezier(0.7, 0, 0.3, 1) infinite alternate
 }
 
-#scrolldown {
-    width: 60px;
-    height: 1rem;
-    top: 85vh;
-    left: calc(50vw - 31px);
-    position: absolute;
-    z-index: 1;
-    transform: rotate(-90deg);
-    font-weight: 500;
-    font-size: 15px
-}
-
 .arrow svg {
     transform: rotate(-90deg);
     margin-left: auto;
@@ -483,90 +516,6 @@ h3 {
     width: 100px;
 }
 
-label .menu {
-    position: absolute;
-    float: left;
-    z-index: 2000;
-    top: 20px;
-    left: 20px;
-    height: 40px;
-    width: 40px;
-    -webkit-transition: all 500ms cubic-bezier(1, 0, 0, 1);
-    transition: all 500ms cubic-bezier(1, 0, 0, 1);
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    cursor: pointer;
-}
-
-label .menu:hover {
-    transform: scale(1.2);
-}
-
-label .text {
-    left: 40px;
-}
-
-label .hamburger {
-    z-index: 9999;
-    position: relative;
-    top: 18px;
-    left: 9px;
-    width: 20px;
-    height: 2px;
-    background: black;
-    display: block;
-    transform-origin: center;
-    transition: all .5s ease-in;
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-}
-
-label .hamburger:after,
-label .hamburger:before {
-    transition: all .5s ease-in;
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-    content: "";
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    background: black;
-}
-
-label .hamburger:before {
-    top: -6px;
-}
-
-label .hamburger:after {
-    bottom: -6px;
-}
-
-label input {
-    display: none;
-}
-
-label input:checked+.menu {
-    z-index: 1000;
-}
-
-label input:checked+.menu .hamburger {
-    transform: rotate(45deg);
-    background: black;
-}
-
-label input:checked+.menu .hamburger:after {
-    transform: rotate(90deg);
-    background: black;
-    bottom: 0;
-}
-
-label input:checked+.menu .hamburger:before {
-    transform: rotate(90deg);
-    background: black;
-    top: 0;
-}
-
 .dark-overlay {
     width: 100%;
     position: fixed;
@@ -578,56 +527,12 @@ label input:checked+.menu .hamburger:before {
     z-index: 1;
 }
 
-.menu ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0;
-    height: 100vh;
-    width: 330px;
-    z-index: 200;
-    position: absolute;
-    left: -100%;
-    background: white;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: auto;
-    margin-bottom: auto;
-    -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
-    transition: all 700ms cubic-bezier(1, 0, 0, 1);
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-}
-
 .vertical-text {
     margin-left: auto;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.menu ul li {
-    font-size: 40px;
-    margin: 10px;
-    text-align: left;
-    margin-left: 53px;
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translate3d(0, 0, 0);
-
-}
-
-.menu ul .based {
-    font-size: 15px;
-    margin-top: 40px;
-}
-
-.menu ul li a {
-    color: black;
-    text-decoration: none;
-    font-weight: 900;
 }
 
 .underline--magical {
@@ -1109,26 +1014,19 @@ header .menu #back:hover {
 
     .hero {
         grid-template-columns: auto;
-        grid-template-rows: .5fr 1fr;
+        grid-template-rows: .4fr 1fr;
     }
 
-    .arrow,
-    #scrolldown {
+    .arrow {
         display: none;
     }
 
     .hero .left {
-        padding: 50px;
+        padding: 35px;
     }
 
     .hero .left p {
         text-align: center;
-    }
-
-    .menu ul {
-        left: 0;
-        left: -100%;
-        width: 100%;
     }
 
     .about .left {
@@ -1149,10 +1047,6 @@ header .menu #back:hover {
         width: 100%;
     }
 
-    label .menu {
-        left: 0;
-    }
-
     .switcher {
         visibility: hidden;
         opacity: 0
@@ -1165,18 +1059,6 @@ header .menu #back:hover {
 
     footer {
         position: unset;
-    }
-
-    label input:checked+.menu .hamburger {
-        background: black;
-    }
-
-    label input:checked+.menu .hamburger:after {
-        background: black;
-    }
-
-    label input:checked+.menu .hamburger:before {
-        background: black;
     }
 
     .about {
@@ -1196,13 +1078,6 @@ header .menu #back:hover {
         grid-template-columns: auto;
         height: auto;
         min-height: 100vh;
-    }
-
-
-    .skills-bar-container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 70%;
     }
 
     .portfolio {
@@ -1292,10 +1167,6 @@ header .menu #back:hover {
         padding: 2em;
     }
 
-    .skills-bar-container {
-        width: 90%
-    }
-
     .portfolio .right {
         margin-left: 1em;
         margin-right: 1em;
@@ -1311,11 +1182,6 @@ header .menu #back:hover {
 
     footer h2 {
         font-size: 12px;
-    }
-
-    .menu ul li {
-        font-size: 30px;
-        margin-left: 30px;
     }
 
     .all-projects {
