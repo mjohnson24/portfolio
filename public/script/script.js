@@ -1,8 +1,8 @@
 // Fade animation
 
-$("body").delay(100).animate({
-    "opacity": "1"
-}, 1000);
+// $("body").delay(100).animate({
+//     "opacity": "1"
+// }, 1000);
 
 const container = document.querySelector(".container");
 const rotateDiv = document.querySelector(".pleaserotate");
@@ -74,6 +74,7 @@ function displayContent() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector('body').style.opacity = '1';
     loader = document.getElementById('loader');
     setTimeout(function () {
         loadNow(1);
@@ -121,16 +122,26 @@ document.addEventListener("DOMContentLoaded", function () {
 })
 
 // Smooth scrolling
-$('a[href^="#"]').on('click', function (e) {
-    e.preventDefault();
+// $('a[href^="#"]').on('click', function (e) {
+//     e.preventDefault();
 
-    var target = this.hash;
-    $target = $(target);
+//     var target = this.hash;
+//     $target = $(target);
 
-    $('html, body').stop().animate({
-        'scrollTop': $target.offset().top
-    }, 500, function () {
-        window.location.hash = target;
-    });
+//     $('html, body').stop().animate({
+//         'scrollTop': $target.offset().top
+//     }, 500, function () {
+//         window.location.hash = target;
+//     });
 
-});
+// });
+
+// Check if browser supports smooth-scroll property
+// if not, use smoothScroll.js
+if (!isCssSmoothSCrollSupported()) {
+    const scroll = new SmoothScroll('a[href*="#"]');
+}
+
+function isCssSmoothSCrollSupported() {
+    return 'scrollBehavior' in document.documentElement.style;
+}

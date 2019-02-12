@@ -132,6 +132,7 @@ html {
   font-size: 15px;
   height: 100vh;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 section {
@@ -144,6 +145,8 @@ body {
   opacity: 0;
   height: 100vh;
   overflow-x: hidden;
+  -webkit-transition: opacity 1s ease-in;
+  transition: opacity 1s ease-in;
 }
 
 p a {
