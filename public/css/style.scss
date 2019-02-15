@@ -490,7 +490,6 @@ h3 {
     left: calc(50vw - 1.05rem);
     position: absolute;
     z-index: 1;
-    transform: rotate(-90deg);
     animation: bounce 800ms cubic-bezier(0.7, 0, 0.3, 1) infinite alternate
 }
 
