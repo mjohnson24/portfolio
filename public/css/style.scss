@@ -49,12 +49,12 @@ h3,
 .contact span,
 #hero-sun,
 #hero-moon,
-.underline--magical:hover,
 main,
 .single-project-grid div h1,
 .single-project-grid div p,
 header .menu #back a,
-.title {
+.title,
+.single-project-grid #see-online span {
     -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
     transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -540,18 +540,6 @@ h3 {
     align-items: center;
 }
 
-.underline--magical {
-    background-image: linear-gradient(120deg, #4285f4 0%, #63bbf5 100%);
-    background-repeat: no-repeat;
-    background-size: 100% 0.2em;
-    background-position: 0 88%;
-}
-
-.underline--magical:hover {
-    background-size: 100% 88%;
-}
-
-
 .container {
     width: 100%;
     position: absolute;
@@ -870,7 +858,6 @@ h3 {
 
 .skills .right img {
     width: 60%;
-    place-self: center;
 }
 
 // Single project
@@ -990,7 +977,22 @@ header .menu #back:hover {
     width: 100%;
     height: 300px;
     grid-column: 1/3;
-    background-color: #332f30;
+    background-image: linear-gradient(120deg, #4285f4 0%, #63bbf5 100%);
+}
+
+.single-project-grid #see-online #prev {
+    margin-right: auto;
+    padding: 40px;
+}
+
+.single-project-grid #see-online #next {
+    margin-left: auto;
+    padding: 40px;
+}
+
+.single-project-grid #see-online #prev:hover,
+.single-project-grid #see-online #next:hover {
+    transform: scale(1.2);
 }
 
 .single-project-grid #see-online a {
@@ -1218,5 +1220,10 @@ header .menu #back:hover {
 
     header .menu #back {
         left: 0;
+    }
+
+    .single-project-grid #see-online #prev,
+    .single-project-grid #see-online #next {
+        padding: 20px;
     }
 }
