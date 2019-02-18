@@ -1,9 +1,3 @@
-// Fade animation
-
-// $("body").delay(100).animate({
-//     "opacity": "1"
-// }, 1000);
-
 const container = document.querySelector(".container");
 const rotateDiv = document.querySelector(".pleaserotate");
 const check = document.getElementById("cbx");
@@ -121,20 +115,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 })
 
-// Smooth scrolling
-// $('a[href^="#"]').on('click', function (e) {
-//     e.preventDefault();
-
-//     var target = this.hash;
-//     $target = $(target);
-
-//     $('html, body').stop().animate({
-//         'scrollTop': $target.offset().top
-//     }, 500, function () {
-//         window.location.hash = target;
-//     });
-
-// });
 
 // Check if browser supports smooth-scroll property
 // if not, use smoothScroll.js
