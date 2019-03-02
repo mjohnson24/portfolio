@@ -83,7 +83,6 @@ header .menu #back a,
   stroke: white;
 }
 
-.dark-theme main,
 .dark-theme footer,
 .dark-theme .container {
   background-color: #393e46;
@@ -106,7 +105,8 @@ header .menu #back a,
 .dark-theme .contact span,
 .dark-theme .single-project-grid div h1,
 .dark-theme .single-project-grid div p,
-.dark-theme header .menu #back a {
+.dark-theme header .menu #back a,
+.dark-theme #skills-left-p {
   color: #fff;
 }
 
@@ -147,6 +147,14 @@ body {
   overflow-x: hidden;
   -webkit-transition: opacity 1s ease-in;
   transition: opacity 1s ease-in;
+}
+
+p {
+  font-weight: 300;
+}
+
+b {
+  font-weight: 600;
 }
 
 p a {
@@ -334,7 +342,6 @@ footer {
 footer h2 {
   height: 0;
   margin-left: 0;
-  text-transform: uppercase;
   letter-spacing: 0;
 }
 
@@ -787,7 +794,7 @@ h3 {
 
 .all-projects-grid #photographer:hover .hover {
   height: 500px;
-  opacity: 1;
+  opacity: .9;
 }
 
 .all-projects-grid #photographer:hover .hover span {
@@ -811,7 +818,7 @@ h3 {
 
 .all-projects-grid #restaurant:hover .hover {
   height: 500px;
-  opacity: 1;
+  opacity: .9;
 }
 
 .all-projects-grid #restaurant:hover .hover span {
@@ -835,7 +842,7 @@ h3 {
 
 .all-projects-grid #estate:hover .hover {
   height: 500px;
-  opacity: 1;
+  opacity: .9;
 }
 
 .all-projects-grid #estate:hover .hover span {
@@ -855,7 +862,7 @@ h3 {
 
 .all-projects-grid #next:hover .hover {
   height: 500px;
-  opacity: 1;
+  opacity: .9;
 }
 
 .all-projects-grid #next:hover .hover span {

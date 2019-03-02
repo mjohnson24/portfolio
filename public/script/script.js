@@ -33,7 +33,7 @@ if (isIE || isEdge || isOpera) {
 
 if (/Android|webOS|iPhone|iPod|Opera Mini/i.test(navigator.userAgent)) {
     window.addEventListener("resize", function () {
-        var screenOrientation = ($(window).width() > $(window).height()) ? 90 : 0;
+        const screenOrientation = (window.innerWidth > window.innerHeight) ? 90 : 0;
 
         // if rotated
         if (screenOrientation != 0) {
