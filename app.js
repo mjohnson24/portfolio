@@ -25,6 +25,10 @@ app.get('/project3', function (req, res) {
     res.sendFile(__dirname + '/public/project3.html');
 });
 
+app.get('/project4', function (req, res) {
+    res.sendFile(__dirname + '/public/project4.html');
+});
+
 app.set('port', process.env.PORT || 3000);
 const server = app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + server.address().port);

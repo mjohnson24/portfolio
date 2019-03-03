@@ -68,50 +68,59 @@ function displayContent() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+
     document.querySelector('body').style.opacity = '1';
     loader = document.getElementById('loader');
     setTimeout(function () {
         loadNow(1);
     }, 1000);
 
-    if (window.location.pathname === '/') {
-        anime.timeline({
-                easing: 'easeOutExpo',
-                delay: 1000
-            })
-            .add({
-                targets: '.hero .left',
-                opacity: [0, 1],
-                translateY: [200, 0],
-                delay: 1500
-            })
-            .add({
-                targets: '.hero .right',
-                opacity: [0, 1],
-                translateX: [200, 0]
-            }, '-=1600')
-            .add({
-                targets: header,
-                opacity: [0, 1],
-                translateY: [-100, 0]
-            }, '-=1200')
-            .add({
-                targets: '#scrolldown',
-                opacity: [0, 1],
-                translateY: [20, 0],
-                rotate: -90
-            }, '-=2000')
-            .add({
-                targets: '.arrow svg',
-                opacity: [0, 1],
-                translateY: [20, 0],
-                rotate: -90
-            }, '-=2000')
+    if (window.location.pathname !== '/') {
+        document.querySelector('header').classList.add('animation');
+    }
 
-        setTimeout(() => {
-            document.querySelector('.hero .left').classList.add('animation');
-            document.querySelector('.hero .right').classList.add('animation');
-        }, 4000)
+    if (window.location.pathname === '/') {
+        if (window.matchMedia("(min-width: 500px)").matches) {
+            console.log('ok');
+            anime.timeline({
+                    easing: 'easeOutExpo',
+                    delay: 1000
+                })
+                .add({
+                    targets: '.hero .left',
+                    opacity: [0, 1],
+                    translateY: [200, 0],
+                    delay: 1500
+                })
+                .add({
+                    targets: '.hero .right',
+                    opacity: [0, 1],
+                    translateX: [200, 0]
+                }, '-=1600')
+                .add({
+                    targets: header,
+                    opacity: [0, 1],
+                    translateY: [-100, 0]
+                }, '-=1200')
+                .add({
+                    targets: '#scrolldown',
+                    opacity: [0, 1],
+                    translateY: [20, 0],
+                    rotate: -90
+                }, '-=2000')
+                .add({
+                    targets: '.arrow svg',
+                    opacity: [0, 1],
+                    translateY: [20, 0],
+                    rotate: -90
+                }, '-=2000')
+
+            setTimeout(() => {
+                document.querySelector('header').classList.add('animation');
+                document.querySelector('.hero .left').classList.add('animation');
+                document.querySelector('.hero .right').classList.add('animation');
+            }, 4000)
+        }
     }
 })
 

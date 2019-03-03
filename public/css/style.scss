@@ -38,7 +38,6 @@ a {
 }
 
 footer,
-.container,
 .contact .right img,
 h2,
 a,
@@ -50,11 +49,16 @@ h3,
 #hero-sun,
 #hero-moon,
 main,
+.single-project-grid,
 .single-project-grid div h1,
 .single-project-grid div p,
 header .menu #back a,
 .title,
-.single-project-grid #see-online span {
+.single-project-grid #see-online span,
+.about,
+.skills,
+.portfolio,
+.contact {
     -webkit-transition: all 700ms cubic-bezier(1, 0, 0, 1);
     transition: all 700ms cubic-bezier(1, 0, 0, 1);
 }
@@ -76,16 +80,15 @@ header .menu #back a,
         stroke: white
     }
 
+    .hero .right,
+    .hero .left,
+    header,
     footer,
-    .container {
-        background-color: #393e46;
-    }
-
-    .hero .left {
-        background-color: #7d7f83
-    }
-
-    .hero .right {
+    .about,
+    .skills,
+    .portfolio,
+    .contact,
+    .single-project-grid {
         background-color: #393e46
     }
 
@@ -146,6 +149,7 @@ body {
     -ms-transition: opacity 1s ease-in;
     -o-transition: opacity 1s ease-in;
     transition: opacity 1s ease-in;
+    overflow-x: hidden;
 }
 
 p {
@@ -191,9 +195,14 @@ hr {
 
 header {
     grid-area: header;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
-    height: 80px;
+    height: 60px;
     z-index: 1000;
+    padding-left: 4em;
+    padding-right: 4em;
 }
 
 .scrolled {
@@ -206,19 +215,16 @@ header h2 a {
 
 header h2 {
     text-align: left;
-    margin-left: 80px;
-    margin-top: 31px;
+    margin-top: 0;
 }
 
 /* Theme switcher */
 .switcher {
-    position: absolute;
     top: 30px;
-    right: 30px;
     opacity: 1;
     text-align: left;
     visibility: visible;
-    margin-right: 38px;
+    margin-left: auto;
 }
 
 .toggle {
@@ -360,7 +366,6 @@ h1 {
 }
 
 h2 {
-    margin-left: 40px;
     padding-left: 0;
     margin-bottom: 0;
     font-size: 15px;
@@ -378,7 +383,6 @@ h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     height: 100vh;
-    margin-top: -80px;
 }
 
 .hero .left {
@@ -759,23 +763,23 @@ h3 {
     margin-top: 40px;
 }
 
-.all-projects-grid #next {
+.all-projects-grid #blog {
     background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
         url('../img/next.jpg') center center;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.all-projects-grid #next:hover .hover {
+.all-projects-grid #blog:hover .hover {
     height: 500px;
     opacity: .9;
 }
 
-.all-projects-grid #next:hover .hover span {
+.all-projects-grid #blog:hover .hover span {
     display: block;
 }
 
-.all-projects-grid #next:hover #type {
+.all-projects-grid #blog:hover #type {
     margin-top: 40px;
 }
 
@@ -869,9 +873,7 @@ h3 {
 
 // Single project
 header .menu #back {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    margin-right: 10px;
     font-size: 18px;
     float: left;
     z-index: 2000;
@@ -930,7 +932,7 @@ header .menu #back:hover {
     padding-left: 7em;
     padding-right: 7em;
     margin: 0 auto;
-    margin-top: 5em;
+    padding-top: 5em;
     grid-gap: 5em 3em;
 }
 
@@ -945,7 +947,6 @@ header .menu #back:hover {
 .single-project-grid div {
     justify-self: center;
     align-self: center;
-
 }
 
 .single-project-grid #title {
@@ -956,7 +957,11 @@ header .menu #back:hover {
 .single-project-grid div p {
     line-height: 25px;
     font-size: 15px;
-    color: #888888;
+    font-weight: 300;
+}
+
+#lang {
+    color: #000;
 }
 
 .single-project-grid #project-video {
@@ -1015,7 +1020,6 @@ header .menu #back:hover {
 }
 
 @media screen and (max-width: 768px) {
-
     main {
         margin: 0;
     }
@@ -1053,11 +1057,13 @@ header .menu #back:hover {
 
     header {
         width: 100%;
+        justify-content: center;
     }
 
     .switcher {
         visibility: hidden;
-        opacity: 0
+        opacity: 0;
+        display: none;
     }
 
     #hero-sun,
@@ -1167,6 +1173,22 @@ header .menu #back:hover {
 
     .hero .right {
         background-size: 90%;
+    }
+
+    .hero .left {
+        padding-top: 0;
+    }
+
+    .hero .left p {
+        margin-top: 10px;
+    }
+
+    .project-header {
+        padding: 0;
+    }
+
+    .project-header h2 {
+        margin-right: auto;
     }
 
     .about .right,
