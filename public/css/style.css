@@ -413,6 +413,7 @@ h3 {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   height: 100vh;
+  margin-top: -60px;
 }
 
 .hero .left {
@@ -1176,6 +1177,7 @@ header .menu #back:hover {
         grid-template-columns: auto;
     -ms-grid-rows: .4fr 1fr;
         grid-template-rows: .4fr 1fr;
+    margin-top: 0;
   }
   .arrow {
     display: none;
