@@ -1,7 +1,26 @@
 {
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edoardolunardi/portfolio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edoardolunardi/portfolio/issues"
+  },
+  "homepage": "https://github.com/edoardolunardi/portfolio#readme",
   "dependencies": {
-    "animate.css": "^3.7.0",
-    "express": "^4.16.4",
-    "path": "^0.12.7"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
   }
 }
