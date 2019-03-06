@@ -81,6 +81,12 @@
     }
 
     document.addEventListener("DOMContentLoaded", () => {
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out-cubic',
+            anchorPlacement: 'top-bottom'
+        });
         body.style.opacity = '1';
         setTimeout(() => {
             loadNow(1);
